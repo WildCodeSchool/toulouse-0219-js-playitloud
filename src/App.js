@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
+import SideBar from './components/SideBar';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar
-          name="Sbaboot"
-          lastName="Flamant"
-        />
+        <SideBar />
       </div>
     );
   }
+
 }
+
 
 export default App;
