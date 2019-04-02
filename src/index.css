@@ -12,12 +12,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+nav img {
+  max-width: 20%;
+  max-height: 20%;
+  text-align: left;
+  margin-right: 0px;
+  display: flex;
+}
 
 .searchbar{
   margin-bottom: auto;
   margin-top: auto;
   height: 60px;
-  background-color: #353b48;
+  background-color: black;
   border-radius: 30px;
   padding: 10px;
   }
@@ -55,3 +62,4 @@ code {
   border-radius: 50%;
   color:white;
   }
+
