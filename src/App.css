@@ -1,7 +1,8 @@
 /* Navbar */
 .sidebar {
-  width: 20%;
-  heigth: 100%;
+  background-color: rgb(190,190,190);
+  position: fixed;
+  height: 100vh;
 }
 
 .playItLoud {
