@@ -1,18 +1,4 @@
 import React, { Component } from 'react'
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
-} from 'reactstrap';
-
 
 class SearchBar extends Component {
   render() {
@@ -41,10 +27,10 @@ class SearchBar extends Component {
             <a className="dropdown-item" href="#">Rap</a>
             <a className="dropdown-item" href="#">Rock</a>
             <a className="dropdown-item" href="#">Pop</a>
-            <a className="dropdown-item" href="#">Metal</a>
+            <a className="dropdown-item" href="#">ASMR</a>
             <a className="dropdown-item" href="#">Animaux</a>
             <a className="dropdown-item" href="#">+18</a>
-            <a className="dropdown-item" href="#">classique</a>
+            <a className="dropdown-item" href="#">Bébéluv</a>
             <a className="dropdown-item" href="#">ASMR</a>
           </div>
         </div>
