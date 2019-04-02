@@ -7,7 +7,7 @@ class SideBar extends React.Component {
   render() {
     return (
       <div className='sidebar'>
-        <Avatar className="px-2 mx-1" name="Réminou Tilmant" size="75" round={true} color={Avatar.getRandomColor('sitebase', ['red', 'green', 'blue'])} />
+        <Avatar className="px-3 my-1" name="Réminou Tilmant" size="75" round={true} color={Avatar.getRandomColor('sitebase', ['red', 'green', 'blue'])} />
         <p className="playItLoud px-3 pt-2">Play it Loud</p>
         <Nav vertical>
           <NavItem>
