@@ -35,11 +35,11 @@ class SideBar extends React.Component {
       <Navbar className="sidebar" light expand="md">
         <div className="pictureName">
           <Avatar className="profilpicture" name="Réminou Tilmant" size="75" color="red" round />
-          <NavbarBrand className="playItLoud mx-3" href="/">Play It Loud</NavbarBrand>
+          <NavbarBrand className="playItLoud" href="/">Play It Loud</NavbarBrand>
         </div>
         <NavbarToggler className="togglerButton" onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
-          <Nav className="ml-auto linksidebar" navbar>
+          <Nav className="linksidebar" navbar>
             <NavItem>
               <NavLink href="/components/">Accueil</NavLink>
             </NavItem>

@@ -20,9 +20,7 @@
 
 .playItLoud {
   text-align: center;
-  
-}
-.profilpicture {
+  font-size: 1rem;
   
 }
 
@@ -30,7 +28,7 @@
   display: block;
   flex-direction: column;
 }
-@media screen and (max-width: 640px) {
+@media screen and (min-width: 350px) and (max-width: 640px) {
   .playItLoud {
     display:none;
   }
@@ -44,6 +42,28 @@
   }
   .sidebar {
     background-color: rgb(200,0,10);
+    position: fixed;
+    height: 20%;
+    width: 20%;
+    border-radius: 5px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .playItLoud {
+    display:none;
+  }
+  .profilpicture {
+    display: none;
+  }
+  .togglerButton {
+    position: fixed;
+    left: 1.5rem;
+    bottom: 16rem;
+  }
+  .sidebar {
+    background-color: rgb(200,0,10);
+    position: fixed;
     height: 20%;
     width: 40%;
     border-radius: 5px;
