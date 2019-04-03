@@ -1,3 +1,4 @@
+/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import './App.css';
 import SideBar from './components/SideBar';
@@ -10,7 +11,6 @@ class App extends Component {
       </div>
     );
   }
-
 }
 
 
