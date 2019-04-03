@@ -12,18 +12,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-nav img {
-  max-width: 20%;
-  max-height: 20%;
-  text-align: left;
-  margin-right: 0px;
-  display: flex;
+#dropdownMenuButton{
+ margin-top:5%;
+ padding-right: 20px;
 }
-
-.recherche{
-  text-align: left;
+.dropdown{
+  justify-content: start;
 }
-
 .searchbar{
   margin-bottom: auto;
   margin-top: auto;
