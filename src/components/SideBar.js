@@ -34,23 +34,23 @@ class SideBar extends React.Component {
     return (
       <Navbar className="sidebar" light expand="md">
         <div className="pictureName">
-          <Avatar className="profilpicture" name="Réminou Tilmant" size="75" color="red" round />
-          <NavbarBrand className="playItLoud" href="/">Play It Loud</NavbarBrand>
+          <Avatar className="profilpicture" name="Réminou Tilmant" size="75" color="rgb(229,9,20)" round />
+          <NavbarBrand style={{ color: 'rgb(229,9,20)' }} className="playItLoud" href="/accueil">Play It Loud</NavbarBrand>
         </div>
         <NavbarToggler className="togglerButton" onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="linksidebar" navbar>
             <NavItem>
-              <NavLink href="/components/">Accueil</NavLink>
+              <NavLink className="asidebar" href="/accueil/">Accueil</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">Favoris</NavLink>
+              <NavLink className="asidebar" href="/favoris">Favoris</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">Playlist</NavLink>
+              <NavLink className="asidebar" href="/playlists">Playlists</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">Albums</NavLink>
+              <NavLink className="asidebar" href="/albums">Albums</NavLink>
             </NavItem>
           </Nav>
         </Collapse>

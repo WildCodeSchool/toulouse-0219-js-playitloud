@@ -1,7 +1,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-import './App.css';
 import SideBar from './components/SideBar';
+import './App.css';
 
 class App extends Component {
   render() {
