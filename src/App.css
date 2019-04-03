@@ -1,3 +1,6 @@
+body {
+  background-color:rgb(34, 31, 31);
+}
 /* Navbar */
 .sidebar {
   background-color: rgb(34, 31, 31);
@@ -42,7 +45,7 @@
     bottom: 16rem;
   }
   .sidebar {
-    background-color: rgb(34, 31, 31);
+    background-color: rgb(229,9,20);
     position: fixed;
     height: 20%;
     width: 20%;
@@ -66,7 +69,7 @@
     bottom: 16rem;
   }
   .sidebar {
-    background-color: rgb(34, 31, 31);
+    background-color: rgb(229,9,20);
     position: fixed;
     height: 20%;
     width: 40%;
@@ -74,5 +77,54 @@
   }
   .asidebar {
     color: red !important;
+  }
+}
+
+/* FOOTER */
+.footer-copyright {
+  color: white;
+}
+.icones {
+  text-align: center;
+  position: fixed;
+  bottom: -1.2rem;
+  left: 21rem;
+}
+
+.footer {
+  position: fixed;
+  bottom: -0.1rem;
+  left: 18rem;
+}
+
+@media screen and (max-width: 350px) {
+  .icones {
+    text-align: center;
+    position: fixed;
+    bottom: -2.5rem;
+    left: 2.5rem;
+  }
+  
+  .footer {
+    position: fixed;
+    bottom: -1rem;
+    left: 3rem;
+    font-size: 0.6rem;
+  }
+}
+
+@media screen and (min-width: 350px) and (max-width: 640px) {
+  .icones {
+    text-align: center;
+    position: fixed;
+    bottom: -2.4rem;
+    left: 0.3rem;
+  }
+  
+  .footer {
+    position: fixed;
+    bottom: -1rem;
+    left: 0.5rem;
+    font-size: 0.6rem;
   }
 }

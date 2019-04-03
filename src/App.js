@@ -1,6 +1,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import SideBar from './components/SideBar';
+import FooterPage from './components/FooterPage';
 import './App.css';
 
 class App extends Component {
@@ -8,6 +9,9 @@ class App extends Component {
     return (
       <div className="App">
         <SideBar />
+        <br />
+        <br />
+        <FooterPage />
       </div>
     );
   }
