@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import Carousel from './Carousel'
+import Carousel from "./Carousel";
+import cards from './Cards';
 
 class App extends Component {
   render() {
     return (
-      <Carousel />
+      <div className="App">
+        <Carousel />
+      </div>
     );
   }
 }
