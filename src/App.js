@@ -6,16 +6,14 @@ import albumList from "./spotify-albums";
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      value: "",
+      value: '',
     };
     this.onChange = this.onChange.bind(this);
-
   }
 
   onChange(event) {
-
     this.setState({ value: event.target.value });
   }
 

@@ -1,3 +1,4 @@
+/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import {
   Navbar,
@@ -6,11 +7,8 @@ import {
 } from 'reactstrap';
 
 class Search extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
 
+  render() {
     return (
       <div>
         <Navbar color="dark" light expand="md" className="fixed-top">
