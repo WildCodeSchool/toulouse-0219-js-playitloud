@@ -5,10 +5,9 @@ import {
   NavItem,
 } from 'reactstrap';
 
-class search extends React.Component {
+class Search extends React.Component {
   constructor(props) {
     super(props);
-
   }
   render() {
 
@@ -39,4 +38,4 @@ class search extends React.Component {
   }
 }
 
-export default search;
+export default Search;
