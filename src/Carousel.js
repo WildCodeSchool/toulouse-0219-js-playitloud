@@ -66,7 +66,7 @@ export default class Responsive extends Component {
         <Slider {...settings}>
           {data.map(element => (
             <div>
-            <Cards image={element.image} />
+            <Cards image={element.image} name={element.name} artist={element.artist} />
             </div>
           ))
         }

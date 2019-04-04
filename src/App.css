@@ -1,6 +1,5 @@
 
 .album {
-  font-family: 'Monospace', sans-serif;
   position: relative;
   display: inline-block;
   overflow: hidden;
@@ -51,6 +50,7 @@
 }
 .album h3,
 .album h5 {
+  font-size: 1em;
   margin: 0;
   opacity: 0;
   letter-spacing: 1px;
