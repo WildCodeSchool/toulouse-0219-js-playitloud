@@ -1,7 +1,9 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-import './App.css';
+import SideBar from './components/SideBar';
+import FooterPage from './components/FooterPage';
 import Search from './Components/Search';
+import './App.css';
 import albumList from "./spotify-albums";
 
 class App extends Component {
@@ -22,12 +24,17 @@ class App extends Component {
     return (
 
       <div className="App">
+
         <Search
           value={this.state.value}
           change={this.onChange}
         />
 
-        <ul>
+       
+
+
+        <SideBar />
+       <ul>
           {albumList.albums.items
             .filter(singleAlbum => singleAlbum.name
               .toLowerCase()
@@ -38,10 +45,14 @@ class App extends Component {
               </li>
             ))}
         </ul>
+        <br />
+        <br />
+        <FooterPage />
 
       </div>
     );
   }
 }
+
 
 export default App;
