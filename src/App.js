@@ -1,10 +1,12 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import Carousel from "./Carousel";
+import cards from './Cards';
 import SideBar from './components/SideBar';
 import FooterPage from './components/FooterPage';
 import Search from './Components/Search';
-import './App.css';
 import albumList from "./spotify-albums";
+import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -30,11 +32,10 @@ class App extends Component {
           change={this.onChange}
         />
 
-       
-
-
         <SideBar />
-       <ul>
+        <Carousel />
+
+      <ul>
           {albumList.albums.items
             .filter(singleAlbum => singleAlbum.name
               .toLowerCase()

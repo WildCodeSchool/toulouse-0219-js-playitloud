@@ -1,0 +1,814 @@
+{
+  "albums" : {
+    "href" : "https://api.spotify.com/v1/search?query=Water&type=album&market=FR&offset=0&limit=20",
+    "items" : [ {
+      "album_type" : "single",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/0YinUQ50QDB7ZxSCLyQ40k"
+        },
+        "href" : "https://api.spotify.com/v1/artists/0YinUQ50QDB7ZxSCLyQ40k",
+        "id" : "0YinUQ50QDB7ZxSCLyQ40k",
+        "name" : "Mustard",
+        "type" : "artist",
+        "uri" : "spotify:artist:0YinUQ50QDB7ZxSCLyQ40k"
+      }, {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/6oMuImdp5ZcFhWP0ESe6mG"
+        },
+        "href" : "https://api.spotify.com/v1/artists/6oMuImdp5ZcFhWP0ESe6mG",
+        "id" : "6oMuImdp5ZcFhWP0ESe6mG",
+        "name" : "Migos",
+        "type" : "artist",
+        "uri" : "spotify:artist:6oMuImdp5ZcFhWP0ESe6mG"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/1ypNy6o0C2ZbuuPPYkavVl"
+      },
+      "href" : "https://api.spotify.com/v1/albums/1ypNy6o0C2ZbuuPPYkavVl",
+      "id" : "1ypNy6o0C2ZbuuPPYkavVl",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/e869d7aa3bf2ba4e7d29623151878947958fc18c",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/46ca56bfdfd8643bd591c14272a262be34f917e4",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/822e9db40dfe3dd53e7fe3f40a12d8d5e783e1e6",
+        "width" : 64
+      } ],
+      "name" : "Pure Water (with Migos)",
+      "release_date" : "2019-01-16",
+      "release_date_precision" : "day",
+      "total_tracks" : 1,
+      "type" : "album",
+      "uri" : "spotify:album:1ypNy6o0C2ZbuuPPYkavVl"
+    }, {
+      "album_type" : "album",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/0p4nmQO2msCgU4IF37Wi3j"
+        },
+        "href" : "https://api.spotify.com/v1/artists/0p4nmQO2msCgU4IF37Wi3j",
+        "id" : "0p4nmQO2msCgU4IF37Wi3j",
+        "name" : "Avril Lavigne",
+        "type" : "artist",
+        "uri" : "spotify:artist:0p4nmQO2msCgU4IF37Wi3j"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/3FrkD0TTaXBuW19vuEhDGz"
+      },
+      "href" : "https://api.spotify.com/v1/albums/3FrkD0TTaXBuW19vuEhDGz",
+      "id" : "3FrkD0TTaXBuW19vuEhDGz",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/c765d52394820558d47ef2fc01f20ce5c75b03b3",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/c03b7628e29a24ae053cf4a3b58df55df293222a",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/173d217c400cc064bbfa6164bd0b9435c64fa97c",
+        "width" : 64
+      } ],
+      "name" : "Head Above Water",
+      "release_date" : "2019-02-15",
+      "release_date_precision" : "day",
+      "total_tracks" : 12,
+      "type" : "album",
+      "uri" : "spotify:album:3FrkD0TTaXBuW19vuEhDGz"
+    }, {
+      "album_type" : "album",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/70cRZdQywnSFp9pnc2WTCE"
+        },
+        "href" : "https://api.spotify.com/v1/artists/70cRZdQywnSFp9pnc2WTCE",
+        "id" : "70cRZdQywnSFp9pnc2WTCE",
+        "name" : "Simon & Garfunkel",
+        "type" : "artist",
+        "uri" : "spotify:artist:70cRZdQywnSFp9pnc2WTCE"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/0JwHz5SSvpYWuuCNbtYZoV"
+      },
+      "href" : "https://api.spotify.com/v1/albums/0JwHz5SSvpYWuuCNbtYZoV",
+      "id" : "0JwHz5SSvpYWuuCNbtYZoV",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/f0348a89ae18721fbc7a35429ae0acc40a7fe386",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/39f12d16f10c8da2aef6a78cdc5ec638a8bb2c38",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/b288f093af91f857e7a608e3ccd946e813b2ffab",
+        "width" : 64
+      } ],
+      "name" : "Bridge Over Troubled Water",
+      "release_date" : "1970-01-26",
+      "release_date_precision" : "day",
+      "total_tracks" : 11,
+      "type" : "album",
+      "uri" : "spotify:album:0JwHz5SSvpYWuuCNbtYZoV"
+    }, {
+      "album_type" : "single",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/65Tmt9uAPTYGl1ZhsOeEJ6"
+        },
+        "href" : "https://api.spotify.com/v1/artists/65Tmt9uAPTYGl1ZhsOeEJ6",
+        "id" : "65Tmt9uAPTYGl1ZhsOeEJ6",
+        "name" : "HAEVN",
+        "type" : "artist",
+        "uri" : "spotify:artist:65Tmt9uAPTYGl1ZhsOeEJ6"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/4AFg8jti4zlGxS2RGAU4NV"
+      },
+      "href" : "https://api.spotify.com/v1/albums/4AFg8jti4zlGxS2RGAU4NV",
+      "id" : "4AFg8jti4zlGxS2RGAU4NV",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/62294855b3413f29edfedc07b47222aca9fcd388",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/4a4c584968cec3a769614462c69783230ff5b50d",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/1064fa3cce5179c14e8d4f235f9c3bd50c9e4ea5",
+        "width" : 64
+      } ],
+      "name" : "Back In The Water",
+      "release_date" : "2018-03-23",
+      "release_date_precision" : "day",
+      "total_tracks" : 1,
+      "type" : "album",
+      "uri" : "spotify:album:4AFg8jti4zlGxS2RGAU4NV"
+    }, {
+      "album_type" : "album",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/165ZgPlLkK7bf5bDoFc6Sb"
+        },
+        "href" : "https://api.spotify.com/v1/artists/165ZgPlLkK7bf5bDoFc6Sb",
+        "id" : "165ZgPlLkK7bf5bDoFc6Sb",
+        "name" : "Limp Bizkit",
+        "type" : "artist",
+        "uri" : "spotify:artist:165ZgPlLkK7bf5bDoFc6Sb"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/5mi7FKaWE5CtcOjdyxScA7"
+      },
+      "href" : "https://api.spotify.com/v1/albums/5mi7FKaWE5CtcOjdyxScA7",
+      "id" : "5mi7FKaWE5CtcOjdyxScA7",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/a145d387ca9eb57b4786a0ec44778d3e43cc500e",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/5ba08c03ef6dd7cbdacc3674b37a9058d6fbcecc",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/c003642e28027d0a9b60eac692adfceeda3de77a",
+        "width" : 64
+      } ],
+      "name" : "Chocolate Starfish And The Hot Dog Flavored Water",
+      "release_date" : "2000-10-17",
+      "release_date_precision" : "day",
+      "total_tracks" : 15,
+      "type" : "album",
+      "uri" : "spotify:album:5mi7FKaWE5CtcOjdyxScA7"
+    }, {
+      "album_type" : "single",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/4ZgQDCtRqZlhLswVS6MHN4"
+        },
+        "href" : "https://api.spotify.com/v1/artists/4ZgQDCtRqZlhLswVS6MHN4",
+        "id" : "4ZgQDCtRqZlhLswVS6MHN4",
+        "name" : "grandson",
+        "type" : "artist",
+        "uri" : "spotify:artist:4ZgQDCtRqZlhLswVS6MHN4"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/2ih65NyzXsPwEsI1sMdyIy"
+      },
+      "href" : "https://api.spotify.com/v1/albums/2ih65NyzXsPwEsI1sMdyIy",
+      "id" : "2ih65NyzXsPwEsI1sMdyIy",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/bd173af47d520ec4d0b1f49dbfb4409c9acd0c7d",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/85c5813ee6c0fb2be42568e8d94c4b5e6bf35926",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/638b058482e33df24f644d1f40eabf14dbbaafc9",
+        "width" : 64
+      } ],
+      "name" : "Blood // Water",
+      "release_date" : "2018-05-04",
+      "release_date_precision" : "day",
+      "total_tracks" : 1,
+      "type" : "album",
+      "uri" : "spotify:album:2ih65NyzXsPwEsI1sMdyIy"
+    }, {
+      "album_type" : "single",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/6GI6fFzjsGBxhDannEDXg4"
+        },
+        "href" : "https://api.spotify.com/v1/artists/6GI6fFzjsGBxhDannEDXg4",
+        "id" : "6GI6fFzjsGBxhDannEDXg4",
+        "name" : "MusicTimeNice",
+        "type" : "artist",
+        "uri" : "spotify:artist:6GI6fFzjsGBxhDannEDXg4"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/6GLc8T0aIVIQyApEpL6L0l"
+      },
+      "href" : "https://api.spotify.com/v1/albums/6GLc8T0aIVIQyApEpL6L0l",
+      "id" : "6GLc8T0aIVIQyApEpL6L0l",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/85d9b4dfffc00b19c594beced237cda7bdddfe06",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/942628d83dc2d6ee4a367ca4f29bf55b7b9e8766",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/9391aeb4f006d1da75fe8c59c0bd286aefa764b5",
+        "width" : 64
+      } ],
+      "name" : "Water",
+      "release_date" : "2018-04-11",
+      "release_date_precision" : "day",
+      "total_tracks" : 1,
+      "type" : "album",
+      "uri" : "spotify:album:6GLc8T0aIVIQyApEpL6L0l"
+    }, {
+      "album_type" : "album",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/3PhoLpVuITZKcymswpck5b"
+        },
+        "href" : "https://api.spotify.com/v1/artists/3PhoLpVuITZKcymswpck5b",
+        "id" : "3PhoLpVuITZKcymswpck5b",
+        "name" : "Elton John",
+        "type" : "artist",
+        "uri" : "spotify:artist:3PhoLpVuITZKcymswpck5b"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/2OZbaW9tgO62ndm375lFZr"
+      },
+      "href" : "https://api.spotify.com/v1/albums/2OZbaW9tgO62ndm375lFZr",
+      "id" : "2OZbaW9tgO62ndm375lFZr",
+      "images" : [ {
+        "height" : 635,
+        "url" : "https://i.scdn.co/image/5236240ad5944c2c191055e0f26293442c0c01fe",
+        "width" : 640
+      }, {
+        "height" : 297,
+        "url" : "https://i.scdn.co/image/c7690b194ff64b629aa258c412ad946d4f9435b5",
+        "width" : 300
+      }, {
+        "height" : 63,
+        "url" : "https://i.scdn.co/image/35b70c1b8bc64efc68cf682339eebe9344500f86",
+        "width" : 64
+      } ],
+      "name" : "Madman Across The Water",
+      "release_date" : "1971-11-05",
+      "release_date_precision" : "day",
+      "total_tracks" : 9,
+      "type" : "album",
+      "uri" : "spotify:album:2OZbaW9tgO62ndm375lFZr"
+    }, {
+      "album_type" : "album",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/1Kssd2mp7BMKGZUUKncUt6"
+        },
+        "href" : "https://api.spotify.com/v1/artists/1Kssd2mp7BMKGZUUKncUt6",
+        "id" : "1Kssd2mp7BMKGZUUKncUt6",
+        "name" : "Shannon Lay",
+        "type" : "artist",
+        "uri" : "spotify:artist:1Kssd2mp7BMKGZUUKncUt6"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/3UirGXBKa2VVuip8JPlBpd"
+      },
+      "href" : "https://api.spotify.com/v1/albums/3UirGXBKa2VVuip8JPlBpd",
+      "id" : "3UirGXBKa2VVuip8JPlBpd",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/72149590629e8f40ee23f020162711a6032c03d5",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/64da8d00bef6b456211d3f69737ce3d7d8f1cf28",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/fe24c3c298e53e85e30e382cd7cca112735bcb4f",
+        "width" : 64
+      } ],
+      "name" : "Living Water",
+      "release_date" : "2017-09-22",
+      "release_date_precision" : "day",
+      "total_tracks" : 14,
+      "type" : "album",
+      "uri" : "spotify:album:3UirGXBKa2VVuip8JPlBpd"
+    }, {
+      "album_type" : "album",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/1FvjvACFvko2Z91IvDljrx"
+        },
+        "href" : "https://api.spotify.com/v1/artists/1FvjvACFvko2Z91IvDljrx",
+        "id" : "1FvjvACFvko2Z91IvDljrx",
+        "name" : "Mick Jenkins",
+        "type" : "artist",
+        "uri" : "spotify:artist:1FvjvACFvko2Z91IvDljrx"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/5170B9wvcKvzWRWmTp5lCV"
+      },
+      "href" : "https://api.spotify.com/v1/albums/5170B9wvcKvzWRWmTp5lCV",
+      "id" : "5170B9wvcKvzWRWmTp5lCV",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/0ddbcc9d3102d1aabc5d0eec6a727c50140e78f4",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/5b9c1159fc35882a55ca0afb63227b82e45e93d9",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/74d837188f615106bb3f9a9cdf36a7622e8e68f1",
+        "width" : 64
+      } ],
+      "name" : "The Water (S)",
+      "release_date" : "2014-08-12",
+      "release_date_precision" : "day",
+      "total_tracks" : 15,
+      "type" : "album",
+      "uri" : "spotify:album:5170B9wvcKvzWRWmTp5lCV"
+    }, {
+      "album_type" : "album",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/2e53aHBQdCMKWqHDuyJsjC"
+        },
+        "href" : "https://api.spotify.com/v1/artists/2e53aHBQdCMKWqHDuyJsjC",
+        "id" : "2e53aHBQdCMKWqHDuyJsjC",
+        "name" : "Free",
+        "type" : "artist",
+        "uri" : "spotify:artist:2e53aHBQdCMKWqHDuyJsjC"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/1ydlm89JR8cV8VuSaNvHNL"
+      },
+      "href" : "https://api.spotify.com/v1/albums/1ydlm89JR8cV8VuSaNvHNL",
+      "id" : "1ydlm89JR8cV8VuSaNvHNL",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/96c92a5dcb5c0f3ecafd61a0cb067aaf360acaf7",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/97a35af4f4362dc9807b1816e8c972c8a10bf55c",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/ee54d70282fd6a9ee6641427881b1907f0b60931",
+        "width" : 64
+      } ],
+      "name" : "Fire And Water",
+      "release_date" : "1970-06-26",
+      "release_date_precision" : "day",
+      "total_tracks" : 7,
+      "type" : "album",
+      "uri" : "spotify:album:1ydlm89JR8cV8VuSaNvHNL"
+    }, {
+      "album_type" : "single",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/4TcOQvIP8LyvMi88JGxq4j"
+        },
+        "href" : "https://api.spotify.com/v1/artists/4TcOQvIP8LyvMi88JGxq4j",
+        "id" : "4TcOQvIP8LyvMi88JGxq4j",
+        "name" : "Saigon Rain",
+        "type" : "artist",
+        "uri" : "spotify:artist:4TcOQvIP8LyvMi88JGxq4j"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/3Z0EvtjzxPYJ5VamO5WAQI"
+      },
+      "href" : "https://api.spotify.com/v1/albums/3Z0EvtjzxPYJ5VamO5WAQI",
+      "id" : "3Z0EvtjzxPYJ5VamO5WAQI",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/af9f8b07c91a2f84c1a4de15531b151340f50310",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/187bcfc3f455086b3285a7048b2918a9f77325be",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/77789b7c9cbc67fb218a1c7763d463d6c4c0c5f9",
+        "width" : 64
+      } ],
+      "name" : "Water",
+      "release_date" : "2019-03-02",
+      "release_date_precision" : "day",
+      "total_tracks" : 4,
+      "type" : "album",
+      "uri" : "spotify:album:3Z0EvtjzxPYJ5VamO5WAQI"
+    }, {
+      "album_type" : "compilation",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/0LyfQWJT6nXafLPZqxe9Of"
+        },
+        "href" : "https://api.spotify.com/v1/artists/0LyfQWJT6nXafLPZqxe9Of",
+        "id" : "0LyfQWJT6nXafLPZqxe9Of",
+        "name" : "Multi-interprètes",
+        "type" : "artist",
+        "uri" : "spotify:artist:0LyfQWJT6nXafLPZqxe9Of"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/058fiqH1NYYmur8cicws4l"
+      },
+      "href" : "https://api.spotify.com/v1/albums/058fiqH1NYYmur8cicws4l",
+      "id" : "058fiqH1NYYmur8cicws4l",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/e8a92abda6c01ddf3f78998b9b00e21c9d884c90",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/efdaa06fbadee2b95eaf1689c8307704c600329f",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/25f76978665acbb786f58ceb9af8e62d6347d72d",
+        "width" : 64
+      } ],
+      "name" : "The Shape Of Water (Original Motion Picture Soundtrack)",
+      "release_date" : "2017-12-01",
+      "release_date_precision" : "day",
+      "total_tracks" : 26,
+      "type" : "album",
+      "uri" : "spotify:album:058fiqH1NYYmur8cicws4l"
+    }, {
+      "album_type" : "album",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/1kMVs324xI4K0tQrKqA4c4"
+        },
+        "href" : "https://api.spotify.com/v1/artists/1kMVs324xI4K0tQrKqA4c4",
+        "id" : "1kMVs324xI4K0tQrKqA4c4",
+        "name" : "City Morgue",
+        "type" : "artist",
+        "uri" : "spotify:artist:1kMVs324xI4K0tQrKqA4c4"
+      }, {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/4G1zP5i0r57g1c1CxrPhfM"
+        },
+        "href" : "https://api.spotify.com/v1/artists/4G1zP5i0r57g1c1CxrPhfM",
+        "id" : "4G1zP5i0r57g1c1CxrPhfM",
+        "name" : "ZillaKami",
+        "type" : "artist",
+        "uri" : "spotify:artist:4G1zP5i0r57g1c1CxrPhfM"
+      }, {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/7fFfPSHnrplQpezV79CFYc"
+        },
+        "href" : "https://api.spotify.com/v1/artists/7fFfPSHnrplQpezV79CFYc",
+        "id" : "7fFfPSHnrplQpezV79CFYc",
+        "name" : "SosMula",
+        "type" : "artist",
+        "uri" : "spotify:artist:7fFfPSHnrplQpezV79CFYc"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/15zcbfnEwQYqdNosjkrlfu"
+      },
+      "href" : "https://api.spotify.com/v1/albums/15zcbfnEwQYqdNosjkrlfu",
+      "id" : "15zcbfnEwQYqdNosjkrlfu",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/fb18c47e15499c1194ecfbb719ac4a07a715a2e4",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/6945ec46554b114b635a69f6dab883f438b0bd27",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/3ed40b2841f610eb6061ba9ad7572aa55a790aa2",
+        "width" : 64
+      } ],
+      "name" : "CITY MORGUE VOL 1: HELL OR HIGH WATER",
+      "release_date" : "2018-10-12",
+      "release_date_precision" : "day",
+      "total_tracks" : 14,
+      "type" : "album",
+      "uri" : "spotify:album:15zcbfnEwQYqdNosjkrlfu"
+    }, {
+      "album_type" : "single",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/2p1fiYHYiXz9qi0JJyxBzN"
+        },
+        "href" : "https://api.spotify.com/v1/artists/2p1fiYHYiXz9qi0JJyxBzN",
+        "id" : "2p1fiYHYiXz9qi0JJyxBzN",
+        "name" : "Skepta",
+        "type" : "artist",
+        "uri" : "spotify:artist:2p1fiYHYiXz9qi0JJyxBzN"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/04MjqJpLKAJR9MmJlXtRDm"
+      },
+      "href" : "https://api.spotify.com/v1/albums/04MjqJpLKAJR9MmJlXtRDm",
+      "id" : "04MjqJpLKAJR9MmJlXtRDm",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/94ca87e26e2c648557e5e3c53cdd3e3ef99cbd63",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/3d7e6ef0129ebe855124424bd58dc662b1f9c4c2",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/dab0c481deb728c4fe546b92f79a80c3c09755ba",
+        "width" : 64
+      } ],
+      "name" : "Pure Water",
+      "release_date" : "2018-05-08",
+      "release_date_precision" : "day",
+      "total_tracks" : 1,
+      "type" : "album",
+      "uri" : "spotify:album:04MjqJpLKAJR9MmJlXtRDm"
+    }, {
+      "album_type" : "single",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/6mU8ucezzms5I2kNH6HNlu"
+        },
+        "href" : "https://api.spotify.com/v1/artists/6mU8ucezzms5I2kNH6HNlu",
+        "id" : "6mU8ucezzms5I2kNH6HNlu",
+        "name" : "Conor Maynard",
+        "type" : "artist",
+        "uri" : "spotify:artist:6mU8ucezzms5I2kNH6HNlu"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/0Ij4PI9izYjquB5yFNRxt3"
+      },
+      "href" : "https://api.spotify.com/v1/albums/0Ij4PI9izYjquB5yFNRxt3",
+      "id" : "0Ij4PI9izYjquB5yFNRxt3",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/c49e1eeee4287d777c8cbde7cac7ae96c8637672",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/5e78049d20025186fce6465cc6bb6fdd243a8283",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/29f15f7aea3adff3a30eaae556a9f61555a321d8",
+        "width" : 64
+      } ],
+      "name" : "Cold Water",
+      "release_date" : "2016-08-19",
+      "release_date_precision" : "day",
+      "total_tracks" : 1,
+      "type" : "album",
+      "uri" : "spotify:album:0Ij4PI9izYjquB5yFNRxt3"
+    }, {
+      "album_type" : "single",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/0q31MBlCXGIFG6gl11Yn0t"
+        },
+        "href" : "https://api.spotify.com/v1/artists/0q31MBlCXGIFG6gl11Yn0t",
+        "id" : "0q31MBlCXGIFG6gl11Yn0t",
+        "name" : "Lyves",
+        "type" : "artist",
+        "uri" : "spotify:artist:0q31MBlCXGIFG6gl11Yn0t"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/1mfr8dYSn1pQJinKXJTdHh"
+      },
+      "href" : "https://api.spotify.com/v1/albums/1mfr8dYSn1pQJinKXJTdHh",
+      "id" : "1mfr8dYSn1pQJinKXJTdHh",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/4ecdb88ca1140eaba1a296ec0a18d65dc856bed8",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/270627e3df766687460cc1a1ac05e129c2c0cc45",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/0671e6432c680796262836578ea612223302a5a1",
+        "width" : 64
+      } ],
+      "name" : "Like Water",
+      "release_date" : "2017-01-20",
+      "release_date_precision" : "day",
+      "total_tracks" : 4,
+      "type" : "album",
+      "uri" : "spotify:album:1mfr8dYSn1pQJinKXJTdHh"
+    }, {
+      "album_type" : "single",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/0lIIsJafIVVi3ruN2vFzpS"
+        },
+        "href" : "https://api.spotify.com/v1/artists/0lIIsJafIVVi3ruN2vFzpS",
+        "id" : "0lIIsJafIVVi3ruN2vFzpS",
+        "name" : "Moglii",
+        "type" : "artist",
+        "uri" : "spotify:artist:0lIIsJafIVVi3ruN2vFzpS"
+      }, {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/3PMqVecYp6tFBk7d7SDlPm"
+        },
+        "href" : "https://api.spotify.com/v1/artists/3PMqVecYp6tFBk7d7SDlPm",
+        "id" : "3PMqVecYp6tFBk7d7SDlPm",
+        "name" : "Novaa",
+        "type" : "artist",
+        "uri" : "spotify:artist:3PMqVecYp6tFBk7d7SDlPm"
+      }, {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/0S3XIv2JsEv7qS1LvQtSJk"
+        },
+        "href" : "https://api.spotify.com/v1/artists/0S3XIv2JsEv7qS1LvQtSJk",
+        "id" : "0S3XIv2JsEv7qS1LvQtSJk",
+        "name" : "Snocker Cot",
+        "type" : "artist",
+        "uri" : "spotify:artist:0S3XIv2JsEv7qS1LvQtSJk"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/4qYw3JHxfd4DQZnZffQs5d"
+      },
+      "href" : "https://api.spotify.com/v1/albums/4qYw3JHxfd4DQZnZffQs5d",
+      "id" : "4qYw3JHxfd4DQZnZffQs5d",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/417ca78907fb1ac3b9dc9611d643d88998e64929",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/e9b6f42ec2b0b0578d0a9788ac9740682895ce69",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/ad1d5d329902ddb00417b4ba7e0c8106b41f6387",
+        "width" : 64
+      } ],
+      "name" : "Tonic Water (Snocker Cot Remix)",
+      "release_date" : "2017-11-17",
+      "release_date_precision" : "day",
+      "total_tracks" : 1,
+      "type" : "album",
+      "uri" : "spotify:album:4qYw3JHxfd4DQZnZffQs5d"
+    }, {
+      "album_type" : "single",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/0eEmrY5t7ncBdBf9ZLopbA"
+        },
+        "href" : "https://api.spotify.com/v1/artists/0eEmrY5t7ncBdBf9ZLopbA",
+        "id" : "0eEmrY5t7ncBdBf9ZLopbA",
+        "name" : "YEAST",
+        "type" : "artist",
+        "uri" : "spotify:artist:0eEmrY5t7ncBdBf9ZLopbA"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/7a6aqwkrjRyei7BcNPZhDD"
+      },
+      "href" : "https://api.spotify.com/v1/albums/7a6aqwkrjRyei7BcNPZhDD",
+      "id" : "7a6aqwkrjRyei7BcNPZhDD",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/3aee4f795c70bd63430ec2667ac4a6e29b39fc20",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/17bc4e3a8308204509033a29baca79e34cc15eca",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/15d572f4ce1d5c418db34a92ecdf247d0ae81027",
+        "width" : 64
+      } ],
+      "name" : "Water",
+      "release_date" : "2018-02-23",
+      "release_date_precision" : "day",
+      "total_tracks" : 5,
+      "type" : "album",
+      "uri" : "spotify:album:7a6aqwkrjRyei7BcNPZhDD"
+    }, {
+      "album_type" : "single",
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/1HMhQzj2QXxR40zGDdaK6y"
+        },
+        "href" : "https://api.spotify.com/v1/artists/1HMhQzj2QXxR40zGDdaK6y",
+        "id" : "1HMhQzj2QXxR40zGDdaK6y",
+        "name" : "Kojey Radical",
+        "type" : "artist",
+        "uri" : "spotify:artist:1HMhQzj2QXxR40zGDdaK6y"
+      }, {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/16rCzZOMQX7P8Kmn5YKexI"
+        },
+        "href" : "https://api.spotify.com/v1/artists/16rCzZOMQX7P8Kmn5YKexI",
+        "id" : "16rCzZOMQX7P8Kmn5YKexI",
+        "name" : "Mahalia",
+        "type" : "artist",
+        "uri" : "spotify:artist:16rCzZOMQX7P8Kmn5YKexI"
+      }, {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/1gH9xoeNySnEkCtR2kbPiQ"
+        },
+        "href" : "https://api.spotify.com/v1/artists/1gH9xoeNySnEkCtR2kbPiQ",
+        "id" : "1gH9xoeNySnEkCtR2kbPiQ",
+        "name" : "Swindle",
+        "type" : "artist",
+        "uri" : "spotify:artist:1gH9xoeNySnEkCtR2kbPiQ"
+      } ],
+      "available_markets" : [ "AD", "AE", "AR", "AT", "AU", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "SA", "SE", "SG", "SK", "SV", "TH", "TN", "TR", "TW", "US", "UY", "VN", "ZA" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/4XcNB4VTSkl2cKVRci10Z4"
+      },
+      "href" : "https://api.spotify.com/v1/albums/4XcNB4VTSkl2cKVRci10Z4",
+      "id" : "4XcNB4VTSkl2cKVRci10Z4",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/053cb3e32bfdd231fd420cf10da20d3bdbe42871",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/15a6db6d99fd9d7d0261fc3bcd8470914ba69605",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/61ede34cecdaa9e5fd4dfe583ce7fce096af1b59",
+        "width" : 64
+      } ],
+      "name" : "Water",
+      "release_date" : "2018-05-10",
+      "release_date_precision" : "day",
+      "total_tracks" : 1,
+      "type" : "album",
+      "uri" : "spotify:album:4XcNB4VTSkl2cKVRci10Z4"
+    } ],
+    "limit" : 20,
+    "next" : "https://api.spotify.com/v1/search?query=Water&type=album&market=FR&offset=20&limit=20",
+    "offset" : 0,
+    "previous" : null,
+    "total" : 15285
+  }
+}
