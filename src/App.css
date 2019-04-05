@@ -106,10 +106,10 @@
   transition-delay: 0.2s;
 }
 body {
-  background-color:rgb(34, 31, 31);
+  background-color:rgb(34, 31, 31) !important;
 }
 /* Navbar */
-.sidebar {
+.navbar.sidebar {
   background-color: rgb(34, 31, 31);
   height: 100%;
   border-radius: 0 5px 5px 0;
@@ -120,7 +120,15 @@ body {
   text-align: center;
 }
 
-.linksidebar {
+.main {
+  margin: 76px 5% 0 20%;
+}
+
+.main ul {
+  color: #eee;
+}
+
+.navbar .linksidebar {
   font-size: 1rem;
   display: block;
   flex-direction: column;
@@ -198,15 +206,19 @@ body {
 }
 .icones {
   text-align: center;
-  position: fixed;
+  /* position: fixed; */
   bottom: -1.2rem;
-  left: 21rem;
+  /* left: 21rem; */
 }
 
 .footer {
   position: fixed;
   bottom: -0.1rem;
-  left: 18rem;
+  /* left: 18rem; */
+  left: 0;
+  background: rgb(34, 31, 31);
+  width: 100%;
+
 }
 
 @media screen and (max-width: 350px) {
@@ -240,3 +252,4 @@ body {
     font-size: 0.6rem;
   }
 }
+

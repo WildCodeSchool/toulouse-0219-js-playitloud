@@ -4,7 +4,7 @@ import Carousel from "./Carousel";
 import cards from './Cards';
 import SideBar from './components/SideBar';
 import FooterPage from './components/FooterPage';
-import Search from './Components/Search';
+import Search from './components/Search';
 import albumList from "./spotify-albums";
 import './App.css';
 
@@ -24,31 +24,28 @@ class App extends Component {
 
   render() {
     return (
-
       <div className="App">
-
         <Search
           value={this.state.value}
           change={this.onChange}
         />
-
         <SideBar />
-        <Carousel />
 
-      <ul>
-          {albumList.albums.items
-            .filter(singleAlbum => singleAlbum.name
-              .toLowerCase()
-              .includes(this.state.value.toLowerCase()))
-            .map(singleAlbum => (
-              <li>
-                {singleAlbum.name}
-              </li>
-            ))}
-        </ul>
-        <br />
-        <br />
-        <FooterPage />
+        <div className="main">
+          <Carousel />
+          <ul>
+            {albumList.albums.items
+              .filter(singleAlbum => singleAlbum.name
+                .toLowerCase()
+                .includes(this.state.value.toLowerCase()))
+              .map(singleAlbum => (
+                <li>
+                  {singleAlbum.name}
+                </li>
+              ))}
+          </ul>
+          <FooterPage />
+        </div>
 
       </div>
     );
