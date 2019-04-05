@@ -1,28 +1,56 @@
+/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Carousel from "./Carousel";
+import cards from './Cards';
+import SideBar from './components/SideBar';
+import FooterPage from './components/FooterPage';
+import Search from './components/Search';
+import albumList from "./spotify-albums";
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '',
+    };
+    this.onChange = this.onChange.bind(this);
+  }
+
+  onChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Search
+          value={this.state.value}
+          change={this.onChange}
+        />
+        <SideBar />
+
+        <div className="main">
+          <Carousel />
+          <ul>
+            {albumList.albums.items
+              .filter(singleAlbum => singleAlbum.name
+                .toLowerCase()
+                .includes(this.state.value.toLowerCase()))
+              .map(singleAlbum => (
+                <li>
+                  {singleAlbum.name}
+                </li>
+              ))}
+          </ul>
+          <FooterPage />
+        </div>
+
       </div>
     );
   }
 }
+
 
 export default App;
