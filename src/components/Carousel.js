@@ -7,17 +7,19 @@ import Cards from './Cards';
 
 export default class Caroussel extends Component {
 
+
+
   render() {
     let settings = {
       dots: true,
       infinite: false,
       autoplay: true,
-      speed: 500,
+      speed: 300,
       slidesToShow: 3,
       slidesToScroll: 3,
       initialSlide: 0,
       vertical: false,
-      centerPadding: '2px',
+      centerPadding: '20px',
       row: 1,
       responsive: [
         {
@@ -55,7 +57,7 @@ export default class Caroussel extends Component {
               .includes(this.props.keyword.toLowerCase()))
             .map(element => (
               <div>
-              <Cards image={element.image} name={element.name} artist={element.artist} />
+              <Cards image={element.image} name={element.name} artist={element.artist} id={element.id} click={this.props.cardsOnClick} />
               </div>
           ))
           }

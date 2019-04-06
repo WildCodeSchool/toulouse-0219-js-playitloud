@@ -11,13 +11,20 @@ class App extends Component {
     super(props);
     this.state = {
       value: '',
+      cardId: '',
     };
     this.onChange = this.onChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   onChange(event) {
     this.setState({ value: event.target.value });
   }
+
+  handleClick(event) {
+    this.setState({ cardId: event.target.id });
+  }
+
   render() {
     return (
       <div>
@@ -25,7 +32,9 @@ class App extends Component {
 
         <div className="main">
           <Search value={this.state.value} change={this.onChange} />
-          <Carousel keyword={this.state.value} />
+          <Carousel keyword={this.state.value} cardsOnClick={this.handleClick} />
+          <h2>{this.state.cardId}</h2>
+
           <FooterPage />
         </div>
         </div>
