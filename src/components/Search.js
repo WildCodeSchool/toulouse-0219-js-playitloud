@@ -24,11 +24,6 @@ class Search extends React.Component {
                 </div>
               </div>
             </NavItem>
-            <NavItem>
-
-              <h1>{this.props.value}</h1>
-
-            </NavItem>
           </Nav>
         </Navbar>
       </div>
