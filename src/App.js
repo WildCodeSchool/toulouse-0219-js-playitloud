@@ -1,53 +1,43 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-import Carousel from "./Carousel";
-import cards from './Cards';
+import Carousel from "./components/Carousel";
 import SideBar from './components/SideBar';
 import FooterPage from './components/FooterPage';
-import Search from './components/Search';
-import albumList from "./spotify-albums";
 import './App.css';
+import Search from './components/Search';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       value: '',
+      cardId: '',
     };
     this.onChange = this.onChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   onChange(event) {
     this.setState({ value: event.target.value });
   }
 
+  handleClick(event) {
+    this.setState({ cardId: event.target.id });
+  }
 
   render() {
     return (
-      <div className="App">
-        <Search
-          value={this.state.value}
-          change={this.onChange}
-        />
+      <div>
         <SideBar />
 
         <div className="main">
-          <Carousel />
-          <ul>
-            {albumList.albums.items
-              .filter(singleAlbum => singleAlbum.name
-                .toLowerCase()
-                .includes(this.state.value.toLowerCase()))
-              .map(singleAlbum => (
-                <li>
-                  {singleAlbum.name}
-                </li>
-              ))}
-          </ul>
+          <Search value={this.state.value} change={this.onChange} />
+          <Carousel keyword={this.state.value} cardsOnClick={this.handleClick} />
+          <h2>{this.state.cardId}</h2>
+
           <FooterPage />
         </div>
-
-      </div>
+        </div>
     );
   }
 }
