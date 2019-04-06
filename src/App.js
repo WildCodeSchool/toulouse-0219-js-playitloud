@@ -21,8 +21,8 @@ class App extends Component {
     this.setState({ value: event.target.value });
   }
 
-  handleClick(event) {
-    this.setState({ cardId: event.target.id });
+  handleClick(id) {
+    this.setState({ cardId: id });
   }
 
   render() {
@@ -33,8 +33,6 @@ class App extends Component {
         <div className="main">
           <Search value={this.state.value} change={this.onChange} />
           <Carousel keyword={this.state.value} cardsOnClick={this.handleClick} />
-          <h2>{this.state.cardId}</h2>
-
           <FooterPage />
         </div>
         </div>
