@@ -6,7 +6,7 @@ import FooterPage from './components/FooterPage';
 import './App.css';
 import Search from './components/Search';
 import DisplayProfile from './components/DisplayProfile';
-
+import FavoriteAlbums from './components/FavoriteAlbums';
 
 const profileTest = {
   display_name: 'prénom nom',
@@ -20,17 +20,19 @@ class App extends Component {
       value: '',
       cardId: '',
       username: profileTest
+      favoriteAlbumsList: [],
     };
     this.onChange = this.onChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleButton = this.handleButton.bind(this);
   }
 
   onChange(event) {
     this.setState({ value: event.target.value });
   }
 
-  handleClick(event) {
-    this.setState({ cardId: event.target.id });
+  handleClick(id) {
+    this.setState({ cardId: id });
   }
 
   getUserProfil() {
@@ -43,6 +45,17 @@ class App extends Component {
       });
   }
 
+  handleButton(name) {
+    if (this.state.favoriteAlbumsList.includes(name)) {
+      return;
+    } else {
+      let arr = this.state.favoriteAlbumsList;
+      arr.push(name)
+      this.setState({ favoriteAlbumsList: arr });
+    }
+  }
+
+
   render() {
     return (
       <div>
@@ -50,8 +63,8 @@ class App extends Component {
 
         <div className="main">
           <Search value={this.state.value} change={this.onChange} />
-          <Carousel keyword={this.state.value} cardsOnClick={this.handleClick} />
-          <h2>{this.state.cardId}</h2>
+          <Carousel keyword={this.state.value} cardsOnClick={this.handleClick} button={this.handleButton} />
+          <FavoriteAlbums albumList={this.state.favoriteAlbumsList} />
           <DisplayProfile display_name={this.state.username.display_name} email={this.state.username.email} />
           <FooterPage />
         </div>
