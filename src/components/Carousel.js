@@ -13,7 +13,7 @@ export default class Caroussel extends Component {
     let settings = {
       dots: true,
       infinite: false,
-      autoplay: true,
+      autoplay: false,
       speed: 300,
       slidesToShow: 3,
       slidesToScroll: 3,
@@ -57,7 +57,14 @@ export default class Caroussel extends Component {
               .includes(this.props.keyword.toLowerCase()))
             .map(element => (
               <div>
-              <Cards image={element.image} name={element.name} artist={element.artist} id={element.id} click={this.props.cardsOnClick} />
+              <Cards 
+              image={element.image} 
+              name={element.name} 
+              artist={element.artist} 
+              id={element.id} 
+              click={this.props.cardsOnClick} 
+              favoriteAlbums={this.props.button} 
+              text={this.props.buttonText} />
               </div>
           ))
           }
