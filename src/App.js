@@ -28,8 +28,12 @@ class App extends Component {
     this.getSearch = this.getSearch.bind(this);
   }
 
+  componentDidMount() {
+    this.getSearch()
+  }
+
   onChange(event) {
-    this.setState({ value: event.target.value });
+    this.setState({ value: event.target.value }, this.getSearch);
   }
 
   getUserProfil() {
@@ -50,36 +54,40 @@ class App extends Component {
 
   getSearch() {
     let search = this.state.value;
-    fetch('https://api.spotify.com/v1/albums', {
+    if (this.state.value === '') {
+      this.setState({
+        valuecarrou: []
+      });
+      return;
+    }
+    fetch(`https://api.spotify.com/v1/search?q=${search}&type=album`, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'q': search,
-        'type': 'album',
         'Authorization': 'Bearer ' + localStorage.getItem('token')
       }
     })
       .then(response => response.json())
       .then(data => {
         this.setState({
-          valuecarrou: data.albums
+          valuecarrou: data.albums.items
         });
       });
   }
 
   APIfilter = () => {
-    this.state.valuecarrou
+    return this.state.valuecarrou
       .filter(singleAlbum => singleAlbum.name
         .toLowerCase()
         .includes(this.state.value.toLowerCase()))
-      .map(albums => (
+      .map(album => (
 
         <div>
           <Cards
-            image={albums.items.images[0]}
-            name={albums.items.name}
-            artist={albums.items.artists.name}
-            id={albums.items.id}
+            image={album.images[0].url}
+            name={album.name}
+            artist={album.artists.name}
+            id={album.id}
             click={this.props.cardsOnClick}
             favoriteAlbums={this.props.button}
             text={this.props.buttonText} />
@@ -108,7 +116,6 @@ class App extends Component {
   }
 
   render() {
-    this.getSearch();
     console.log(this.state.valuecarrou);
 
     if (localStorage.getItem('token') !== null) {
