@@ -7,22 +7,23 @@ import './App.css';
 import Search from './components/Search';
 import DisplayProfile from './components/DisplayProfile';
 import FavoriteAlbums from './components/FavoriteAlbums';
+import Cards from './components/Cards';
 
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
+      value: [],
       cardId: '',
       profile: '',
       favoriteAlbumsList: [],
       token: '',
-      isAuthenticate: false
     };
     this.onChange = this.onChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleButton = this.handleButton.bind(this);
+    this.APIfilter = this.APIfilter.bind(this);
   }
 
   onChange(event) {
@@ -44,6 +45,36 @@ class App extends Component {
         });
       });
   }
+
+  getSearch() {
+    fetch("https://api.spotify.com/v1/search")
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ value: data });
+      });
+  }
+
+  APIfilter = () => {
+    this.state.value = this.state.value
+      .filter(singleAlbum => singleAlbum.name
+        .toLowerCase()
+        .includes(this.state.value.toLowerCase()))
+      .map(albums => (
+
+        <div>
+          <Cards
+            image={albums.items.images[0]}
+            name={albums.items.name}
+            artist={albums.items.artists.name}
+            id={albums.items.id}
+            click={this.props.cardsOnClick}
+            favoriteAlbums={this.props.button}
+            text={this.props.buttonText} />
+        </div>
+      ))
+  }
+
+
 
   handleClick(id) {
     this.setState({ cardId: id });
@@ -68,12 +99,26 @@ class App extends Component {
       if (this.state.profile === '') {
         this.getUserProfil();
       }
+      this.getSearch();
+
       return (
         <div>
           <SideBar />
           <div className="main">
             <Search value={this.state.value} change={this.onChange} />
-            <Carousel keyword={this.state.value} cardsOnClick={this.handleClick} button={this.handleButton} />
+            <Carousel
+              api={this.APIfilter()}
+              keyword={this.state.value}
+              cardsOnClick={this.handleClick}
+              button={this.handleButton}
+            />
+
+
+
+
+
+
+
             <FavoriteAlbums albumList={this.state.favoriteAlbumsList} />
             {this.state.profile && <DisplayProfile profile={this.state.profile} />}
             <button onClick={this.deco} > Déconnexion!</button>

@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import data from './data';
 import Cards from './Cards';
+import FavoriteAlbums from "./FavoriteAlbums";
 
 
 
 export default class Caroussel extends Component {
-
-
-
   render() {
     let settings = {
       dots: true,
@@ -48,26 +45,15 @@ export default class Caroussel extends Component {
         }
       ]
     };
+
+
+    const test = this.props.test
     return (
       <div>
         <Slider {...settings}>
-          {data
-            .filter(singleAlbum => singleAlbum.name
-              .toLowerCase()
-              .includes(this.props.keyword.toLowerCase()))
-            .map(element => (
-              <div>
-                <Cards
-                  image={element.image}
-                  name={element.name}
-                  artist={element.artist}
-                  id={element.id}
-                  click={this.props.cardsOnClick}
-                  favoriteAlbums={this.props.button}
-                  text={this.props.buttonText} />
-              </div>
-            ))
-          }
+
+          {this.props.api}
+
         </Slider>
       </div>
     );
