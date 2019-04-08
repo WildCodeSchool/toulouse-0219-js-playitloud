@@ -1,38 +1,25 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import info from './albums.json';
-
-const Cards = props => (
-  <figure className="album">
-    <img src={props.image} />
-    <figcaption>
-      <h3>{props.name}</h3>
-      <h5>{props.artist}</h5>
-    </figcaption><a href="#"></a>
-  </figure>
-)
-
-const data = info.albums.items.map(item => {
-  const name = item.name;
-  const id = item.id;
-  const image = item.images[1].url;
-  const artist = item.artists[0].name;
-  return { name: name, id: id, image: image, artist: artist }
-})
+import data from './data';
+import Cards from './Cards';
 
 
-export default class Responsive extends Component {
+
+export default class Caroussel extends Component {
+
+
+
   render() {
-    var settings = {
+    let settings = {
       dots: true,
-      infinite: true,
-      autoplay: true,
-      speed: 500,
+      infinite: false,
+      autoplay: false,
+      speed: 300,
       slidesToShow: 3,
       slidesToScroll: 3,
       initialSlide: 0,
       vertical: false,
-      centerPadding: '2px',
+      centerPadding: '20px',
       row: 1,
       responsive: [
         {
@@ -64,12 +51,23 @@ export default class Responsive extends Component {
     return (
       <div>
         <Slider {...settings}>
-          {data.map(element => (
-            <div>
-            <Cards image={element.image} name={element.name} artist={element.artist} />
-            </div>
-          ))
-        }
+          {data
+            .filter(singleAlbum => singleAlbum.name
+              .toLowerCase()
+              .includes(this.props.keyword.toLowerCase()))
+            .map(element => (
+              <div>
+                <Cards
+                  image={element.image}
+                  name={element.name}
+                  artist={element.artist}
+                  id={element.id}
+                  click={this.props.cardsOnClick}
+                  favoriteAlbums={this.props.button}
+                  text={this.props.buttonText} />
+              </div>
+            ))
+          }
         </Slider>
       </div>
     );

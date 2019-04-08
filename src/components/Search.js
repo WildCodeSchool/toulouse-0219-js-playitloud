@@ -24,8 +24,7 @@ class Search extends React.Component {
                 </div>
               </div>
             </NavItem>
-            <NavItem>
-            </NavItem>
+
           </Nav>
         </Navbar>
       </div>
