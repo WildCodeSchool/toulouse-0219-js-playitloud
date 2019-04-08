@@ -12,9 +12,9 @@ class Cards extends React.Component {
   manageButton = () => {
     this.props.favoriteAlbums(this.props.name);
     if (this.state.buttonValue) {
-      this.setState({buttonValue: false})
+      this.setState({ buttonValue: false })
     } else {
-      this.setState({buttonValue: true})
+      this.setState({ buttonValue: true })
     }
   }
 
@@ -24,7 +24,7 @@ class Cards extends React.Component {
     return (
       <div>
         <figure className="album">
-          <img src={this.props.image} />
+          <img src={this.props.image} alt="pictures" />
           <figcaption id={this.props.id} onClick={() => this.props.click(this.props.id)}>
             <h3>{this.props.name}</h3>
             <h5>{this.props.artist}</h5>

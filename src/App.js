@@ -14,16 +14,18 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: [],
+      value: "",
       cardId: '',
       profile: '',
       favoriteAlbumsList: [],
       token: '',
+      valuecarrou: [],
     };
     this.onChange = this.onChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleButton = this.handleButton.bind(this);
     this.APIfilter = this.APIfilter.bind(this);
+    this.getSearch = this.getSearch.bind(this);
   }
 
   onChange(event) {
@@ -47,15 +49,26 @@ class App extends Component {
   }
 
   getSearch() {
-    fetch("https://api.spotify.com/v1/search")
+    let search = this.state.value;
+    fetch('https://api.spotify.com/v1/albums', {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'q': search,
+        'type': 'album',
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      }
+    })
       .then(response => response.json())
       .then(data => {
-        this.setState({ value: data });
+        this.setState({
+          valuecarrou: data.albums
+        });
       });
   }
 
   APIfilter = () => {
-    this.state.value = this.state.value
+    this.state.valuecarrou
       .filter(singleAlbum => singleAlbum.name
         .toLowerCase()
         .includes(this.state.value.toLowerCase()))
@@ -95,17 +108,22 @@ class App extends Component {
   }
 
   render() {
+    this.getSearch();
+    console.log(this.state.valuecarrou);
+
     if (localStorage.getItem('token') !== null) {
       if (this.state.profile === '') {
         this.getUserProfil();
       }
-      this.getSearch();
 
       return (
         <div>
           <SideBar />
           <div className="main">
-            <Search value={this.state.value} change={this.onChange} />
+            <Search
+              value={this.state.value}
+              change={this.onChange}
+            />
             <Carousel
               api={this.APIfilter()}
               keyword={this.state.value}
@@ -117,14 +135,17 @@ class App extends Component {
 
 
 
+            <FavoriteAlbums
+              albumList={this.state.favoriteAlbumsList}
+            />
 
-
-            <FavoriteAlbums albumList={this.state.favoriteAlbumsList} />
             {this.state.profile && <DisplayProfile profile={this.state.profile} />}
-            <button onClick={this.deco} > Déconnexion!</button>
+
+            <button
+              onClick={this.deco} > Déconnexion!</button>
             <FooterPage />
           </div>
-        </div>
+        </div >
       );
     } else {
       let urlParams = window.location.hash.split('&');

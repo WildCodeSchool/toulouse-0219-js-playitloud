@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import Cards from './Cards';
-import FavoriteAlbums from "./FavoriteAlbums";
+// import Cards from './Cards';
+// import FavoriteAlbums from "./FavoriteAlbums";
 
 
 
@@ -46,8 +46,6 @@ export default class Caroussel extends Component {
       ]
     };
 
-
-    const test = this.props.test
     return (
       <div>
         <Slider {...settings}>
