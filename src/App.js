@@ -34,7 +34,7 @@ class App extends Component {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + this.state.token
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
       }
     })
       .then(response => response.json())
@@ -58,9 +58,13 @@ class App extends Component {
       this.setState({ favoriteAlbumsList: arr });
     }
   }
+  deco() {
+    localStorage.removeItem('token');
+    window.location.replace('http://localhost:3000/')
+  }
 
   render() {
-    if (this.state.isAuthenticate) {
+    if (localStorage.getItem('token') !== null) {
       if (this.state.profile === '') {
         this.getUserProfil();
       }
@@ -71,7 +75,8 @@ class App extends Component {
             <Search value={this.state.value} change={this.onChange} />
             <Carousel keyword={this.state.value} cardsOnClick={this.handleClick} button={this.handleButton} />
             <FavoriteAlbums albumList={this.state.favoriteAlbumsList} />
-            <DisplayProfile profile={this.state.profile} />
+            {this.state.profile && <DisplayProfile profile={this.state.profile} />}
+            <button onClick={this.deco} > Déconnexion!</button>
             <FooterPage />
           </div>
         </div>
@@ -80,11 +85,10 @@ class App extends Component {
       let urlParams = window.location.hash.split('&');
       urlParams = urlParams.map(element => element.split('='));
       if (urlParams[0][1] !== undefined) {
-        this.setState({ isAuthenticate: true, token: urlParams[0][1] });
-        return (
-          <script>window.location.replace(http://localhost:3000)</script>
-        )
-      } else {
+        localStorage.setItem('token', urlParams[0][1]);
+        window.location.replace('http://localhost:3000/')
+      }
+      else {
         return (
           <a style={{ color: 'red' }} href="https://accounts.spotify.com/authorize?client_id=136da030d9704f5e9314b475d1a79537&redirect_uri=http://localhost:3000&scope=user-read-private%20user-read-email&response_type=token&state=123" > Connectez - vous</a >
         )
