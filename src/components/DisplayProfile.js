@@ -7,7 +7,8 @@ const DisplayProfile = ({ profile }) => {
       <p>Email : {profile.email}</p>
       <p>country : {profile.country}</p>
       <p>id : {profile.id}</p>
-      {/* <img src={profile.images[0].url} alt={profile.display_name} /> */}
+      <p>Date de naissance : {profile.birthdate}</p>
+      <img src={profile.images[0].url} alt={profile.display_name} />
     </div>
   );
 };

@@ -5,10 +5,9 @@ import SideBar from './components/SideBar';
 import FooterPage from './components/FooterPage';
 import './App.css';
 import Search from './components/Search';
-import DisplayProfile from './components/DisplayProfile';
 import FavoriteAlbums from './components/FavoriteAlbums';
 import Cards from './components/Cards';
-
+// import { Route, BrowserRouter, Switch, NavLink } from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
@@ -34,22 +33,6 @@ class App extends Component {
 
   onChange(event) {
     this.setState({ value: event.target.value }, this.getSearch);
-  }
-
-  getUserProfil() {
-    fetch("https://api.spotify.com/v1/me", {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem('token')
-      }
-    })
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          profile: data,
-        });
-      });
   }
 
   getSearch() {
@@ -95,8 +78,6 @@ class App extends Component {
       ))
   }
 
-
-
   handleClick(id) {
     this.setState({ cardId: id });
   }
@@ -116,13 +97,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.valuecarrou);
-
     if (localStorage.getItem('token') !== null) {
-      if (this.state.profile === '') {
-        this.getUserProfil();
-      }
-
       return (
         <div>
           <SideBar />
@@ -137,17 +112,9 @@ class App extends Component {
               cardsOnClick={this.handleClick}
               button={this.handleButton}
             />
-
-
-
-
-
             <FavoriteAlbums
               albumList={this.state.favoriteAlbumsList}
             />
-
-            {this.state.profile && <DisplayProfile profile={this.state.profile} />}
-
             <button
               onClick={this.deco} > Déconnexion!</button>
             <FooterPage />

@@ -9,8 +9,10 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
 } from 'reactstrap';
+import { Route, BrowserRouter, Switch, NavLink } from 'react-router-dom';
+import ProfilePage from './ProfilePage';
+// import App from '../App'
 
 
 class SideBar extends React.Component {
@@ -32,29 +34,40 @@ class SideBar extends React.Component {
 
   render() {
     return (
-      <Navbar className="sidebar" light expand="md">
-        <div className="pictureName">
-          <Avatar className="profilpicture" name="Réminou Tilmant" size="75" color="rgb(229,9,20)" round />
-          <NavbarBrand style={{ color: 'rgb(229,9,20)' }} className="playItLoud" href="/accueil">Play It Loud</NavbarBrand>
+      <BrowserRouter>
+        <div>
+          <Navbar className="sidebar" light expand="md">
+            <div className="pictureName">
+              <Avatar className="profilpicture" name="Réminou Tilmant" size="75" color="rgb(229,9,20)" round />
+              <NavbarBrand style={{ color: 'rgb(229,9,20)' }} className="playItLoud" href="/accueil">Play It Loud</NavbarBrand>
+            </div>
+            <NavbarToggler className="togglerButton" onClick={this.toggle} />
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav className="linksidebar" navbar>
+                <NavItem>
+                  <NavLink className="asidebar" exact to="/">Accueil</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink className="asidebar" exact to="/profile">Profil</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink className="asidebar" exact to="/favoris">Favoris</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink className="asidebar" exact to="/playlists">Playlists</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink className="asidebar" exact to="/albums">Albums</NavLink>
+                </NavItem>
+              </Nav>
+            </Collapse>
+          </Navbar>
+          <Switch>
+            <Route exact path="/profile" component={ProfilePage} />
+            {/* <Route exact path="/" component={App} /> */}
+          </Switch>
         </div>
-        <NavbarToggler className="togglerButton" onClick={this.toggle} />
-        <Collapse isOpen={this.state.isOpen} navbar>
-          <Nav className="linksidebar" navbar>
-            <NavItem>
-              <NavLink className="asidebar" href="/accueil/">Accueil</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink className="asidebar" href="/favoris">Favoris</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink className="asidebar" href="/playlists">Playlists</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink className="asidebar" href="/albums">Albums</NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
-      </Navbar>
+      </BrowserRouter>
     );
   }
 }
