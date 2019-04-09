@@ -12,8 +12,6 @@ import {
 } from 'reactstrap';
 import { Route, BrowserRouter, Switch, NavLink } from 'react-router-dom';
 import ProfilePage from './ProfilePage';
-// import App from '../App'
-
 
 class SideBar extends React.Component {
   constructor(props) {
@@ -48,7 +46,7 @@ class SideBar extends React.Component {
                   <NavLink className="asidebar" exact to="/">Accueil</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="asidebar" exact to="/profile">Profil</NavLink>
+                  <NavLink className="asidebar" exact to="/profile">Ton profil</NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink className="asidebar" exact to="/favoris">Favoris</NavLink>
@@ -64,7 +62,6 @@ class SideBar extends React.Component {
           </Navbar>
           <Switch>
             <Route exact path="/profile" component={ProfilePage} />
-            {/* <Route exact path="/" component={App} /> */}
           </Switch>
         </div>
       </BrowserRouter>
