@@ -8,7 +8,6 @@ const DisplayProfile = ({ profile }) => {
       <p>country : {profile.country}</p>
       <p>id : {profile.id}</p>
       <p>Date de naissance : {profile.birthdate}</p>
-      <img src={profile.images[0].url} alt={profile.display_name} />
     </div>
   );
 };

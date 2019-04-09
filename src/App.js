@@ -13,7 +13,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: "",
+      value: "love",
       cardId: '',
       profile: '',
       favoriteAlbumsList: [],
@@ -130,7 +130,7 @@ class App extends Component {
       }
       else {
         return (
-          <a style={{ color: 'red' }} href="https://accounts.spotify.com/authorize?client_id=136da030d9704f5e9314b475d1a79537&redirect_uri=http://localhost:3000&scope=user-read-private%20user-read-email&response_type=token&state=123" > Connectez - vous</a >
+          <a style={{ color: 'red' }} href="https://accounts.spotify.com/authorize?client_id=136da030d9704f5e9314b475d1a79537&redirect_uri=http://localhost:3000&scope=user-read-private%20user-read-email%20user-read-birthdate&response_type=token&state=123" > Connectez - vous</a >
         )
       }
     }
