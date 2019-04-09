@@ -60,7 +60,7 @@ class App extends Component {
       });
       return;
     }
-    fetch(`https://api.spotify.com/v1/search?q=${search}&type=album`, {
+    fetch(`https://api.spotify.com/v1/search?q=${search}&&type=album,track&limit=50`, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ class App extends Component {
 
         <div>
           <Cards
-            image={album.images[0].url}
+            image={album.images[1].url}
             name={album.name}
             artist={album.artists.name}
             id={album.id}

@@ -12,7 +12,7 @@ export default class Caroussel extends Component {
       infinite: false,
       autoplay: false,
       speed: 300,
-      slidesToShow: 3,
+      slidesToShow: 4,
       slidesToScroll: 3,
       initialSlide: 0,
       vertical: false,
