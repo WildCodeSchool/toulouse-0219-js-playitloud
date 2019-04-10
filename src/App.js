@@ -97,7 +97,7 @@ class App extends Component {
   }
 
   handleButton(id) {
-    if (this.state.favoriteAlbumsList.includes(id)) {
+    if (this.state.favoriteAlbumsList.includes(id + ',')) {
       return;
     } else {
       let arr = this.state.favoriteAlbumsList;
