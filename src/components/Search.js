@@ -7,7 +7,6 @@ import {
 } from 'reactstrap';
 
 class Search extends React.Component {
-
   render() {
     return (
       <div>
@@ -17,18 +16,19 @@ class Search extends React.Component {
             <NavItem>
               <div className="recherche mx-4">
                 <div className="searchbar">
-                  <input className="search_input " type="text" placeholder="Search..." value={this.props.value} onChange={this.props.change} />
+                  <input
+                    className="search_input"
+                    type="text" placeholder="Search..."
+                    value={this.props.value}
+                    onChange={this.props.change}
+                  />
                   <a href="/" className="search_icon">
                     <i className="fas fa-search" />
                   </a>
                 </div>
               </div>
             </NavItem>
-            <NavItem>
 
-              <h1>{this.props.value}</h1>
-
-            </NavItem>
           </Nav>
         </Navbar>
       </div>
