@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Carousel from './Carousel';
 import FavoriteAlbums from './FavoriteAlbums';
 import Cards from './Cards';
+import NewsAlbums from "./NewsAlbums";
 // import { Route, BrowserRouter, Switch, NavLink } from 'react-router-dom';
 
 class Home extends Component {
@@ -13,19 +14,23 @@ class Home extends Component {
       profile: '',
       favoriteAlbumsList: [],
       carouselItems: [],
+      carouselNews: [],
       addToFavourite: '',
       checkFavourite: ''
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleButton = this.handleButton.bind(this);
     this.APIfilter = this.APIfilter.bind(this);
+    this.NewestApiFilter = this.NewestApiFilter.bind(this);
     this.getSearch = this.getSearch.bind(this);
+    this.getSearchNews = this.getSearchNews.bind(this);
     this.addToFavourite = this.addToFavourite.bind(this);
     this.checkFavourite = this.checkFavourite.bind(this);
   }
 
   componentDidMount() {
     this.getSearch();
+    this.getSearchNews();
     this.addToFavourite();
   }
 
@@ -50,10 +55,11 @@ class Home extends Component {
           console.log(data.albums.items)
           this.setState({
             carouselItems: data.albums.items
+
           });
         });
     } else {
-      fetch(`https://api.spotify.com/v1/search?q=${search}&type=album,track&limit=50`, {
+      fetch(`https://api.spotify.com/v1/search?q=${search}&type=artist,album,track&limit=50`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
@@ -64,6 +70,39 @@ class Home extends Component {
         .then(data => {
           this.setState({
             carouselItems: data.albums.items
+          });
+        });
+    }
+  }
+  getSearchNews() {
+    let searchNews = this.props.search;
+    if (searchNews === '') {
+      fetch(`https://api.spotify.com/v1/browse/new-releases/?q=chocolat&type=album&limit=50`, {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + localStorage.getItem('token')
+        }
+      })
+        .then(response => response.json())
+        .then(data => {
+          this.setState({
+            carouselNews: data.albums.items
+
+          });
+        });
+    } else {
+      fetch(`https://api.spotify.com/v1/search/browse/new-releases/?q=${searchNews}&type=album,track,artist&limit=50`, {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + localStorage.getItem('token')
+        }
+      })
+        .then(response => response.json())
+        .then(data => {
+          this.setState({
+            carouselNews: data.albums.items
           });
         });
     }
@@ -87,7 +126,25 @@ class Home extends Component {
         </div>
       ))
   }
+  NewestApiFilter = () => {
+    return this.state.carouselNews
+      .filter(singleAlbum => singleAlbum.name
+        .toLowerCase()
+        .includes(this.props.search.toLowerCase()))
+      .map(album => (
 
+        <div>
+          <Cards
+            image={album.images[1].url}
+            name={album.name}
+            artist={album.artists.name}
+            id={album.id}
+            click={this.handleClick}
+            favoriteAlbums={this.handleButton}
+            text={this.props.buttonText} />
+        </div>
+      ))
+  }
   handleClick(id) {
     this.setState({ cardId: id });
   }
@@ -142,6 +199,10 @@ class Home extends Component {
         <div className="main">
           <Carousel
             api={this.APIfilter()}
+            keyword={this.state.value}
+          />
+          <NewsAlbums
+            Newest={this.NewestApiFilter()}
             keyword={this.state.value}
           />
           <FavoriteAlbums
