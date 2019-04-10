@@ -13,22 +13,27 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: "love",
+      value: "",
       cardId: '',
       profile: '',
       favoriteAlbumsList: [],
       token: '',
-      valuecarrou: [],
+      carouselItems: [],
+      addToFavourite: '',
+      checkFavourite: ''
     };
     this.onChange = this.onChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleButton = this.handleButton.bind(this);
     this.APIfilter = this.APIfilter.bind(this);
     this.getSearch = this.getSearch.bind(this);
+    this.addToFavourite = this.addToFavourite.bind(this);
+    this.checkFavourite = this.checkFavourite.bind(this);
   }
 
   componentDidMount() {
-    this.getSearch()
+    this.getSearch();
+    this.addToFavourite();
   }
 
   onChange(event) {
@@ -38,28 +43,37 @@ class App extends Component {
   getSearch() {
     let search = this.state.value;
     if (this.state.value === '') {
-      this.setState({
-        valuecarrou: []
-      });
-      return;
-    }
-    fetch(`https://api.spotify.com/v1/search?q=${search}&&type=album,track&limit=50`, {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem('token')
-      }
-    })
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          valuecarrou: data.albums.items
+      fetch(`https://api.spotify.com/v1/search?q=chocolat&&type=album&limit=50`, {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + localStorage.getItem('token')
+        }
+      })
+        .then(response => response.json())
+        .then(data => {
+          this.setState({
+            carouselItems: data.albums.items
+          });
         });
-      });
+    } else {
+      fetch(`https://api.spotify.com/v1/search?q=${search}&&type=album,track&limit=50`, {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + localStorage.getItem('token')
+        }
+      })
+        .then(response => response.json())
+        .then(data => {
+          this.setState({
+            carouselItems: data.albums.items
+          });
+        });
+    }
   }
-
   APIfilter = () => {
-    return this.state.valuecarrou
+    return this.state.carouselItems
       .filter(singleAlbum => singleAlbum.name
         .toLowerCase()
         .includes(this.state.value.toLowerCase()))
@@ -71,8 +85,8 @@ class App extends Component {
             name={album.name}
             artist={album.artists.name}
             id={album.id}
-            click={this.props.cardsOnClick}
-            favoriteAlbums={this.props.button}
+            click={this.handleClick}
+            favoriteAlbums={this.handleButton}
             text={this.props.buttonText} />
         </div>
       ))
@@ -82,15 +96,49 @@ class App extends Component {
     this.setState({ cardId: id });
   }
 
-  handleButton(name) {
-    if (this.state.favoriteAlbumsList.includes(name)) {
+  handleButton(id) {
+    if (this.state.favoriteAlbumsList.includes(id)) {
       return;
     } else {
       let arr = this.state.favoriteAlbumsList;
-      arr.push(name)
+      arr.push(id + ',')
       this.setState({ favoriteAlbumsList: arr });
     }
   }
+
+  addToFavourite() {
+    fetch(`https://api.spotify.com/v1/me/albums?ids=${this.state.favoriteAlbumsList}`, {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + localStorage.getItem('token')
+        }
+      })
+        .then(response => response.json())
+        .then(data => {
+          this.setState({
+            addToFavourite: data
+          });
+        });
+  }
+
+  checkFavourite() {
+    fetch(`https://api.spotify.com/v1/me/albums`, {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          checkFavourite: data
+        });
+      });
+  }
+
+
   deco() {
     localStorage.removeItem('token');
     window.location.replace('http://localhost:3000/')
@@ -109,8 +157,6 @@ class App extends Component {
             <Carousel
               api={this.APIfilter()}
               keyword={this.state.value}
-              cardsOnClick={this.handleClick}
-              button={this.handleButton}
             />
             <FavoriteAlbums
               albumList={this.state.favoriteAlbumsList}

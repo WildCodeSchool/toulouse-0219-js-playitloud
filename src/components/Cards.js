@@ -10,7 +10,7 @@ class Cards extends React.Component {
     this.handleButton = this.handleButton.bind(this);
   }
   manageButton = () => {
-    this.props.favoriteAlbums(this.props.name);
+    this.props.favoriteAlbums(this.props.id);
     if (this.state.buttonValue) {
       this.setState({ buttonValue: false })
     } else {
