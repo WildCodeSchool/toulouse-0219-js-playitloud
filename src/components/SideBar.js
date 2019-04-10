@@ -10,7 +10,7 @@ import {
   NavItem,
   NavLink
 } from 'reactstrap';
-import { Route, Switch, NavLink as NavRouter } from 'react-router-dom';
+import { NavLink as NavRouter } from 'react-router-dom';
 
 
 class SideBar extends React.Component {

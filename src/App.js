@@ -1,12 +1,9 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Carousel from './components/Carousel';
 import SideBar from './components/SideBar';
 import FooterPage from './components/FooterPage';
 import Search from './components/Search';
-import FavoriteAlbums from './components/FavoriteAlbums';
-import Cards from './components/Cards';
 import Home from './components/Home';
 import ProfilePage from './components/ProfilePage';
 import './App.css';
