@@ -11,7 +11,7 @@ import {
   NavLink
 } from 'reactstrap';
 import { Route, Switch, NavLink as NavRouter } from 'react-router-dom';
-import ProfilePage from './ProfilePage';
+
 
 class SideBar extends React.Component {
   constructor(props) {
@@ -68,26 +68,27 @@ class SideBar extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="linksidebar" navbar>
               <NavItem>
-                <NavLink tag={NavRouter} className="asidebar" exact to="/">Accueil</NavLink>
+                <NavLink tag={NavRouter} className="asidebar" to="/">Accueil</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={NavRouter} className="asidebar" exact to="/profile">Ton profil</NavLink>
+                <NavLink tag={NavRouter} className="asidebar" to="/profile">Ton profil</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={NavRouter} className="asidebar" exact to="/favoris">Favoris</NavLink>
+                <NavLink tag={NavRouter} className="asidebar" to="/favoris">Favoris</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={NavRouter} className="asidebar" exact to="/playlists">Playlists</NavLink>
+                <NavLink tag={NavRouter} className="asidebar" to="/playlists">Playlists</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={NavRouter} className="asidebar" exact to="/albums">Albums</NavLink>
+                <NavLink tag={NavRouter} className="asidebar" to="/albums">Albums</NavLink>
+              </NavItem>
+              <NavItem>
+                <button onClick={this.props.deco} > Déconnexion!</button>
               </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
-        <Switch>
-          <Route exact path="/profile" component={ProfilePage} />
-        </Switch>
+
       </div>
     );
   }
