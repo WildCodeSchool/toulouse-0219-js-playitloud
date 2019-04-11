@@ -20,6 +20,7 @@ export default class AlbumDetails extends React.Component {
     const year = us[0];
     const day = us[2];
     const month = us[1];
+    console.log(p);
     return `${day} / ${month} / ${year}`;
   }
   componentDidMount() {
@@ -52,7 +53,7 @@ export default class AlbumDetails extends React.Component {
         < h3 > {this.state.albumsInfos.name}</h3 >
         {this.state.albumsInfos && <p>{this.state.albumsInfos.artists[0].name}</p>}
         < p > Label : {this.state.albumsInfos.label}</p >
-        <p>Date de sortie : {this.convertdate("2018-08-31")}</p>
+        {this.state.albumsInfos && <p>Date de sortie : {this.convertdate(this.state.albumsInfos.release_date)}</p>}
         <p>{this.state.albumsInfos.total_tracks} titre(s)</p>
         <p>Popularité : {this.state.albumsInfos.popularity}%</p>
         {
