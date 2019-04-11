@@ -10,7 +10,11 @@ export default class AlbumDetails extends React.Component {
     }
     this.apiCallById = this.apiCallById.bind(this);
   }
-
+  convertTime = (MS) => {
+    const minute = (MS / 60000).toFixed(0);
+    const second = ((MS % 60000) / 1000).toFixed(0);
+    return `${minute} min ${second} s`;
+  }
   componentDidMount() {
     this.apiCallById();
   }
@@ -47,7 +51,7 @@ export default class AlbumDetails extends React.Component {
         {
           this.state.albumsInfos && this.state.albumsInfos.tracks.items.map((singleTrack, i) =>
             <div>
-              <p key={i}>{singleTrack.track_number}. {singleTrack.name} {Number(((singleTrack.duration_ms) / 60000)).toFixed(0)}min{Number((singleTrack.duration_ms) % 60000 / 1000).toFixed(0)}s</p>
+              <p key={i}>{singleTrack.track_number}. {singleTrack.name} {this.convertTime(singleTrack.duration_ms)}</p>
             </div>)
         }
       </div >
