@@ -6,6 +6,7 @@ import FooterPage from './components/FooterPage';
 import Search from './components/Search';
 import Home from './components/Home';
 import ProfilePage from './components/ProfilePage';
+import AlbumDetails from "./components/AlbumDetails";
 import './App.css';
 
 
@@ -43,8 +44,10 @@ class App extends Component {
             <Switch>
               <Route exact path="/" render={props => <Home {...props} search={this.state.value} />} />
               <Route exact path="/profile" component={ProfilePage} />
+              <Route exact path="/details-album" component={AlbumDetails} />
             </Switch>
             <FooterPage />
+
           </div>
         </div >
       );

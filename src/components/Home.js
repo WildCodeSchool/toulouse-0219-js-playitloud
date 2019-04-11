@@ -43,7 +43,7 @@ class Home extends Component {
   getSearch() {
     let search = this.props.search;
     if (search === '') {
-      fetch(`https://api.spotify.com/v1/search?q=chocolat&type=album&limit=50`, {
+      fetch(`https://api.spotify.com/v1/search?q=eminem&type=album&limit=50`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
@@ -52,7 +52,6 @@ class Home extends Component {
       })
         .then(response => response.json())
         .then(data => {
-          console.log(data.albums.items)
           this.setState({
             carouselItems: data.albums.items
 
@@ -92,7 +91,7 @@ class Home extends Component {
           });
         });
     } else {
-      fetch(`https://api.spotify.com/v1/search/browse/new-releases/?q=${searchNews}&type=album,track,artist&limit=50`, {
+      fetch(`https://api.spotify.com/v1/search/browse/new-releases/?q=${searchNews}&type=album,track&limit=50`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
