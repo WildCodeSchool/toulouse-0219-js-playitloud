@@ -62,7 +62,7 @@ class SideBar extends React.Component {
                 alt={this.state.profile.display_name}
               />}
             <h6 style={{ color: "white", paddingTop: "3vh" }}>Bonjour {this.state.profile.display_name}</h6>
-            <NavbarBrand style={{ color: 'rgb(229,9,20)' }} className="playItLoud" href="/accueil">Play It Loud</NavbarBrand>
+            <NavbarBrand style={{ color: 'rgb(229,9,20)' }} className="playItLoud" to="/">Play It Loud</NavbarBrand>
           </div>
           <NavbarToggler className="togglerButton" onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>

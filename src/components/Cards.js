@@ -23,7 +23,7 @@ class Cards extends React.Component {
 
   render() {
     return (
-      <NavLink to="/details-album">
+      <NavLink to={`album-details/${this.props.id}/${this.props.name}`} >
         <div>
           <figure className="album">
             <img src={this.props.image} alt="pictures" />
