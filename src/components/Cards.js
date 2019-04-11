@@ -10,15 +10,16 @@ class Cards extends React.Component {
     this.handleButton = this.handleButton.bind(this);
   }
   manageButton = () => {
-    this.props.favoriteAlbums(this.props.id);
-    if (this.state.buttonValue) {
-      this.setState({ buttonValue: false })
-    } else {
+    if (this.props.isFavorite) {
       this.setState({ buttonValue: true })
+      this.props.removeFavorite(this.props.id)
+    } else {
+      this.setState({ buttonValue: false })
+      this.props.favoriteAlbums(this.props.id);
     }
   }
 
-  handleButton = () => this.state.buttonValue ? 'pouet' : 'prout';
+  handleButton = () => this.props.isFavorite ?  'Remove from favorites' : 'Add to favorites';
 
   render() {
     return (
