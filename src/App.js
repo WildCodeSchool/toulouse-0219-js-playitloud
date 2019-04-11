@@ -6,7 +6,8 @@ import FooterPage from './components/FooterPage';
 import Search from './components/Search';
 import Home from './components/Home';
 import ProfilePage from './components/ProfilePage';
-import AlbumDetails from "./components/AlbumDetails";
+import AlbumDetails from './components/AlbumDetails';
+
 import './App.css';
 
 
@@ -28,7 +29,9 @@ class App extends Component {
 
   deco() {
     localStorage.removeItem('token');
-    window.location.replace('http://localhost:3000/')
+    localStorage.removeItem('tokenTimeStamp');
+    localStorage.removeItem('lastLink')
+    window.location.replace('http://localhost:3000/');
   }
 
   render() {
@@ -47,7 +50,6 @@ class App extends Component {
               <Route exact path="/details-album/:id" component={AlbumDetails} />
             </Switch>
             <FooterPage />
-
           </div>
         </div >
       );
@@ -56,7 +58,12 @@ class App extends Component {
       urlParams = urlParams.map(element => element.split('='));
       if (urlParams[0][1] !== undefined) {
         localStorage.setItem('token', urlParams[0][1]);
-        window.location.replace('http://localhost:3000/')
+        localStorage.setItem('tokenTimeStamp', Date.now())
+        if (localStorage.getItem('lastLink') !== null) {
+          window.location.replace('http://localhost:3000' + localStorage.getItem('lastLink'))
+        } else {
+          window.location.replace('http://localhost:3000/')
+        }
       }
       else {
         return (

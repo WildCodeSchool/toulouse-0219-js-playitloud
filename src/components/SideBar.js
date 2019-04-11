@@ -68,19 +68,19 @@ class SideBar extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="linksidebar" navbar>
               <NavItem>
-                <NavLink tag={NavRouter} className="asidebar" to="/">Accueil</NavLink>
+                <NavLink tag={NavRouter} className="asidebar" to="/" onClick={() => { localStorage.setItem('lastLink', '/') }}>Accueil</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={NavRouter} className="asidebar" to="/profile">Ton profil</NavLink>
+                <NavLink tag={NavRouter} className="asidebar" to="/profile" onClick={() => { localStorage.setItem('lastLink', '/profile') }}>Ton profil</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={NavRouter} className="asidebar" to="/favoris">Favoris</NavLink>
+                <NavLink tag={NavRouter} className="asidebar" to="/favoris" onClick={() => { localStorage.setItem('lastLink', '/favoris') }}>Favoris</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={NavRouter} className="asidebar" to="/playlists">Playlists</NavLink>
+                <NavLink tag={NavRouter} className="asidebar" to="/playlists" onClick={() => { localStorage.setItem('lastLink', '/playlists') }}>Playlists</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={NavRouter} className="asidebar" to="/albums">Albums</NavLink>
+                <NavLink tag={NavRouter} className="asidebar" to="/albums" onClick={() => { localStorage.setItem('lastLink', '/albums') }}>Albums</NavLink>
               </NavItem>
               <NavItem>
                 <button onClick={this.props.deco} > Déconnexion!</button>
