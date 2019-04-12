@@ -1,33 +1,256 @@
-.App {
+.album {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 230px;
+  max-width: 315px;
+  width: 100%;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: left;
+}
+.album * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+.album:before {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 30px;
+  top: 100%;
+  content: '';
+  background-color: rgba(34, 31, 31, 0.9);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+}
+.album img {
+  vertical-align: top;
+  max-width: 100%;
+  backface-visibility: hidden;
+}
+.album figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.album h3,
+.album h5 {
+  font-size: 1em;
+  margin: 0;
+  opacity: 0;
+  letter-spacing: 1px;
+}
+.album h3 {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  text-transform: uppercase;
+  font-weight: 400;
+  -webkit-transition-delay: 0.05s;
+  transition-delay: 0.05s;
+  margin-bottom: 5px;
+}
+.album h5 {
+  font-weight: normal;
+  background-color:  rgb(229,9,20);
+  padding: 3px 10px;
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.album a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.album:hover:before,
+.album.hover:before {
+  top: 10px;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.album:hover h3,
+.album.hover h3,
+.album:hover h5,
+.album.hover h5 {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+}
+.album:hover h3,
+.album.hover h3 {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s; 
+}
+.album:hover h5,
+.album.hover h5 {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+body {
+  background-color:rgb(34, 31, 31) !important;
+}
+/* Navbar */
+.navbar.sidebar {
+  background-color: rgb(34, 31, 31);
+  height: 100%;
+  border-radius: 0 5px 5px 0;
+  display: block;
+  flex-direction: column;
+  position: fixed;
+  width: 10%;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.main {
+  margin: 76px 5% 100px 16%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.main ul {
+  color: #eee;
+}
+
+.navbar .linksidebar {
+  font-size: 1rem;
+  display: block;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: left;
+}
+
+.asidebar {
+  color: white !important;
+}
+.playItLoud {
+  text-align: center;
+  font-size: 1rem;
+  
+}
+.pictureName {
+  display: block;
+  flex-direction: column;
+}
+@media screen and (min-width: 350px) and (max-width: 640px) {
+  .playItLoud {
+    position: fixed;
+    top: 1rem;
+    right: 9rem;
+    color: white !important;
+  }
+  .profilpicture {
+    display: none;
+  }
+  .togglerButton {
+    position: fixed;
+    left: 1.5rem;
+    bottom: 16rem;
+  }
+  .sidebar {
+    background-color: rgb(229,9,20);
+    position: fixed;
+    height: 20%;
+    width: 100%;
+    border-radius: 5px;
+  }
+  .asidebar {
+    color: red !important;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .playItLoud {
+    position: fixed;
+    top: 1rem;
+    right: 3rem;
+    color: white !important;
+  }
+  .profilpicture {
+    display: none;
+  }
+  .togglerButton {
+    position: fixed;
+    left: 1.5rem;
+    bottom: 16rem;
+  }
+  .sidebar {
+    background-color: rgb(229,9,20);
+    position: fixed;
+    height: 20%;
+    width: 100%;
+    border-radius: 5px;
+  }
+  .asidebar {
+    color: red !important;
+  }
+}
+
+/* FOOTER */
+.footer-copyright {
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.icones {
+  text-align: center;
+  /* position: fixed; */
+  bottom: -1.2rem;
+  /* left: 21rem; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.footer {
+  position: fixed;
+  bottom: -0.1rem;
+  /* left: 18rem; */
+  left: 0;
+  background: rgb(34, 31, 31);
+  width: 100%;
+
+}
+
+@media screen and (max-width: 350px) {
+  .icones {
+    text-align: center;
+    position: fixed;
+    bottom: -2.5rem;
+    left: 2.5rem;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .footer {
+    position: fixed;
+    bottom: -1rem;
+    left: 3rem;
+    font-size: 0.6rem;
   }
 }
+
+@media screen and (min-width: 350px) and (max-width: 640px) {
+  .icones {
+    text-align: center;
+    position: fixed;
+    bottom: -2.4rem;
+    left: 0.3rem;
+  }
+  
+  .footer {
+    position: fixed;
+    bottom: -1rem;
+    left: 0.5rem;
+    font-size: 0.6rem;
+  }
+}
+
