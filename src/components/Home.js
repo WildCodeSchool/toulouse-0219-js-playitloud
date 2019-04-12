@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import Carousel from './Carousel';
 import Cards from './Cards';
+import NewsAlbums from "./NewsAlbums";
 // import { Route, BrowserRouter, Switch, NavLink } from 'react-router-dom';
 
 class Home extends Component {
@@ -14,21 +15,25 @@ class Home extends Component {
       favoriteAlbumsList: [],
       checkFavoriteData: '',
       carouselItems: [],
-      addTofavorite: '',
-      checkfavorite: ''
+      carouselNews: [],
+      addToFavourite: '',
+      checkFavourite: ''
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleButtonTrue = this.handleButtonTrue.bind(this);
     this.handleButtonFalse = this.handleButtonFalse.bind(this);
     this.APIfilter = this.APIfilter.bind(this);
+    this.NewestApiFilter = this.NewestApiFilter.bind(this);
     this.getSearch = this.getSearch.bind(this);
-    this.addTofavorite = this.addTofavorite.bind(this);
-    this.checkfavorite = this.checkfavorite.bind(this);
+    this.getSearchNews = this.getSearchNews.bind(this);
+    // this.addToFavourite = this.addToFavourite.bind(this);
+    this.checkFavorite = this.checkFavorite.bind(this);
   }
 
   componentDidMount() {
     this.getSearch();
-    this.checkfavorite();
+    this.getSearchNews();
+    this.checkFavorite();
   }
 
   componentDidUpdate(prevProps) {
@@ -41,7 +46,7 @@ class Home extends Component {
   getSearch() {
     const { search } = this.props;
     if (search === '') {
-      fetch('https://api.spotify.com/v1/search?q=chocolate&type=album&limit=50', {
+      fetch(`https://api.spotify.com/v1/search?q=eminem&type=album&limit=50`, {
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
@@ -50,23 +55,56 @@ class Home extends Component {
       })
         .then(response => response.json())
         .then(data => {
-          console.log(data.albums.items)
+          this.setState({
+            carouselItems: data.albums.items
+
+          });
+        });
+    } else {
+      fetch(`https://api.spotify.com/v1/search?q=${search}&type=artist,album,track&limit=50`, {
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+        }
+      })
+        .then(response => response.json())
+        .then(data => {
           this.setState({
             carouselItems: data.albums.items
           });
         });
-    } else {
-      fetch(`https://api.spotify.com/v1/search?q=${search}&type=album,track&limit=50`, {
+    }
+  }
+  getSearchNews() {
+    let searchNews = this.props.search;
+    if (searchNews === '') {
+      fetch(`https://api.spotify.com/v1/browse/new-releases/?q=chocolat&type=album&limit=50`, {
         headers: {
-          Accept: 'application/json',
+          'Accept': 'application/json',
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${localStorage.getItem('token')}`
+          'Authorization': 'Bearer ' + localStorage.getItem('token')
         }
       })
         .then(response => response.json())
         .then(data => {
           this.setState({
-            carouselItems: data.albums.items
+            carouselNews: data.albums.items
+
+          });
+        });
+    } else {
+      fetch(`https://api.spotify.com/v1/search/browse/new-releases/?q=${searchNews}&type=album,track&limit=50`, {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + localStorage.getItem('token')
+        }
+      })
+        .then(response => response.json())
+        .then(data => {
+          this.setState({
+            carouselNews: data.albums.items
           });
         });
     }
@@ -96,6 +134,30 @@ class Home extends Component {
         </div>
       ));
   }
+  NewestApiFilter = () => {
+    const { checkFavoriteData } = this.state;
+    const { search, buttonText } = this.props;
+    return this.state.carouselNews
+      .filter(singleAlbum => singleAlbum.name
+        .toLowerCase()
+        .includes(search.toLowerCase()))
+      .map(album => (
+
+        <div>
+          <Cards
+            image={album.images[1].url}
+            name={album.name}
+            artist={album.artists.name}
+            id={album.id}
+            click={this.handleClick}
+            favoriteAlbums={this.handleButtonFalse}
+            removeFavorite={this.handleButtonTrue}
+            text={buttonText}
+            isFavorite={checkFavoriteData.includes(album.id)}
+          />
+        </div>
+      ))
+  }
 
   handleButtonFalse(id) {
     this.addTofavorite(id);
@@ -114,7 +176,7 @@ class Home extends Component {
       },
       method: 'PUT'
     })
-      .then(response => response.json())
+      .then(response => response.text())
       .then(data => {
         this.setState({
           addTofavorite: data
@@ -131,7 +193,7 @@ class Home extends Component {
       },
       method: 'DELETE'
     })
-      .then(response => response.json())
+      .then(response => response.text())
       .then(data => {
         this.setState({
           removeFromFavorite: data
@@ -139,7 +201,7 @@ class Home extends Component {
       });
   }
 
-  checkfavorite() {
+  checkFavorite() {
     fetch('https://api.spotify.com/v1/me/albums', {
       headers: {
         Accept: 'application/json',
@@ -153,7 +215,7 @@ class Home extends Component {
           checkFavoriteData: data.items.map(element => (
             element.album.id
           ))
-        }, () =>  console.log(this.state.checkFavoriteData.join()));
+        }, () => console.log(this.state.checkFavoriteData.join()));
       });
 
   }
@@ -164,15 +226,23 @@ class Home extends Component {
 
 
   render() {
- 
-    const { value } = this.state;
+
+    // const { value } = this.state;
     return (
       <div>
         <div className="main">
           <Carousel
             api={this.APIfilter()}
-            keyword={value}
+            keyword={this.state.value}
           />
+          <NewsAlbums
+            Newest={this.NewestApiFilter()}
+            keyword={this.state.value}
+          />
+          {/* <FavoriteAlbums
+            albumList={this.state.favoriteAlbumsList}
+            keyword={value}
+          /> */}
         </div>
       </div >
     );

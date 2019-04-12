@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 class Cards extends React.Component {
   constructor(props) {
@@ -23,18 +24,23 @@ class Cards extends React.Component {
 
   render() {
     return (
-      <div>
+
+      <div><NavLink to={`/details-album/${this.props.id}`} >
+
         <figure className="album">
           <img src={this.props.image} alt="pictures" />
-          <figcaption id={this.props.id} onClick={() => this.props.click(this.props.id)}>
+          <figcaption id={this.props.id} onClick={() => { this.props.click(this.props.id); localStorage.setItem('lastLink', `/details-album/${this.props.id}`) }} >
             <h3>{this.props.name}</h3>
             <h5>{this.props.artist}</h5>
+
           </figcaption>
         </figure>
+      </NavLink >
         <br />
         <br />
         <button onClick={() => this.manageButton()} > {this.handleButton()} </button>
       </div>
+
     )
   }
 
