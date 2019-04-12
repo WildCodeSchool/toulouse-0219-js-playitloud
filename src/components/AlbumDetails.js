@@ -1,4 +1,5 @@
 import React from 'react';
+import convertDate from '../functions/convertDate';
 
 export default class AlbumDetails extends React.Component {
   constructor(props) {
@@ -13,16 +14,9 @@ export default class AlbumDetails extends React.Component {
   convertTime = (MS) => {
     const minute = (MS / 60000).toFixed(0);
     const second = ((MS % 60000) / 1000).toFixed(0);
-    return `${minute} min ${second} s`;
+    return `${minute}min  ${second}s`;
   }
-  convertdate = (p) => {
-    const us = p.split("-");
-    const year = us[0];
-    const day = us[2];
-    const month = us[1];
-    console.log(p);
-    return `${day} / ${month} / ${year}`;
-  }
+
   componentDidMount() {
     this.apiCallById();
   }
@@ -46,14 +40,13 @@ export default class AlbumDetails extends React.Component {
   }
 
   render() {
-
     return (
       <div className="main" style={{ color: 'white' }}>
         {this.state.albumsInfos && <img src={this.state.albumsInfos.images[1].url} alt="pictures" />}
         < h3 > {this.state.albumsInfos.name}</h3 >
         {this.state.albumsInfos && <p>{this.state.albumsInfos.artists[0].name}</p>}
         < p > Label : {this.state.albumsInfos.label}</p >
-        {this.state.albumsInfos && <p>Date de sortie : {this.convertdate(this.state.albumsInfos.release_date)}</p>}
+        {this.state.albumsInfos && <p>Date de sortie : {convertDate(this.state.albumsInfos.release_date)}</p>}
         <p>{this.state.albumsInfos.total_tracks} titre(s)</p>
         <p>Popularité : {this.state.albumsInfos.popularity}%</p>
         {

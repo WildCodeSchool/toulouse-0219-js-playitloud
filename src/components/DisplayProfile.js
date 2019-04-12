@@ -1,4 +1,5 @@
 import React from 'react';
+import convertDate from '../functions/convertDate';
 
 const DisplayProfile = ({ profile }) => {
   return (
@@ -7,7 +8,7 @@ const DisplayProfile = ({ profile }) => {
       <p>Email : {profile.email}</p>
       <p>country : {profile.country}</p>
       <p>id : {profile.id}</p>
-      <p>Date de naissance : {profile.birthdate}</p>
+      <p>Date de naissance : {convertDate(profile.birthdate)}</p>
     </div>
   );
 };
