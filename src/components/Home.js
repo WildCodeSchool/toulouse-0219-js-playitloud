@@ -94,7 +94,7 @@ class Home extends Component {
           });
         });
     } else {
-      fetch(`https://api.spotify.com/v1/search/browse/new-releases/?q=${searchNews}&type=album,track&limit=50`, {
+      fetch(`https://api.spotify.com/v1/browse/new-releases/?q=${searchNews}&type=album,track&limit=50`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
@@ -134,6 +134,7 @@ class Home extends Component {
         </div>
       ));
   }
+
   NewestApiFilter = () => {
     const { checkFavoriteData } = this.state;
     const { search, buttonText } = this.props;
