@@ -28,7 +28,7 @@ class Cards extends React.Component {
       <div><NavLink to={`/details-album/${this.props.id}`} >
 
         <figure className="album">
-          <img src={this.props.image} alt="pictures" />
+          <img src={this.props.image} alt={this.props.name} />
           <figcaption id={this.props.id} onClick={() => { this.props.click(this.props.id); localStorage.setItem('lastLink', `/details-album/${this.props.id}`) }} >
             <h3>{this.props.name}</h3>
             <h5>{this.props.artist}</h5>

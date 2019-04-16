@@ -49,7 +49,8 @@ class App extends Component {
               <Route exact path="/" render={props => <Home {...props} search={this.state.value} />} />
               <Route exact path="/profile" component={ProfilePage} />
               <Route exact path="/details-album/:id" component={AlbumDetails} />
-              <Route exact path="/playlist/:id" component={CategoryPlaylist} />
+              <Route path="/playlist/:category/:id" component={NOUVEAUCOMPOSANT} />
+              <Route path="/playlist/:category" component={CategoryPlaylist} />
             </Switch>
             <FooterPage />
           </div>
