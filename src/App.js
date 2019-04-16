@@ -20,10 +20,15 @@ class App extends Component {
 
     };
     this.onChange = this.onChange.bind(this);
+    this.onChangeByClick = this.onChangeByClick.bind(this);
 
   }
 
   onChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  onChangeByClick(event) {
     this.setState({ value: event.target.value });
   }
 
@@ -35,14 +40,17 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.value);
     if (localStorage.getItem('token') !== null) {
       return (
+
         <div>
           <SideBar deco={this.deco} />
           <div className="main">
             <Search
               value={this.state.value}
               change={this.onChange}
+              changeByClick={this.onChangeByClick}
             />
             <Switch>
               <Route exact path="/" render={props => <Home {...props} search={this.state.value} />} />

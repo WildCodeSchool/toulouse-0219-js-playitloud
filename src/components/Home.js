@@ -79,7 +79,7 @@ class Home extends Component {
   getSearchNews() {
     let searchNews = this.props.search;
     if (searchNews === '') {
-      fetch(`https://api.spotify.com/v1/browse/new-releases/?q=chocolat&type=album&limit=50`, {
+      fetch(`https://api.spotify.com/v1/browse/new-releases`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
@@ -94,7 +94,7 @@ class Home extends Component {
           });
         });
     } else {
-      fetch(`https://api.spotify.com/v1/search/browse/new-releases/?q=${searchNews}&type=album,track&limit=50`, {
+      fetch(`https://api.spotify.com/v1/browse/new-releases`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
@@ -136,27 +136,23 @@ class Home extends Component {
   }
   NewestApiFilter = () => {
     const { checkFavoriteData } = this.state;
-    const { search, buttonText } = this.props;
-    return this.state.carouselNews
-      .filter(singleAlbum => singleAlbum.name
-        .toLowerCase()
-        .includes(search.toLowerCase()))
-      .map(album => (
+    const { buttonText } = this.props;
+    return this.state.carouselNews.map(album => (
 
-        <div>
-          <Cards
-            image={album.images[1].url}
-            name={album.name}
-            artist={album.artists.name}
-            id={album.id}
-            click={this.handleClick}
-            favoriteAlbums={this.handleButtonFalse}
-            removeFavorite={this.handleButtonTrue}
-            text={buttonText}
-            isFavorite={checkFavoriteData.includes(album.id)}
-          />
-        </div>
-      ))
+      <div>
+        <Cards
+          image={album.images[1].url}
+          name={album.name}
+          artist={album.artists.name}
+          id={album.id}
+          click={this.handleClick}
+          favoriteAlbums={this.handleButtonFalse}
+          removeFavorite={this.handleButtonTrue}
+          text={buttonText}
+          isFavorite={checkFavoriteData.includes(album.id)}
+        />
+      </div>
+    ))
   }
 
   handleButtonFalse(id) {
