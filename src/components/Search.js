@@ -23,7 +23,6 @@ class Search extends React.Component {
                     type="text" placeholder="Search..."
                     value={this.props.value}
                     onChange={this.props.change}
-                  // onClick={<NavLink exact to={`/${this.props.changeByClick}`} />}
 
                   />
 
