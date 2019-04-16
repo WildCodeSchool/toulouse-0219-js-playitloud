@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import Carousel from './Carousel';
 import Cards from './Cards';
 import NewsAlbums from "./NewsAlbums";
+import MusicByCategories from './MusicByCategories';
+import CardByPlaylist from './CardByPlaylist';
 // import { Route, BrowserRouter, Switch, NavLink } from 'react-router-dom';
 
 class Home extends Component {
@@ -17,7 +19,8 @@ class Home extends Component {
       carouselItems: [],
       carouselNews: [],
       addToFavourite: '',
-      checkFavourite: ''
+      checkFavourite: '',
+      categories: []
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleButtonTrue = this.handleButtonTrue.bind(this);
@@ -25,6 +28,7 @@ class Home extends Component {
     this.APIfilter = this.APIfilter.bind(this);
     this.NewestApiFilter = this.NewestApiFilter.bind(this);
     this.getSearch = this.getSearch.bind(this);
+    this.getMusciByCategories = this.getMusciByCategories.bind(this)
     this.getSearchNews = this.getSearchNews.bind(this);
     // this.addToFavourite = this.addToFavourite.bind(this);
     this.checkFavorite = this.checkFavorite.bind(this);
@@ -34,6 +38,7 @@ class Home extends Component {
     this.getSearch();
     this.getSearchNews();
     this.checkFavorite();
+    this.getMusciByCategories()
   }
 
   componentDidUpdate(prevProps) {
@@ -90,7 +95,6 @@ class Home extends Component {
         .then(data => {
           this.setState({
             carouselNews: data.albums.items
-
           });
         });
     } else {
@@ -108,6 +112,41 @@ class Home extends Component {
           });
         });
     }
+  }
+  getMusciByCategories() {
+    fetch(`https://api.spotify.com/v1/browse/categories?country=FR&locale=fr_fr&offset=0&limit=50`, {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        this.setState({
+          categories: data.categories.items
+        });
+      });
+  }
+
+  CategoryDisplay() {
+    const { categories, checkFavoriteData } = this.state;
+    const { buttonText } = this.props;
+    return categories.map(category => (
+      <div>
+        <CardByPlaylist
+          image={category.icons[0].url}
+          name={category.name}
+          id={category.id}
+          click={this.handleClick}
+          favoriteAlbums={this.handleButtonFalse}
+          removeFavorite={this.handleButtonTrue}
+          text={buttonText}
+          isFavorite={checkFavoriteData.includes(category.id)}
+        />
+      </div>
+    ));
   }
 
   APIfilter() {
@@ -159,6 +198,7 @@ class Home extends Component {
         </div>
       ))
   }
+
 
   handleButtonFalse(id) {
     this.addTofavorite(id);
@@ -239,6 +279,9 @@ class Home extends Component {
           <NewsAlbums
             Newest={this.NewestApiFilter()}
             keyword={this.state.value}
+          />
+          <MusicByCategories
+            categories={this.CategoryDisplay()}
           />
           {/* <FavoriteAlbums
             albumList={this.state.favoriteAlbumsList}

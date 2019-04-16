@@ -46,7 +46,7 @@ export default class AlbumDetails extends React.Component {
     return (
       <div className="main" style={{ color: 'white' }}>
         {this.state.albumsInfos && <img src={this.state.albumsInfos.images[1].url} alt={this.state.albumsInfos.name} />}
-        < h3 > {this.state.albumsInfos.name}</h3 >
+        <h3> {this.state.albumsInfos.name}</h3 >
         {this.state.albumsInfos && <p>{this.state.albumsInfos.artists[0].name}</p>}
         < p > Label : {this.state.albumsInfos.label}</p >
         {this.state.albumsInfos && <p>Date de sortie : {convertDate(this.state.albumsInfos.release_date)}</p>}
