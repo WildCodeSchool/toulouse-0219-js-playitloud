@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-class Cards extends React.Component {
+class CardByPlaylist extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -46,4 +46,4 @@ class Cards extends React.Component {
 }
 
 
-export default Cards;
+export default CardByPlaylist;

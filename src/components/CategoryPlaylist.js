@@ -1,5 +1,7 @@
 import React from 'react';
 import chekingTokenTimeStamp from '../functions/chekingTokenTimeStamp';
+import { NavLink } from 'react-router-dom';
+
 
 export default class CategoryPlaylist extends React.Component {
   constructor(props) {
@@ -38,7 +40,7 @@ export default class CategoryPlaylist extends React.Component {
 
   render() {
     return (
-      <div className="main" style={{ color: 'white' }}>
+      <div className="main" style={{ color: 'white' }}><NavLink to={`/playlist/${this.props.id}`} >
         {
           this.state.categoryInfo && this.state.categoryInfo.playlists.items.map((singlePlaylist, i) =>
             <div>
@@ -52,6 +54,8 @@ export default class CategoryPlaylist extends React.Component {
               </figure>
             </div>)
         }
+      </NavLink >
+
       </div >
     );
   }

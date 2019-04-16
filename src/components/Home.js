@@ -62,7 +62,6 @@ class Home extends Component {
         .then(data => {
           this.setState({
             carouselItems: data.albums.items
-
           });
         });
     } else {
