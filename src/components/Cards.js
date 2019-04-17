@@ -10,6 +10,7 @@ class Cards extends React.Component {
     this.manageButton = this.manageButton.bind(this);
     this.handleButton = this.handleButton.bind(this);
   }
+
   manageButton = () => {
     if (this.props.isFavorite) {
       this.setState({ buttonValue: true })
@@ -29,7 +30,7 @@ class Cards extends React.Component {
 
         <figure className="album">
           <img src={this.props.image} alt="pictures" />
-          <figcaption id={this.props.id} onClick={() => { this.props.click(this.props.id); localStorage.setItem('lastLink', `/details-album/${this.props.id}`) }} >
+          <figcaption id={this.props.id} onClick={() => { localStorage.setItem('lastLink', `/details-album/${this.props.id}`) }} >
             <h3>{this.props.name}</h3>
             <h5>{this.props.artist}</h5>
 
