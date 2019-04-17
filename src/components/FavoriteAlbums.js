@@ -30,12 +30,12 @@ export default class FavoriteCards extends React.Component {
 
   handleClick(id) {
     removeFromFavorite(id)
-    .then(data => {
-      this.setState({
-        removeFromFavorite: data
+      .then(data => {
+        this.setState({
+          removeFromFavorite: data
+        });
+        this.checkFavorite();
       });
-      this.checkFavorite();
-    });
   }
 
   displayFavorite() {
