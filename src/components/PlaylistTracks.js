@@ -1,5 +1,6 @@
 import React from 'react';
 import chekingTokenTimeStamp from '../functions/chekingTokenTimeStamp';
+import convertTime from '../functions/convertTime';
 
 
 export default class PlaylistTracks extends React.Component {
@@ -11,12 +12,6 @@ export default class PlaylistTracks extends React.Component {
       tracks: []
     }
     this.apiCallTracks = this.apiCallTracks.bind(this);
-  }
-
-  convertTime = (MS) => {
-    const minute = (MS / 60000).toFixed(0);
-    const second = ((MS % 60000) / 1000).toFixed(0);
-    return `${minute}min ${second}s`;
   }
 
   componentDidMount() {
@@ -54,7 +49,7 @@ export default class PlaylistTracks extends React.Component {
                 <p key={i}>{i + 1}
                   . {singleTrack.track.artists
                     .map((singleArtist) => singleArtist.name).join(' & ')}
-                  {" - "}{singleTrack.track.name}{" - "}{this.convertTime(singleTrack.track.duration_ms)}
+                  {" - "}{singleTrack.track.name}{" - "}{convertTime(singleTrack.track.duration_ms)}
                 </p>
               }
             </div>

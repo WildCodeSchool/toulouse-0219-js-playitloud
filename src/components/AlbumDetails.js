@@ -1,6 +1,7 @@
 import React from 'react';
 import convertDate from '../functions/convertDate';
 import chekingTokenTimeStamp from '../functions/chekingTokenTimeStamp';
+import convertTime from '../functions/convertTime';
 
 
 export default class AlbumDetails extends React.Component {
@@ -12,11 +13,6 @@ export default class AlbumDetails extends React.Component {
       tracks: []
     }
     this.apiCallById = this.apiCallById.bind(this);
-  }
-  convertTime = (MS) => {
-    const minute = (MS / 60000).toFixed(0);
-    const second = ((MS % 60000) / 1000).toFixed(0);
-    return `${minute}min  ${second}s`;
   }
 
   componentDidMount() {
@@ -55,7 +51,7 @@ export default class AlbumDetails extends React.Component {
         {
           this.state.albumsInfos && this.state.albumsInfos.tracks.items.map((singleTrack, i) =>
             <div>
-              <p key={i}>{singleTrack.track_number}. {singleTrack.name} {this.convertTime(singleTrack.duration_ms)}</p>
+              <p key={i}>{singleTrack.track_number}. {singleTrack.name} {convertTime(singleTrack.duration_ms)}</p>
             </div>)
         }
       </div >

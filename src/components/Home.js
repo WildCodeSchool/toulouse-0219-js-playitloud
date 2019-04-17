@@ -23,8 +23,8 @@ class Home extends Component {
       categories: []
     };
     this.handleClick = this.handleClick.bind(this);
-    this.handleButtonTrue = this.handleButtonTrue.bind(this);
-    this.handleButtonFalse = this.handleButtonFalse.bind(this);
+    this.getButtonTextTrue = this.getButtonTextTrue.bind(this);
+    this.getButtonTextFalse = this.getButtonTextFalse.bind(this);
     this.APIfilter = this.APIfilter.bind(this);
     this.NewestApiFilter = this.NewestApiFilter.bind(this);
     this.getSearch = this.getSearch.bind(this);
@@ -139,8 +139,8 @@ class Home extends Component {
           name={category.name}
           id={category.id}
           click={this.handleClick}
-          favoriteAlbums={this.handleButtonFalse}
-          removeFavorite={this.handleButtonTrue}
+          favoriteAlbums={this.getButtonTextFalse}
+          removeFavorite={this.getButtonTextTrue}
           text={buttonText}
           isFavorite={checkFavoriteData.includes(category.id)}
         />
@@ -164,8 +164,8 @@ class Home extends Component {
             artist={album.artists.name}
             id={album.id}
             click={this.handleClick}
-            favoriteAlbums={this.handleButtonFalse}
-            removeFavorite={this.handleButtonTrue}
+            favoriteAlbums={this.getButtonTextFalse}
+            removeFavorite={this.getButtonTextTrue}
             text={buttonText}
             isFavorite={checkFavoriteData.includes(album.id)}
           />
@@ -189,8 +189,8 @@ class Home extends Component {
             artist={album.artists.name}
             id={album.id}
             click={this.handleClick}
-            favoriteAlbums={this.handleButtonFalse}
-            removeFavorite={this.handleButtonTrue}
+            favoriteAlbums={this.getButtonTextFalse}
+            removeFavorite={this.getButtonTextTrue}
             text={buttonText}
             isFavorite={checkFavoriteData.includes(album.id)}
           />
@@ -199,11 +199,11 @@ class Home extends Component {
   }
 
 
-  handleButtonFalse(id) {
+  getButtonTextFalse(id) {
     this.addTofavorite(id);
   }
 
-  handleButtonTrue(id) {
+  getButtonTextTrue(id) {
     this.removeFromFavorite(id);
   }
 
