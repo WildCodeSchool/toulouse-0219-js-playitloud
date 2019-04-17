@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-class Cards extends React.Component {
+class CardByPlaylist extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,13 +21,14 @@ class Cards extends React.Component {
   }
 
   getButtonText = () => this.props.isFavorite ? 'Remove from favorites' : 'Add to favorites';
+
   render() {
     return (
 
-      <div><NavLink to={`/details-album/${this.props.id}`} >
+      <div><NavLink to={`/playlist/${this.props.id}`} >
 
         <figure className="album">
-          <img src={this.props.image} alt={this.props.name} />
+          <img src={this.props.image} alt="pictures" />
           <figcaption id={this.props.id} onClick={() => { this.props.click(this.props.id); localStorage.setItem('lastLink', `/details-album/${this.props.id}`) }} >
             <h3>{this.props.name}</h3>
             <h5>{this.props.artist}</h5>
@@ -45,4 +46,4 @@ class Cards extends React.Component {
 }
 
 
-export default Cards;
+export default CardByPlaylist;
