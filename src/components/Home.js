@@ -4,9 +4,11 @@ import React, { Component } from 'react';
 import Carousel from './Carousel';
 import Cards from './Cards';
 import NewsAlbums from "./NewsAlbums";
+import { addToFavorite, removeFromFavorite, getFavorite } from '../services/FavoriteServices';
 import MusicByCategories from './MusicByCategories';
 import CardByPlaylist from './CardByPlaylist';
 // import { Route, BrowserRouter, Switch, NavLink } from 'react-router-dom';
+
 
 class Home extends Component {
   constructor(props) {
@@ -22,15 +24,13 @@ class Home extends Component {
       checkFavourite: '',
       categories: []
     };
-    this.handleClick = this.handleClick.bind(this);
-    this.getButtonTextTrue = this.getButtonTextTrue.bind(this);
-    this.getButtonTextFalse = this.getButtonTextFalse.bind(this);
+    this.handleButtonTrue = this.handleButtonTrue.bind(this);
+    this.handleButtonFalse = this.handleButtonFalse.bind(this);
     this.APIfilter = this.APIfilter.bind(this);
     this.NewestApiFilter = this.NewestApiFilter.bind(this);
     this.getSearch = this.getSearch.bind(this);
     this.getMusciByCategories = this.getMusciByCategories.bind(this)
     this.getSearchNews = this.getSearchNews.bind(this);
-    // this.addToFavourite = this.addToFavourite.bind(this);
     this.checkFavorite = this.checkFavorite.bind(this);
   }
 
@@ -51,7 +51,7 @@ class Home extends Component {
   getSearch() {
     const { search } = this.props;
     if (search === '') {
-      fetch(`https://api.spotify.com/v1/search?q=eminem&type=album&limit=50`, {
+      fetch(`https://api.spotify.com/v1/search?q=cacao&type=artist,album,track&limit=50`, {
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
@@ -162,11 +162,10 @@ class Home extends Component {
           <Cards
             image={album.images[1].url}
             name={album.name}
-            artist={album.artists.name}
+            artist={album.artists[0].name}
             id={album.id}
-            click={this.handleClick}
-            favoriteAlbums={this.getButtonTextFalse}
-            removeFavorite={this.getButtonTextTrue}
+            favoriteAlbums={this.handleButtonFalse}
+            removeFavorite={this.handleButtonTrue}
             text={buttonText}
             isFavorite={checkFavoriteData.includes(album.id)}
           />
@@ -175,18 +174,21 @@ class Home extends Component {
   }
 
   NewestApiFilter = () => {
-    const { checkFavoriteData } = this.state;
-    const { buttonText } = this.props;
-    return this.state.carouselNews.map(album => (
+    const { checkFavoriteData, carouselNews } = this.state;
+    const { search, buttonText } = this.props;
+    return carouselNews
+      .filter(singleAlbum => singleAlbum.name
+        .toLowerCase()
+        .includes(search.toLowerCase()))
+      .map(album => (
         <div>
           <Cards
             image={album.images[1].url}
             name={album.name}
             artist={album.artists.name}
             id={album.id}
-            click={this.handleClick}
-            favoriteAlbums={this.getButtonTextFalse}
-            removeFavorite={this.getButtonTextTrue}
+            favoriteAlbums={this.handleButtonFalse}
+            removeFavorite={this.handleButtonTrue}
             text={buttonText}
             isFavorite={checkFavoriteData.includes(album.id)}
           />
@@ -194,76 +196,37 @@ class Home extends Component {
       ))
   }
 
-
-  getButtonTextFalse(id) {
-    this.addTofavorite(id);
-  }
-
-  getButtonTextTrue(id) {
-    this.removeFromFavorite(id);
-  }
-
-  addTofavorite(id) {
-    fetch(`https://api.spotify.com/v1/me/albums?ids=${id}`, {
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${localStorage.getItem('token')}`
-      },
-      method: 'PUT'
-    })
-      .then(response => response.text())
-      .then(data => {
-        this.setState({
-          addTofavorite: data
-        });
+  handleButtonFalse(id) {
+    addToFavorite(id)
+    .then(data => {
+      this.setState({
+        addTofavorite: data
       });
+      this.checkFavorite();
+    });
   }
 
-  removeFromFavorite(id) {
-    fetch(`https://api.spotify.com/v1/me/albums?ids=${id}`, {
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${localStorage.getItem('token')}`
-      },
-      method: 'DELETE'
-    })
-      .then(response => response.text())
-      .then(data => {
-        this.setState({
-          removeFromFavorite: data
-        });
+  handleButtonTrue(id) {
+    removeFromFavorite(id)
+    .then(data => {
+      this.setState({
+        removeFromFavorite: data
       });
+      this.checkFavorite();
+    });
   }
 
   checkFavorite() {
-    fetch('https://api.spotify.com/v1/me/albums', {
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${localStorage.getItem('token')}`
-      }
-    })
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          checkFavoriteData: data.items.map(element => (
-            element.album.id
-          ))
-        }, () => console.log(this.state.checkFavoriteData.join()));
-      });
-
+    getFavorite().then(data => {
+      this.setState({
+        checkFavoriteData: data.items.map(element => (
+          element.album.id
+        ))
+      }, () => console.log(this.state.checkFavoriteData.join()));
+    });
   }
-
-  handleClick(id) {
-    this.setState({ cardId: id });
-  }
-
-
+  
   render() {
-
-    // const { value } = this.state;
     return (
       <div>
         <div className="main">
