@@ -16,7 +16,7 @@ export default class PlaylistTracks extends React.Component {
   convertTime = (MS) => {
     const minute = (MS / 60000).toFixed(0);
     const second = ((MS % 60000) / 1000).toFixed(0);
-    return `${minute}min  ${second}s`;
+    return `${minute}min ${second}s`;
   }
 
   componentDidMount() {
@@ -53,8 +53,8 @@ export default class PlaylistTracks extends React.Component {
               {this.state.playlistInfos &&
                 <p key={i}>{i + 1}
                   . {singleTrack.track.artists
-                    .map((singleArtist) => <span>{singleArtist.name} </span>)}
-                  - {singleTrack.track.name} - {this.convertTime(singleTrack.track.duration_ms)}
+                    .map((singleArtist) => singleArtist.name).join(' & ')}
+                  {" - "}{singleTrack.track.name}{" - "}{this.convertTime(singleTrack.track.duration_ms)}
                 </p>
               }
             </div>
