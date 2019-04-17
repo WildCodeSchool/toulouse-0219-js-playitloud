@@ -20,7 +20,7 @@ class Cards extends React.Component {
     }
   }
 
-  handleButton = () => this.props.isFavorite ?  'Remove from favorites' : 'Add to favorites';
+  handleButton = () => this.props.isFavorite ? 'Remove from favorites' : 'Add to favorites';
 
   render() {
     return (
