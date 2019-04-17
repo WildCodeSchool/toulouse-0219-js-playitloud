@@ -9,7 +9,6 @@ import ProfilePage from './components/ProfilePage';
 import AlbumDetails from './components/AlbumDetails';
 import CategoryPlaylist from './components/CategoryPlaylist';
 import PlaylistTracks from './components/PlaylistTracks';
-
 import './App.css';
 
 
