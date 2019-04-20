@@ -51,7 +51,7 @@ class App extends Component {
             </Switch>
             <FooterPage />
           </div>
-        </div >
+        </div>
       );
     } else {
       let urlParams = window.location.hash.split('&');
