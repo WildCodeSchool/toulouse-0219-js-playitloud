@@ -5,16 +5,46 @@ import {
   Nav,
   NavItem,
 } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
+import SpotifyPlayer from 'react-spotify-player';
+
 
 class Search extends React.Component {
   render() {
+    const ID = this.props.location.pathname;
+    this.nmbLenght=this.props.location.pathname.length;
+    this.catchID=(ID)=>{
+      return ID.substring((this.nmbLenght-22), this.nmbLenght)
+    }
+    console.log(this.catchID(this.props.location.pathname))
+    const size = {
+      width: '60%',
+      height: 80,
+    };
+    console.log(ID);
+    const view = 'list'; // or 'coverart'
+    const theme = 'black'; // or 'white'
+
+
+
+
+
     return (
       <div>
+        
         <Navbar color="dark" light expand="md" className="fixed-top">
+          <SpotifyPlayer
+            uri={`spotify:album:${this.catchID(this.props.location.pathname)}`}
+            size={size}
+            view={view}
+            theme={theme}
+          />
+          
           <Nav className="ml-auto" navbar>
             {/* SearchBar */}
+            
             <NavItem>
+              
               <div className="recherche mx-4">
                 <div className="searchbar">
 
@@ -40,4 +70,4 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default withRouter(Search);
