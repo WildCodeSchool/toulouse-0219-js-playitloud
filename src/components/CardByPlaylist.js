@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import FavoritePlaylist from './FavoritePlaylist';
 
 class CardByPlaylist extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class CardByPlaylist extends React.Component {
       this.props.removeFavorite(this.props.id)
     } else {
       this.setState({ buttonValue: false })
-      this.props.favoriteAlbums(this.props.id);
+      this.props.FavoriteAlbums(this.props.id);
     }
   }
 
@@ -35,9 +36,6 @@ class CardByPlaylist extends React.Component {
           </figcaption>
         </figure>
       </NavLink >
-        <br />
-        <br />
-        <button onClick={() => this.manageButton()} > {this.getButtonText()} </button>
       </div>
 
     )

@@ -1,6 +1,7 @@
 import React from 'react';
 import chekingTokenTimeStamp from '../functions/chekingTokenTimeStamp';
 import { NavLink } from 'react-router-dom';
+import FavoritePlaylist from './FavoritePlaylist';
 
 
 export default class CategoryPlaylist extends React.Component {
@@ -13,6 +14,18 @@ export default class CategoryPlaylist extends React.Component {
     }
     this.playlistByCategory = this.playlistByCategory.bind(this);
   }
+
+  manageButton = () => {
+    if (this.props.isFavorite) {
+      this.setState({ buttonValue: true })
+      this.props.removeFavorite(this.props.id)
+    } else {
+      this.setState({ buttonValue: false })
+      this.props.FavoritePlaylist(this.props.id);
+    }
+  }
+
+  getButtonText = () => this.props.isFavorite ? 'Enlever playlist' : 'Ajouter playlist';
 
   componentDidMount() {
     this.playlistByCategory();
@@ -50,6 +63,7 @@ export default class CategoryPlaylist extends React.Component {
                   <h3 key={i}>{singlePlaylist.name}</h3>
                 </figcaption>
               </figure>
+              <button onClick={() => this.manageButton()} > {this.getButtonText()} </button>
             </NavLink >)
         }
 

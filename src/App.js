@@ -8,6 +8,7 @@ import Home from './components/Home';
 import ProfilePage from './components/ProfilePage';
 import AlbumDetails from './components/AlbumDetails';
 import FavoriteAlbums from './components/FavoriteAlbums';
+import FavoritePlaylist from './components/FavoritePlaylist';
 import CategoryPlaylist from './components/CategoryPlaylist';
 import PlaylistTracks from './components/PlaylistTracks';
 import './App.css';
@@ -25,7 +26,7 @@ class App extends Component {
     this.onChangeByClick = this.onChangeByClick.bind(this);
   }
 
- 
+
 
   onChange(event) {
     this.setState({ value: event.target.value });
@@ -57,8 +58,9 @@ class App extends Component {
             <Switch>
               <Route exact path="/" render={props => <Home {...props} search={this.state.value} />} />
               <Route exact path="/profile" component={ProfilePage} />
-              <Route exact path="/details-album/:id" component={AlbumDetails}  />
+              <Route exact path="/details-album/:id" component={AlbumDetails} />
               <Route exact path="/favoris" component={FavoriteAlbums} />
+              <Route exact path="/playlist" component={FavoritePlaylist} />
               <Route path="/playlist/:category/:id" component={PlaylistTracks} />
               <Route path="/playlist/:category" component={CategoryPlaylist} />
             </Switch>
