@@ -7,7 +7,9 @@ import Search from './components/Search';
 import Home from './components/Home';
 import ProfilePage from './components/ProfilePage';
 import AlbumDetails from './components/AlbumDetails';
-
+import FavoriteAlbums from './components/FavoriteAlbums';
+import CategoryPlaylist from './components/CategoryPlaylist';
+import PlaylistTracks from './components/PlaylistTracks';
 import './App.css';
 
 
@@ -20,10 +22,16 @@ class App extends Component {
 
     };
     this.onChange = this.onChange.bind(this);
-
+    this.onChangeByClick = this.onChangeByClick.bind(this);
   }
 
+ 
+
   onChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  onChangeByClick(event) {
     this.setState({ value: event.target.value });
   }
 
@@ -37,17 +45,22 @@ class App extends Component {
   render() {
     if (localStorage.getItem('token') !== null) {
       return (
+
         <div>
           <SideBar deco={this.deco} />
           <div className="main">
             <Search
               value={this.state.value}
               change={this.onChange}
+              changeByClick={this.onChangeByClick}
             />
             <Switch>
               <Route exact path="/" render={props => <Home {...props} search={this.state.value} />} />
               <Route exact path="/profile" component={ProfilePage} />
-              <Route exact path="/details-album/:id" component={AlbumDetails} />
+              <Route exact path="/details-album/:id" component={AlbumDetails}  />
+              <Route exact path="/favoris" component={FavoriteAlbums} />
+              <Route path="/playlist/:category/:id" component={PlaylistTracks} />
+              <Route path="/playlist/:category" component={CategoryPlaylist} />
             </Switch>
             <FooterPage />
           </div>

@@ -8,8 +8,9 @@ class Cards extends React.Component {
       buttonValue: false,
     }
     this.manageButton = this.manageButton.bind(this);
-    this.handleButton = this.handleButton.bind(this);
+    this.getButtonText = this.getButtonText.bind(this);
   }
+
   manageButton = () => {
     if (this.props.isFavorite) {
       this.setState({ buttonValue: true })
@@ -20,8 +21,7 @@ class Cards extends React.Component {
     }
   }
 
-  handleButton = () => this.props.isFavorite ?  'Remove from favorites' : 'Add to favorites';
-
+  getButtonText = () => this.props.isFavorite ? 'Remove from favorites' : 'Add to favorites';
   render() {
     return (
 
@@ -29,16 +29,15 @@ class Cards extends React.Component {
 
         <figure className="album">
           <img src={this.props.image} alt="pictures" />
-          <figcaption id={this.props.id} onClick={() => { this.props.click(this.props.id); localStorage.setItem('lastLink', `/details-album/${this.props.id}`) }} >
+          <figcaption id={this.props.id} onClick={() => { localStorage.setItem('lastLink', `/details-album/${this.props.id}`) }} >
             <h3>{this.props.name}</h3>
             <h5>{this.props.artist}</h5>
-
           </figcaption>
         </figure>
       </NavLink >
         <br />
         <br />
-        <button onClick={() => this.manageButton()} > {this.handleButton()} </button>
+        <button onClick={() => this.manageButton()} > {this.getButtonText()} </button>
       </div>
 
     )
