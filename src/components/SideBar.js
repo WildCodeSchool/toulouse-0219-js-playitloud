@@ -56,14 +56,15 @@ class SideBar extends React.Component {
           <div className="pictureName">
             {this.state.profile &&
               <img
-                style={{ borderRadius: "100%", maxWidth: "20vh" }}
+                style={{ borderRadius: "100%", maxWidth: "15vh" }}
                 className="profilePicture"
                 src={this.state.profile.images[0].url}
                 alt={this.state.profile.display_name}
               />}
-            <h6 style={{ color: "white", paddingTop: "3vh" }}>Bonjour {this.state.profile.display_name}</h6>
-            <NavbarBrand style={{ color: 'rgb(229,9,20)' }} tag={NavRouter} className="playItLoud" to="/">Play It Loud</NavbarBrand>
           </div>
+          <h6 style={{ color: "white", paddingTop: "3vh" }}>Bonjour {this.state.profile.display_name}</h6>
+          <NavbarBrand style={{ color: 'rgb(229,9,20)' }} tag={NavRouter} className="playItLoud" to="/">Play it Loud</NavbarBrand>
+
           <NavbarToggler className="togglerButton" onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="linksidebar" navbar>
@@ -80,10 +81,7 @@ class SideBar extends React.Component {
                 <NavLink tag={NavRouter} className="asidebar" to="/playlists" onClick={() => { localStorage.setItem('lastLink', '/playlists') }}>Playlists</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={NavRouter} className="asidebar" to="/albums" onClick={() => { localStorage.setItem('lastLink', '/albums') }}>Albums</NavLink>
-              </NavItem>
-              <NavItem>
-                <button onClick={this.props.deco} > Déconnexion!</button>
+                <button className='decoButton' onClick={this.props.deco} >Déconnexion</button>
               </NavItem>
             </Nav>
           </Collapse>
