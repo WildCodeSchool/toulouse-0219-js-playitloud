@@ -198,22 +198,22 @@ class Home extends Component {
 
   handleButtonFalse(id) {
     addToFavorite(id)
-    .then(data => {
-      this.setState({
-        addTofavorite: data
+      .then(data => {
+        this.setState({
+          addTofavorite: data
+        });
+        this.checkFavorite();
       });
-      this.checkFavorite();
-    });
   }
 
   handleButtonTrue(id) {
     removeFromFavorite(id)
-    .then(data => {
-      this.setState({
-        removeFromFavorite: data
+      .then(data => {
+        this.setState({
+          removeFromFavorite: data
+        });
+        this.checkFavorite();
       });
-      this.checkFavorite();
-    });
   }
 
   checkFavorite() {
@@ -225,28 +225,26 @@ class Home extends Component {
       }, () => console.log(this.state.checkFavoriteData.join()));
     });
   }
-  
+
   render() {
     return (
-      <div>
-        <div className="main">
-          <Carousel
-            api={this.APIfilter()}
-            keyword={this.state.value}
-          />
-          <NewsAlbums
-            Newest={this.NewestApiFilter()}
-            keyword={this.state.value}
-          />
-          <MusicByCategories
-            categories={this.CategoryDisplay()}
-          />
-          {/* <FavoriteAlbums
+      <div className="main">
+        <Carousel
+          api={this.APIfilter()}
+          keyword={this.state.value}
+        />
+        <NewsAlbums
+          Newest={this.NewestApiFilter()}
+          keyword={this.state.value}
+        />
+        <MusicByCategories
+          categories={this.CategoryDisplay()}
+        />
+        {/* <FavoriteAlbums
             albumList={this.state.favoriteAlbumsList}
             keyword={value}
           /> */}
-        </div>
-      </div >
+      </div>
     );
   }
 }
