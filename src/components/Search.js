@@ -11,40 +11,49 @@ import SpotifyPlayer from 'react-spotify-player';
 
 class Search extends React.Component {
   render() {
-    const ID = this.props.location.pathname;
-    this.nmbLenght=this.props.location.pathname.length;
-    this.catchID=(ID)=>{
-      return ID.substring((this.nmbLenght-22), this.nmbLenght)
+
+    this.nmbLength = this.props.location.pathname.length;
+    this.catchID = (ID) => {
+      return ID.substring((this.nmbLength - 22), this.nmbLength)
     }
     console.log(this.catchID(this.props.location.pathname))
+
+
     const size = {
       width: '60%',
       height: 80,
     };
-    console.log(ID);
     const view = 'list'; // or 'coverart'
     const theme = 'black'; // or 'white'
 
+    const URLMUSIC = () => {
+      if (this.props.location.pathname.includes("playlist")) {
+        return `spotify:playlist:${this.catchID(this.props.location.pathname)}`
+      }
+      else {
+        return `spotify:album:${this.catchID(this.props.location.pathname)}`
+      }
+    }
 
 
 
 
     return (
       <div>
-        
+
         <Navbar color="dark" light expand="md" className="fixed-top">
           <SpotifyPlayer
-            uri={`spotify:album:${this.catchID(this.props.location.pathname)}`}
+            uri={URLMUSIC()}
             size={size}
             view={view}
             theme={theme}
           />
-          
+
           <Nav className="ml-auto" navbar>
             {/* SearchBar */}
-            
+
             <NavItem>
-              
+
               <div className="recherche mx-4">
                 <div className="searchbar">
 
