@@ -20,7 +20,7 @@ class CardByPlaylist extends React.Component {
     }
   }
 
-  getButtonText = () => this.props.isFavorite ? 'Remove from favorites' : 'Add to favorites';
+  getButtonText = () => this.props.isFavorite ? 'Ajouter Playlist' : 'Enlever Playlist';
 
   render() {
     return (
@@ -35,9 +35,7 @@ class CardByPlaylist extends React.Component {
           </figcaption>
         </figure>
       </NavLink >
-        <br />
-        <br />
-        <button onClick={() => this.manageButton()} > {this.getButtonText()} </button>
+
       </div>
 
     )

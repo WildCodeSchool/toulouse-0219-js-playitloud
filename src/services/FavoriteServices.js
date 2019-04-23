@@ -35,4 +35,15 @@ function getFavorite() {
     .then(response => response.json());
 }
 
+function getFavoritePlaylist() {
+  return fetch(`${BASE_SPOTIFY_URL}me/playlists`, {
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`
+    }
+  })
+    .then(response => response.json());
+}
+
 export { addToFavorite, removeFromFavorite, getFavorite };
