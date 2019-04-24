@@ -21,7 +21,7 @@ class Cards extends React.Component {
     }
   }
 
-  getButtonText = () => this.props.isFavorite ? 'Remove from favorites' : 'Add to favorites';
+  getButtonText = () => this.props.isFavorite ? 'Enlever des favoris' : 'Ajouter aux favoris';
   render() {
     return (
 

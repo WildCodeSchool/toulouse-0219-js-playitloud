@@ -18,7 +18,7 @@ export default class FavoriteCards extends React.Component {
         </NavLink>
         <br />
         <br />
-        <button onClick={() => this.props.remove(this.props.id)} > Remove from Favorite </button>
+        <button onClick={() => this.props.remove(this.props.id)} >Enlever des favoris</button>
       </div>
 
     )
