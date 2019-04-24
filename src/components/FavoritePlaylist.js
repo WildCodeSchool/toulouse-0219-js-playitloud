@@ -1,16 +1,17 @@
 import React from 'react';
 import { CardColumns } from 'reactstrap';
 import CardByPlaylist from './CardByPlaylist';
-
+import { removeFromFavoritePlaylist } from '../services/FavoriteServices';
 export default class FavoritePlaylist extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      checkFavoriteData: []
+      checkFavoriteData: [],
+      removeFromFavoritePlaylist: [],
     }
     this.checkFavoritePlaylist = this.checkFavoritePlaylist.bind(this);
     this.displayFavorite = this.displayFavorite.bind(this);
-    // this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -33,28 +34,30 @@ export default class FavoritePlaylist extends React.Component {
       });
   }
 
-  // handleClick(id) {
-  //   removeFromFavorite(id)
-  //     .then(data => {
-  //       this.setState({
-  //         removeFromFavorite: data
-  //       });
-  //       this.checkFavorite();
-  //     });
-  // }
+  handleClick(id) {
+    removeFromFavoritePlaylist(id)
+      .then(data => {
+        console.log(data)
+        this.setState({
+          removeFromFavoritePlaylist: data.items
+        });
+        this.checkFavoritePlaylist();
+      });
+  }
 
   displayFavorite() {
     const { checkFavoriteData } = this.state;
-    console.log(checkFavoriteData);
     return checkFavoriteData
       .map(playlist => (
-        <div className='main'>
+        <div className="main">
           <CardByPlaylist
-            image='https://cdn.pixabay.com/photo/2016/06/18/17/42/image-1465348_960_720.jpg'
+            image={playlist.images[0] && playlist.images[0].url}
             name={playlist.name}
             id={playlist.id}
-          // remove={this.handleClick}
+            remove={this.handleClick}
+            showButton
           />
+
         </div>
 
       ));

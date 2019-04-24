@@ -12,8 +12,31 @@ function addToFavorite(id) {
     .then(response => response.text());
 }
 
+function addToFavoritePlaylist(id) {
+  return fetch(`${BASE_SPOTIFY_URL}playlists/${id}/followers`, {
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`
+    },
+    method: 'PUT'
+  })
+    .then(response => response.text());
+}
 function removeFromFavorite(id) {
   return fetch(`${BASE_SPOTIFY_URL}me/albums?ids=${id}`, {
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`
+    },
+    method: 'DELETE'
+  })
+    .then(response => response.text());
+}
+
+function removeFromFavoritePlaylist(id) {
+  return fetch(`${BASE_SPOTIFY_URL}playlists/${id}/followers`, {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
@@ -46,4 +69,4 @@ function getFavoritePlaylist() {
     .then(response => response.json());
 }
 
-export { addToFavorite, removeFromFavorite, getFavorite, getFavoritePlaylist };
+export { addToFavorite, removeFromFavorite, getFavorite, getFavoritePlaylist, addToFavoritePlaylist, removeFromFavoritePlaylist };

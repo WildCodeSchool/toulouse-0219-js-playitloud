@@ -7,22 +7,12 @@ class CardByPlaylist extends React.Component {
     this.state = {
       buttonValue: false,
     }
-    this.manageButton = this.manageButton.bind(this);
-    this.getButtonText = this.getButtonText.bind(this);
-  }
-  manageButton = () => {
-    if (this.props.isFavorite) {
-      this.setState({ buttonValue: true })
-      this.props.removeFavorite(this.props.id)
-    } else {
-      this.setState({ buttonValue: false })
-      this.props.favoriteAlbums(this.props.id);
-    }
   }
 
-  getButtonText = () => this.props.isFavorite ? 'Ajouter Playlist' : 'Enlever Playlist';
+
 
   render() {
+
     return (
 
       <div><NavLink to={`/playlist/${this.props.id}`} >
@@ -35,6 +25,7 @@ class CardByPlaylist extends React.Component {
           </figcaption>
         </figure>
       </NavLink >
+        {this.props.showButton && <button onClick={() => this.props.remove(this.props.id)} > Remove from Favorite </button>}
 
       </div>
 
@@ -43,5 +34,7 @@ class CardByPlaylist extends React.Component {
 
 }
 
-
+CardByPlaylist.defaultProps = {
+  image: 'https://image.noelshack.com/fichiers/2019/17/3/1556092563-playlistdefaultpicture.png'
+}
 export default CardByPlaylist;

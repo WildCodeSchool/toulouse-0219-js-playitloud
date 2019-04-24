@@ -9,7 +9,6 @@ export default class CategoryPlaylist extends React.Component {
     this.state = {
       id: '',
       categoryInfo: "",
-      tracks: [],
       buttonValue: false,
     }
     this.playlistByCategory = this.playlistByCategory.bind(this);
@@ -25,8 +24,8 @@ export default class CategoryPlaylist extends React.Component {
       this.props.favoriteAlbums(this.props.id);
     }
   }
-
   getButtonText = () => this.props.isFavorite ? 'Remove from favorites' : 'Add to favorites';
+
   componentDidMount() {
     this.playlistByCategory();
   }
@@ -63,7 +62,7 @@ export default class CategoryPlaylist extends React.Component {
                   <h3 key={i}>{singlePlaylist.name}</h3>
                 </figcaption>
               </figure>
-              <button onClick={() => this.manageButton()} > {this.getButtonText()} </button>
+              <button onClick={() => this.manageButton(singlePlaylist.id)} > {this.getButtonText()} </button>
 
             </NavLink >)
         }

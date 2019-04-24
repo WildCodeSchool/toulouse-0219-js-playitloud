@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import Carousel from './Carousel';
 import Cards from './Cards';
 import NewsAlbums from "./NewsAlbums";
-import { addToFavorite, removeFromFavorite, getFavorite } from '../services/FavoriteServices';
+import { addToFavorite, removeFromFavorite, getFavorite, getFavoritePlaylist, addToFavoritePlaylist, removeFromFavoritePlaylist } from '../services/FavoriteServices';
 import MusicByCategories from './MusicByCategories';
 import CardByPlaylist from './CardByPlaylist';
 // import { Route, BrowserRouter, Switch, NavLink } from 'react-router-dom';
@@ -131,8 +131,7 @@ class Home extends Component {
   }
 
   CategoryDisplay() {
-    const { categories, checkFavoriteData } = this.state;
-    const { buttonText } = this.props;
+    const { categories } = this.state;
     return categories.map(category => (
       <div>
         <CardByPlaylist
@@ -140,10 +139,6 @@ class Home extends Component {
           name={category.name}
           id={category.id}
           click={this.handleClick}
-          favoriteAlbums={this.getButtonTextFalse}
-          removeFavorite={this.getButtonTextTrue}
-          text={buttonText}
-          isFavorite={checkFavoriteData.includes(category.id)}
         />
       </div>
     ));
@@ -195,6 +190,7 @@ class Home extends Component {
         </div>
       ))
   }
+
 
   handleButtonFalse(id) {
     addToFavorite(id)
