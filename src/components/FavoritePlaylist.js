@@ -2,6 +2,7 @@ import React from 'react';
 import { CardColumns } from 'reactstrap';
 import CardByPlaylist from './CardByPlaylist';
 import { removeFromFavoritePlaylist } from '../services/FavoriteServices';
+
 export default class FavoritePlaylist extends React.Component {
   constructor(props) {
     super(props);
@@ -37,7 +38,6 @@ export default class FavoritePlaylist extends React.Component {
   handleClick(id) {
     removeFromFavoritePlaylist(id)
       .then(data => {
-        console.log(data)
         this.setState({
           removeFromFavoritePlaylist: data.items
         });

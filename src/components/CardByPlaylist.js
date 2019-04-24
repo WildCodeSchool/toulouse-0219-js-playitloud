@@ -25,7 +25,7 @@ class CardByPlaylist extends React.Component {
           </figcaption>
         </figure>
       </NavLink >
-        {this.props.showButton && <button onClick={() => this.props.remove(this.props.id)} > Remove from Favorite </button>}
+        {this.props.showButton && <button onClick={() => this.props.remove(this.props.id)} >Enlever des playlists</button>}
 
       </div>
 

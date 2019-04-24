@@ -16,8 +16,6 @@ class Search extends React.Component {
     this.catchID = (ID) => {
       return ID.substring((this.nmbLength - 22), this.nmbLength)
     }
-    console.log(this.catchID(this.props.location.pathname))
-
 
     const size = {
       width: '60%',
