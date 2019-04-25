@@ -28,7 +28,7 @@ class CardByPlaylist extends React.Component {
       <div><NavLink to={`/playlist/${this.props.id}`} >
 
         <figure className="album">
-          <img src={this.props.image} alt="pictures" />
+          <img className="imgcard" src={this.props.image} alt="pictures" />
           <figcaption id={this.props.id} >
             <h3>{this.props.name}</h3>
             <h5>{this.props.artist}</h5>

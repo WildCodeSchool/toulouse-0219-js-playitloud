@@ -20,11 +20,11 @@ class Search extends React.Component {
 
 
     const size = {
-      width: '60%',
-      height: 80,
+      width: '100%',
+      height: '70rem',
     };
-    const view = 'list'; // or 'coverart'
-    const theme = 'black'; // or 'white'
+    const view = 'coverart';
+    const theme = 'white';
 
     const URLMUSIC = () => {
       if (this.props.location.pathname.includes("playlist")) {
@@ -32,16 +32,14 @@ class Search extends React.Component {
       }
       else {
         return `spotify:album:${this.catchID(this.props.location.pathname)}`
+
       }
     }
-
-
-
 
     return (
       <div>
 
-        <Navbar color="dark" light expand="md" className="fixed-top">
+        <Navbar color="dark" light expand="md" className="fixed-top" bg-white>
           <SpotifyPlayer
             uri={URLMUSIC()}
             size={size}
