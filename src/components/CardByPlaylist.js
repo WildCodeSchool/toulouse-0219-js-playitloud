@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import FavoritePlaylist from './FavoritePlaylist';
 
 class CardByPlaylist extends React.Component {
   constructor(props) {
@@ -7,26 +8,12 @@ class CardByPlaylist extends React.Component {
     this.state = {
       buttonValue: false,
     }
-    this.manageButton = this.manageButton.bind(this);
-    this.getButtonText = this.getButtonText.bind(this);
   }
-  manageButton = () => {
-    if (this.props.isFavorite) {
-      this.setState({ buttonValue: true })
-      this.props.removeFavorite(this.props.id)
-    } else {
-      this.setState({ buttonValue: false })
-      this.props.favoriteAlbums(this.props.id);
-    }
-  }
-
-  getButtonText = () => this.props.isFavorite ? 'Remove from favorites' : 'Add to favorites';
 
   render() {
     return (
 
       <div><NavLink to={`/playlist/${this.props.id}`} >
-
         <figure className="album">
           <img className="imgcard" src={this.props.image} alt="pictures" />
           <figcaption id={this.props.id} >
@@ -35,9 +22,8 @@ class CardByPlaylist extends React.Component {
           </figcaption>
         </figure>
       </NavLink >
-        <br />
-        <br />
-        <button onClick={() => this.manageButton()} > {this.getButtonText()} </button>
+        {this.props.showButton && <button onClick={() => this.props.remove(this.props.id)} >Enlever des playlists</button>}
+
       </div>
 
     )
@@ -45,5 +31,7 @@ class CardByPlaylist extends React.Component {
 
 }
 
-
+CardByPlaylist.defaultProps = {
+  image: 'https://image.noelshack.com/fichiers/2019/17/3/1556092563-playlistdefaultpicture.png'
+}
 export default CardByPlaylist;

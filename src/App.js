@@ -8,6 +8,7 @@ import Home from './components/Home';
 import ProfilePage from './components/ProfilePage';
 import AlbumDetails from './components/AlbumDetails';
 import FavoriteAlbums from './components/FavoriteAlbums';
+import FavoritePlaylist from './components/FavoritePlaylist';
 import CategoryPlaylist from './components/CategoryPlaylist';
 import PlaylistTracks from './components/PlaylistTracks';
 import './App.css';
@@ -59,6 +60,7 @@ class App extends Component {
               <Route exact path="/profile" component={ProfilePage} />
               <Route exact path="/details-album/:id" component={AlbumDetails} />
               <Route exact path="/favoris" component={FavoriteAlbums} />
+              <Route exact path="/playlists" component={FavoritePlaylist} />
               <Route path="/playlist/:category/:id" component={PlaylistTracks} />
               <Route path="/playlist/:category" component={CategoryPlaylist} />
             </Switch>
@@ -80,7 +82,7 @@ class App extends Component {
       }
       else {
         return (
-          <a style={{ color: 'red' }} href="https://accounts.spotify.com/authorize?client_id=136da030d9704f5e9314b475d1a79537&redirect_uri=http://localhost:3000&scope=user-read-private%20user-read-email%20user-read-birthdate%20user-library-modify%20user-library-read&response_type=token&state=123" > Connectez - vous</a >
+          <a style={{ color: 'red' }} href="https://accounts.spotify.com/authorize?client_id=136da030d9704f5e9314b475d1a79537&redirect_uri=http://localhost:3000&scope=user-read-private%20user-read-email%20user-read-birthdate%20user-library-modify%20user-library-read%20playlist-read-private%20user-library-modify%20playlist-modify-private%20playlist-modify-public&response_type=token&state=123" > Connectez - vous</a >
         )
       }
     }

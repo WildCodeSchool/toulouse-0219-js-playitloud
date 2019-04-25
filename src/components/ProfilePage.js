@@ -25,7 +25,7 @@ class ProfilePage extends Component {
       .then(data => {
         this.setState({
           profile: data,
-        }); console.log(data)
+        });
       });
   }
 
