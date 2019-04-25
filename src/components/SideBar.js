@@ -11,6 +11,8 @@ import {
   NavLink
 } from 'reactstrap';
 import { NavLink as NavRouter } from 'react-router-dom';
+// import { REPL_MODE_STRICT } from 'repl';
+import splitName from '../functions/splitName';
 
 
 class SideBar extends React.Component {
@@ -20,7 +22,7 @@ class SideBar extends React.Component {
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false,
-      profile: ""
+      profile: ''
     };
   }
   componentDidMount() {
@@ -62,9 +64,10 @@ class SideBar extends React.Component {
                 alt={this.state.profile.display_name}
               />}
           </div>
-          <h6 style={{ color: "white", paddingTop: "3vh" }}>Bonjour {this.state.profile.display_name}</h6>
+          <h6 style={{ color: "white", paddingTop: "3vh" }}>
+            Bonjour {this.state.profile && splitName(this.state.profile.display_name)}
+          </h6>
           <NavbarBrand style={{ color: 'rgb(229,9,20)' }} tag={NavRouter} className="playItLoud" to="/">Play it Loud</NavbarBrand>
-
           <NavbarToggler className="togglerButton" onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="linksidebar" navbar>
