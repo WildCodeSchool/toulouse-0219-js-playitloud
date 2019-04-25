@@ -135,9 +135,6 @@ body {
   font-size:1.2rem;
 }
 
-
-
-
 .main ul {
   color: #eee;
 }
@@ -219,7 +216,7 @@ body {
     height: max-content;
     border-radius: 5px;
     z-index: 1;
-    
+    visibility: hidden;
 
   }
 
@@ -375,15 +372,12 @@ body {
 
 }
 
-<<<<<<< HEAD
 .boutonConnexion {
   color: red;
-  border: 1px solid blue;
   position: fixed;
   left: 40rem;
   bottom: 30rem;
-=======
-
+}
 .figcaption{
   max-width:10px;
 }
@@ -413,5 +407,8 @@ body {
 }
 .card-columns{
   margin-left: 200px;
->>>>>>> 35d08e018d26d62c558c0cf481ad57601e613894
+}
+
+.main {
+  margin-bottom: 100px !important;
 }
