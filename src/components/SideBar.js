@@ -54,7 +54,7 @@ class SideBar extends React.Component {
   render() {
     return (
       <div>
-        <Navbar className="sidebar" light expand="md">
+        <Navbar className="sidebar">
           <div className="pictureName">
             {this.state.profile &&
               <img
