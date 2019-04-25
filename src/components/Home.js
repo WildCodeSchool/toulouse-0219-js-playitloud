@@ -224,21 +224,21 @@ class Home extends Component {
   render() {
     return (
       <div className="main">
+        <p className="titleCAT">Pour vous</p>
         <Carousel
           api={this.APIfilter()}
           keyword={this.state.value}
         />
+        <p className="titleCAT">Nouveautés</p>
         <NewsAlbums
           Newest={this.NewestApiFilter()}
           keyword={this.state.value}
         />
+        <p className="titleCAT">Catégories du moment</p>
         <MusicByCategories
           categories={this.CategoryDisplay()}
         />
-        {/* <FavoriteAlbums
-            albumList={this.state.favoriteAlbumsList}
-            keyword={value}
-          /> */}
+
       </div>
     );
   }

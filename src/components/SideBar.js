@@ -70,6 +70,7 @@ class SideBar extends React.Component {
           <NavbarBrand style={{ color: 'rgb(229,9,20)' }} tag={NavRouter} className="playItLoud" to="/">Play it Loud</NavbarBrand>
           <NavbarToggler className="togglerButton" onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
+
             <Nav className="linksidebar" navbar>
               <NavItem>
                 <NavLink tag={NavRouter} className="asidebar" to="/" onClick={() => { localStorage.setItem('lastLink', '/') }}>Accueil</NavLink>
