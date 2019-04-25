@@ -238,10 +238,7 @@ class Home extends Component {
         <MusicByCategories
           categories={this.CategoryDisplay()}
         />
-        {/* <FavoriteAlbums
-            albumList={this.state.favoriteAlbumsList}
-            keyword={value}
-          /> */}
+
       </div>
     );
   }
