@@ -229,7 +229,7 @@ class Home extends Component {
           api={this.APIfilter()}
           keyword={this.state.value}
         />
-        <p className="titleCAT">nouveautées</p>
+        <p className="titleCAT">Nouveautés</p>
         <NewsAlbums
           Newest={this.NewestApiFilter()}
           keyword={this.state.value}
