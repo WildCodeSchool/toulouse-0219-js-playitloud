@@ -8,10 +8,10 @@ import Home from './components/Home';
 import ProfilePage from './components/ProfilePage';
 import AlbumDetails from './components/AlbumDetails';
 import FavoriteAlbums from './components/FavoriteAlbums';
+import FavoritePlaylist from './components/FavoritePlaylist';
 import CategoryPlaylist from './components/CategoryPlaylist';
 import PlaylistTracks from './components/PlaylistTracks';
 import './App.css';
-import FavoritePlaylist from './components/FavoritePlaylist';
 
 
 class App extends Component {
