@@ -275,3 +275,10 @@ body {
   }
 }
 
+.boutonConnexion {
+  color: red;
+  border: 1px solid blue;
+  position: fixed;
+  left: 40rem;
+  bottom: 30rem;
+}
