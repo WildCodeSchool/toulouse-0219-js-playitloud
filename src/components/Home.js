@@ -123,7 +123,6 @@ class Home extends Component {
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         this.setState({
           categories: data.categories.items
         });
@@ -131,8 +130,7 @@ class Home extends Component {
   }
 
   CategoryDisplay() {
-    const { categories, checkFavoriteData } = this.state;
-    const { buttonText } = this.props;
+    const { categories } = this.state;
     return categories.map(category => (
       <div>
         <CardByPlaylist
@@ -140,10 +138,6 @@ class Home extends Component {
           name={category.name}
           id={category.id}
           click={this.handleClick}
-          favoriteAlbums={this.getButtonTextFalse}
-          removeFavorite={this.getButtonTextTrue}
-          text={buttonText}
-          isFavorite={checkFavoriteData.includes(category.id)}
         />
       </div>
     ));
@@ -196,24 +190,25 @@ class Home extends Component {
       ))
   }
 
+
   handleButtonFalse(id) {
     addToFavorite(id)
-    .then(data => {
-      this.setState({
-        addTofavorite: data
+      .then(data => {
+        this.setState({
+          addTofavorite: data
+        });
+        this.checkFavorite();
       });
-      this.checkFavorite();
-    });
   }
 
   handleButtonTrue(id) {
     removeFromFavorite(id)
-    .then(data => {
-      this.setState({
-        removeFromFavorite: data
+      .then(data => {
+        this.setState({
+          removeFromFavorite: data
+        });
+        this.checkFavorite();
       });
-      this.checkFavorite();
-    });
   }
 
   checkFavorite() {
@@ -225,28 +220,26 @@ class Home extends Component {
       }, () => console.log(this.state.checkFavoriteData.join()));
     });
   }
-  
+
   render() {
     return (
-      <div>
-        <div className="main">
-          <Carousel
-            api={this.APIfilter()}
-            keyword={this.state.value}
-          />
-          <NewsAlbums
-            Newest={this.NewestApiFilter()}
-            keyword={this.state.value}
-          />
-          <MusicByCategories
-            categories={this.CategoryDisplay()}
-          />
-          {/* <FavoriteAlbums
+      <div className="main">
+        <Carousel
+          api={this.APIfilter()}
+          keyword={this.state.value}
+        />
+        <NewsAlbums
+          Newest={this.NewestApiFilter()}
+          keyword={this.state.value}
+        />
+        <MusicByCategories
+          categories={this.CategoryDisplay()}
+        />
+        {/* <FavoriteAlbums
             albumList={this.state.favoriteAlbumsList}
             keyword={value}
           /> */}
-        </div>
-      </div >
+      </div>
     );
   }
 }

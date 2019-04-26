@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "TitlesFont";
+  src: url("./font/Rounded_Elegance.ttf") format('truetype');
+ }
+
+body {
+   font-family: 'TitlesFont'!important;
+   font-weight: bold !important;
+    background-color:rgb(34, 31, 31) !important;
+  }
+
+
 .album {
   position: relative;
   display: inline-block;
@@ -105,9 +117,7 @@
   -webkit-transition-delay: 0.2s;
   transition-delay: 0.2s;
 }
-body {
-  background-color:rgb(34, 31, 31) !important;
-}
+
 /* Navbar */
 .navbar.sidebar {
   background-color: rgb(34, 31, 31);
@@ -116,12 +126,16 @@ body {
   display: block;
   flex-direction: column;
   position: fixed;
-  width: 10%;
+  width: 8%;
+  z-index: 1;
   text-align: center;
 }
-
+.asidebar {
+  font-size:1.2rem;
+}
 .main {
-  margin: 76px 5% 100px 16%;
+  margin: 7rem 2% 100px 10%;
+  padding: auto;
 }
 
 .main ul {
@@ -160,7 +174,7 @@ body {
   .togglerButton {
     position: fixed;
     left: 1.5rem;
-    bottom: 16rem;
+    bottom: 1rem;
   }
   .sidebar {
     background-color: rgb(229,9,20);
@@ -171,7 +185,9 @@ body {
   }
   .asidebar {
     color: red !important;
+    font-size: 0.9rem;
   }
+
 }
 
 @media screen and (max-width: 350px) {
@@ -199,6 +215,11 @@ body {
   .asidebar {
     color: red !important;
   }
+
+}
+
+.decoButton {
+  font-size: 0.7rem !important;
 }
 
 /* FOOTER */

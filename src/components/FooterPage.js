@@ -14,7 +14,7 @@ const FooterPagePro = () => {
       <div className="footer-copyright text-center py-1">
         &copy; 2019 Copyright :
         {' '}
-        Rémi mets moi du son
+        Play it Loud
       </div>
     </div>
   );
