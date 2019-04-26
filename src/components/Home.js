@@ -229,7 +229,7 @@ class Home extends Component {
           api={this.APIfilter()}
           keyword={this.state.value}
         />
-        <p className="titleCAT">nouveautées</p>
+        <p className="titleCAT">Nouveautés</p>
         <NewsAlbums
           Newest={this.NewestApiFilter()}
           keyword={this.state.value}
@@ -238,10 +238,7 @@ class Home extends Component {
         <MusicByCategories
           categories={this.CategoryDisplay()}
         />
-        {/* <FavoriteAlbums
-            albumList={this.state.favoriteAlbumsList}
-            keyword={value}
-          /> */}
+
       </div>
     );
   }

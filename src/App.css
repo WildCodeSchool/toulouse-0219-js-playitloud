@@ -16,7 +16,7 @@ body {
   overflow: hidden;
   margin: 10px;
   min-width: 230px;
-  max-width: 315px;
+  max-width: 300px;
   width: 100%;
   color: #ffffff;
   font-size: 16px;
@@ -135,9 +135,6 @@ body {
   font-size:1.2rem;
 }
 
-
-
-
 .main ul {
   color: #eee;
 }
@@ -219,7 +216,7 @@ body {
     height: max-content;
     border-radius: 5px;
     z-index: 1;
-    
+    visibility: hidden;
 
   }
 
@@ -375,7 +372,12 @@ body {
 
 }
 
-
+.boutonConnexion {
+  color: red;
+  position: fixed;
+  left: 40rem;
+  bottom: 30rem;
+}
 .figcaption{
   max-width:10px;
 }
@@ -405,4 +407,18 @@ body {
 }
 .card-columns{
   margin-left: 200px;
+}
+
+.main {
+  margin-bottom: 100px !important;
+}
+.buttonFav{
+  max-width: 300px;
+  max-height: 50px;
+  position: relative;
+  top:-15px;
+  left: 50px;
+}
+.card-columns{
+  margin :20px;
 }
