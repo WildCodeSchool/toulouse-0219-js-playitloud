@@ -31,7 +31,7 @@ class Cards extends React.Component {
           <figure className="album">
             <img src={this.props.image} alt="pictures" className="pic" />
             <figcaption className="photoAlbum" id={this.props.id} onClick={() => { localStorage.setItem('lastLink', `/details-album/${this.props.id}`) }} >
-              <h3>{this.props.name}ddddddddd</h3>
+              <h3>{this.props.name}</h3>
               <h5>{this.props.artist}</h5>
             </figcaption>
           </figure>
