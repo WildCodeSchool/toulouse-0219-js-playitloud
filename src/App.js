@@ -26,8 +26,6 @@ class App extends Component {
     this.onChangeByClick = this.onChangeByClick.bind(this);
   }
 
-
-
   onChange(event) {
     this.setState({ value: event.target.value });
   }
@@ -60,7 +58,7 @@ class App extends Component {
               <Route exact path="/profile" component={ProfilePage} />
               <Route exact path="/details-album/:id" component={AlbumDetails} />
               <Route exact path="/favoris" component={FavoriteAlbums} />
-              <Route exact path="/playlists/category" component={FavoritePlaylist} />
+              <Route exact path="/playlists" component={FavoritePlaylist} />
               {/* <Route path="/playlist-details/:category/:id" component={CategoryPlaylist} /> */}
               <Route path="/playlist-details/:id" component={PlaylistTracks} />
               <Route path="/playlist-categories/:category" component={CategoryPlaylist} />

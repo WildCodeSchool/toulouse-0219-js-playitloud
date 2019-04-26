@@ -10,9 +10,9 @@ class CardByPlaylist extends React.Component {
   }
 
   render() {
+    const detailsOrCategory = this.props.isCategory ? 'categories' : 'details';
     return (
-
-      <div><NavLink to={`/playlist-categories/${this.props.id}`} >
+      <div><NavLink to={`/playlist-${detailsOrCategory}/${this.props.id}`} >
         <figure className="album">
           <img className="imgcard" src={this.props.image} alt="pictures" />
           <figcaption id={this.props.id} >
