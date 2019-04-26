@@ -96,7 +96,7 @@ export default class CategoryPlaylist extends React.Component {
         {
           this.state.categoryInfo && this.state.categoryInfo.playlists.items.map((singlePlaylist, i) =>
             <div>
-              <NavLink to={`/playlist/${this.props.match.params.category}/${singlePlaylist.id}`} >
+              <NavLink to={`/playlist-details/${singlePlaylist.id}`} >
                 <figure className="album">
                   <img src={singlePlaylist.images[0].url} alt={singlePlaylist.name} />
                   <figcaption id={singlePlaylist.id}>

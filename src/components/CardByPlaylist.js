@@ -11,21 +11,19 @@ class CardByPlaylist extends React.Component {
   }
 
   render() {
+    const detailsOrCategory = this.props.isCategory ? 'categories' : 'details';
     return (
-
-      <div>
-        <NavLink to={`/playlist-details/${this.props.id}`} >
-          <figure className="album">
-            <img className="imgcard" src={this.props.image} alt="pictures" />
-            <figcaption id={this.props.id} >
-              <h3>{this.props.name}</h3>
-              <h5>{this.props.artist}</h5>
-            </figcaption>
-          </figure>
-        </NavLink >
+      <div><NavLink to={`/playlist-${detailsOrCategory}/${this.props.id}`} >
+        <figure className="album">
+          <img className="imgcard" src={this.props.image} alt="pictures" />
+          <figcaption id={this.props.id} >
+            <h3>{this.props.name}</h3>
+            <h5>{this.props.artist}</h5>
+          </figcaption>
+        </figure>
+      </NavLink >
 
         {this.props.showButton && <button onClick={() => this.props.remove(this.props.id)} >Enlever des playlists</button>}
-
       </div>
 
     )
