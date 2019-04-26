@@ -16,7 +16,7 @@ body {
   overflow: hidden;
   margin: 10px;
   min-width: 230px;
-  max-width: 315px;
+  max-width: 300px;
   width: 100%;
   color: #ffffff;
   font-size: 16px;
@@ -411,4 +411,14 @@ body {
 
 .main {
   margin-bottom: 100px !important;
+}
+.buttonFav{
+  max-width: 300px;
+  max-height: 50px;
+  position: relative;
+  top:-15px;
+  left: 50px;
+}
+.card-columns{
+  margin :20px;
 }

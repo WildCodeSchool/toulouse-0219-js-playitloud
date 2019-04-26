@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+
 export default class CardsForPlaylist extends React.Component {
 
   render() {

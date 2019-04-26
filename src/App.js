@@ -59,9 +59,9 @@ class App extends Component {
               <Route exact path="/details-album/:id" component={AlbumDetails} />
               <Route exact path="/favoris" component={FavoriteAlbums} />
               <Route exact path="/playlists" component={FavoritePlaylist} />
-              {/* <Route path="/playlist-details/:category/:id" component={CategoryPlaylist} /> */}
               <Route path="/playlist-details/:id" component={PlaylistTracks} />
               <Route path="/playlist-categories/:category" component={CategoryPlaylist} />
+
             </Switch>
             <FooterPage />
           </div>
@@ -82,7 +82,6 @@ class App extends Component {
       else {
         return (
           <div className='accueilConnexion'>
-            <h1>Fion</h1>
             <a className="boutonConnexion" href="https://accounts.spotify.com/authorize?client_id=136da030d9704f5e9314b475d1a79537&redirect_uri=http://localhost:3000&scope=user-read-private%20user-read-email%20user-read-birthdate%20user-library-modify%20user-library-read%20playlist-read-private%20user-library-modify%20playlist-modify-private%20playlist-modify-public&response_type=token&state=123" > Connectez - vous</a >
           </div>
         )
