@@ -42,24 +42,24 @@ export default class FavoriteCards extends React.Component {
     const { checkFavoriteData } = this.state;
     return checkFavoriteData
       .map(album => (
-        <div>
-          <Cards
-            image={album.images[1].url}
-            name={album.name}
-            artist={album.artists[0].name}
-            id={album.id}
-            remove={this.handleClick}
-          />
-        </div>
+
+        <Cards
+          image={album.images[1].url}
+          name={album.name}
+          artist={album.artists[0].name}
+          id={album.id}
+          remove={this.handleClick}
+        />
+
       ));
   }
 
   render() {
     return (
       <CardColumns>
-        <div>
-          { this.displayFavorite() }
-        </div>
+
+        {this.displayFavorite()}
+
       </CardColumns>
     );
   }
