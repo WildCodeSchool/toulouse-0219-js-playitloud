@@ -60,9 +60,10 @@ class App extends Component {
               <Route exact path="/profile" component={ProfilePage} />
               <Route exact path="/details-album/:id" component={AlbumDetails} />
               <Route exact path="/favoris" component={FavoriteAlbums} />
-              <Route exact path="/playlists" component={FavoritePlaylist} />
-              <Route path="/playlist/:category/:id" component={PlaylistTracks} />
-              <Route path="/playlist/:category" component={CategoryPlaylist} />
+              <Route exact path="/playlists/category" component={FavoritePlaylist} />
+              {/* <Route path="/playlist-details/:category/:id" component={CategoryPlaylist} /> */}
+              <Route path="/playlist-details/:id" component={PlaylistTracks} />
+              <Route path="/playlist-categories/:category" component={CategoryPlaylist} />
             </Switch>
             <FooterPage />
           </div>
