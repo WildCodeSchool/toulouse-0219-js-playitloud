@@ -37,7 +37,7 @@ class App extends Component {
   deco() {
     localStorage.removeItem('token');
     localStorage.removeItem('tokenTimeStamp');
-    localStorage.removeItem('lastLink')
+    localStorage.removeItem('lastLink');
     window.location.replace('http://localhost:3000/');
   }
 
@@ -45,9 +45,9 @@ class App extends Component {
     if (localStorage.getItem('token') !== null) {
       return (
 
-        <div>
-          <SideBar deco={this.deco} />
+          
           <div className="main">
+          <SideBar deco={this.deco} />
             <Search
               value={this.state.value}
               change={this.onChange}
@@ -65,29 +65,27 @@ class App extends Component {
             </Switch>
             <FooterPage />
           </div>
+      );
+    }
+    let urlParams = window.location.hash.split('&');
+    urlParams = urlParams.map(element => element.split('='));
+    if (urlParams[0][1] !== undefined) {
+      localStorage.setItem('token', urlParams[0][1]);
+      localStorage.setItem('tokenTimeStamp', Date.now());
+      if (localStorage.getItem('lastLink') !== null) {
+        window.location.replace(`http://localhost:3000${  localStorage.getItem('lastLink')}`);
+      } else {
+        window.location.replace('http://localhost:3000/');
+      }
+    } else {
+      return (
+        <div className="accueilConnexion">
+          <a className="boutonConnexion" href="https://accounts.spotify.com/authorize?client_id=136da030d9704f5e9314b475d1a79537&redirect_uri=http://localhost:3000&scope=user-read-private%20user-read-email%20user-read-birthdate%20user-library-modify%20user-library-read%20playlist-read-private%20user-library-modify%20playlist-modify-private%20playlist-modify-public&response_type=token&state=123" > Connectez - vous</a >
         </div>
       );
-    } else {
-      let urlParams = window.location.hash.split('&');
-      urlParams = urlParams.map(element => element.split('='));
-      if (urlParams[0][1] !== undefined) {
-        localStorage.setItem('token', urlParams[0][1]);
-        localStorage.setItem('tokenTimeStamp', Date.now())
-        if (localStorage.getItem('lastLink') !== null) {
-          window.location.replace('http://localhost:3000' + localStorage.getItem('lastLink'))
-        } else {
-          window.location.replace('http://localhost:3000/')
-        }
-      }
-      else {
-        return (
-          <div className='accueilConnexion'>
-            <a className="boutonConnexion" href="https://accounts.spotify.com/authorize?client_id=136da030d9704f5e9314b475d1a79537&redirect_uri=http://localhost:3000&scope=user-read-private%20user-read-email%20user-read-birthdate%20user-library-modify%20user-library-read%20playlist-read-private%20user-library-modify%20playlist-modify-private%20playlist-modify-public&response_type=token&state=123" > Connectez - vous</a >
-          </div>
-        )
-      }
     }
   }
 }
+
 
 export default App;

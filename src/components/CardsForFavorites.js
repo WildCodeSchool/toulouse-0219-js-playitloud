@@ -6,7 +6,7 @@ export default class FavoriteCards extends React.Component {
   render() {
     return (
 
-      <div className="CardFav">
+      <div className="ALBUM">
         <NavLink to={`/details-album/${this.props.id}`} >
           <figure className="album">
             <img src={this.props.image} alt="pictures" />

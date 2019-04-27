@@ -54,7 +54,7 @@ class SideBar extends React.Component {
   render() {
     return (
       <div>
-        <Navbar className="sidebar" light>
+        <Navbar className="sidebar" dark>
           <NavbarToggler className="togglerButton" onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <div className="pictureName">

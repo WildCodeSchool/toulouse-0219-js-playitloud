@@ -1,5 +1,4 @@
 import React from 'react';
-import { CardColumns } from 'reactstrap';
 import CardByPlaylist from './CardByPlaylist';
 import { removeFromFavoritePlaylist } from '../services/FavoriteServices';
 
@@ -49,7 +48,6 @@ export default class FavoritePlaylist extends React.Component {
     const { checkFavoriteData } = this.state;
     return checkFavoriteData
       .map(playlist => (
-        <div className="main">
           <CardByPlaylist
             image={playlist.images[0] && playlist.images[0].url}
             name={playlist.name}
@@ -58,18 +56,15 @@ export default class FavoritePlaylist extends React.Component {
             showButton
           />
 
-        </div>
 
       ));
   }
 
   render() {
     return (
-      <CardColumns>
-        <div>
+        <div className="Cardcontainer">
           {this.displayFavorite()}
         </div>
-      </CardColumns>
     );
   }
 }

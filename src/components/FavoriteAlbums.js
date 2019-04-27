@@ -1,5 +1,4 @@
 import React from 'react';
-import { CardColumns } from 'reactstrap';
 import Cards from './CardsForFavorites';
 import { removeFromFavorite, getFavorite } from '../services/FavoriteServices';
 
@@ -56,11 +55,9 @@ export default class FavoriteCards extends React.Component {
 
   render() {
     return (
-      <CardColumns>
-
+<div className="Cardcontainer">
         {this.displayFavorite()}
-
-      </CardColumns>
+        </div>
     );
   }
 }

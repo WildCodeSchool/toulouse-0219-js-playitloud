@@ -126,6 +126,7 @@ body {
   flex-direction: column;
   position: fixed;
   min-width: 100px;
+  left: 0px;
   top: 130px;
   width: 8%;
   z-index: 1;
@@ -180,12 +181,7 @@ body {
   margin-right: 0px !important;
   margin-left: 80px;
 }
-.togglerButton {
-  position: fixed;
-  left: 1.5rem;
-  bottom: 1rem;
-  margin-left: 0px !important;
-}
+
 
   .footer {
   visibility: hidden
@@ -203,11 +199,6 @@ body {
   .profilpicture {
     display: none;
   }
-  .togglerButton {
-    position: fixed;
-    left: 1.5rem;
-    bottom: 1rem;
-    margin-left: 60px;
 
   }
   .sidebar {
@@ -216,7 +207,7 @@ body {
     height: max-content;
     border-radius: 5px;
     z-index: 1;
-    visibility: hidden;
+    width: 50px !important;
 
   }
 
@@ -225,7 +216,7 @@ body {
     font-size: 0.9rem;
   }
 
-}
+
 
 @media screen and (max-width: 319px) {
   
@@ -248,19 +239,13 @@ body {
   .profilpicture {
     display: none;
   }
-  .togglerButton {
-    position: fixed;
-    left: 1.5rem;
-    bottom: 16rem;
-    margin-left: 60px;
-  }
+
   .sidebar {
     background-color: rgb(229,9,20);
     position: fixed;
     height: 20%;
     width: 10px !important;
     border-radius: 5px;
-    visibility: hidden;
   }
   .asidebar {
     color: red !important;
@@ -298,6 +283,9 @@ body {
 }
 
 @media screen and (max-width: 350px) {
+  .buttonPlaylist{
+    max-width: 30px;
+  }
 
   .imgcard{
 
@@ -366,9 +354,6 @@ body {
     margin-bottom: 100px !important;
     margin-top: 0.3vh !important;
   }
-  .togglerButton{
-    visibility: hidden;
-  }
 
 }
 
@@ -399,12 +384,15 @@ body {
 .fixed-top{
   background-color:white !important;
 }
-.navbar-toggler-icon{
+/* .navbar-toggler-icon{
   color: white !important;
   border-radius: 100%;
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E")!important;
   margin-left: 5vh;
-}
+  position: fixed;
+  top: 90px;
+  left: 5%;
+} */
 .card-columns{
   margin-left: 200px;
 }
@@ -421,4 +409,13 @@ body {
 }
 .card-columns{
   margin :20px;
+}
+.Cardcontainer{
+  margin-left: 100px;
+}
+.sidebar{
+  margin-left: 10px !important;
+  padding: 0px !important;
+  position: fixed;
+  left: 30px !important;
 }

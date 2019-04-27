@@ -1,5 +1,3 @@
-/* eslint-disable react/no-unused-state */
-/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import Carousel from './Carousel';
 import Cards from './Cards';
@@ -7,8 +5,6 @@ import NewsAlbums from "./NewsAlbums";
 import { addToFavorite, removeFromFavorite, getFavorite } from '../services/FavoriteServices';
 import MusicByCategories from './MusicByCategories';
 import CardByPlaylist from './CardByPlaylist';
-// import { Route, BrowserRouter, Switch, NavLink } from 'react-router-dom';
-
 
 class Home extends Component {
   constructor(props) {
@@ -132,7 +128,7 @@ class Home extends Component {
   CategoryDisplay() {
     const { categories } = this.state;
     return categories.map(category => (
-      <div>
+    
         <CardByPlaylist
           image={category.icons[0].url}
           name={category.name}
@@ -140,7 +136,6 @@ class Home extends Component {
           click={this.handleClick}
           isCategory
         />
-      </div>
     ));
   }
 

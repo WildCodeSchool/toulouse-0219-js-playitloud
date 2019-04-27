@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import FavoritePlaylist from './FavoritePlaylist';
 
 class CardByPlaylist extends React.Component {
   constructor(props) {
@@ -13,7 +12,8 @@ class CardByPlaylist extends React.Component {
   render() {
     const detailsOrCategory = this.props.isCategory ? 'categories' : 'details';
     return (
-      <div><NavLink to={`/playlist-${detailsOrCategory}/${this.props.id}`} >
+      <div>
+        <NavLink to={`/playlist-${detailsOrCategory}/${this.props.id}`} >
         <figure className="album">
           <img className="imgcard" src={this.props.image} alt="pictures" />
           <figcaption id={this.props.id} >
@@ -23,7 +23,7 @@ class CardByPlaylist extends React.Component {
         </figure>
       </NavLink >
 
-        {this.props.showButton && <button onClick={() => this.props.remove(this.props.id)} >Enlever des playlists</button>}
+        {this.props.showButton && <button className="buttonPlaylist" onClick={() => this.props.remove(this.props.id)} >Enlever des playlists</button>}
       </div>
 
     )
