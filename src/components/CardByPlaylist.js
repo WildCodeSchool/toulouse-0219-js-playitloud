@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import FavoritePlaylist from './FavoritePlaylist';
 
 class CardByPlaylist extends React.Component {
   constructor(props) {
