@@ -66,9 +66,6 @@ class SideBar extends React.Component {
                   alt={this.state.profile.display_name}
                 />}
             </div>
-            <h6 style={{ color: "white", paddingTop: "3vh" }}>
-              Bonjour {this.state.profile && splitName(this.state.profile.display_name)}
-            </h6>
             <NavbarBrand style={{ color: 'rgb(229,9,20)' }} tag={NavRouter} className="playItLoud" to="/">Play it Loud</NavbarBrand>
             <Nav className="linksidebar" navbar>
               <NavItem>

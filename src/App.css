@@ -335,7 +335,7 @@ body {
 }
 @media screen and (min-width: 1024px) {
   .main{
-    margin: 7rem 7rem 1vh 10%;
+    margin: 7rem 2rem 1vh 10%;
   padding: auto;
   object-fit: contain !important;
   flex-direction: column !important;
@@ -424,11 +424,12 @@ body {
 }
 
 .DisplayProfil{
+  text-align: center;
   width: 70%;
   min-height: 100px;
   font-size: 30px;
   position: fixed;
-  left: 40vh;
+  left: 30vh;
   right: 300px;
   top : 20vh;
   color: white;
@@ -439,15 +440,26 @@ body {
   text-align: center;
 }
 .DisplayProfil h1, h2{
-  font-size: 60px;
+  font-size: 8vh;
   color: #e62214;
   font-weight: 900 !important;
 
 }
+.DisplayProfil h3{
+font-weight: bold;
+
+}
 .PProfile{
   max-width: fit-content;
-  padding: 30px;
+  padding: 3vh;
   align-content: center;
   position: fixed;
-  right: 420px;
+  right: 40vh;
+}
+.sidebar h6 {
+  font-size: 30px;
+}
+
+.DisplayProfil p {
+  font-weight: normal;
 }

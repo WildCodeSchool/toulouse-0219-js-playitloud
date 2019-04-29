@@ -10,16 +10,14 @@ const DisplayProfile = ({ profile }) => {
       <br />
       <h2>Bienvenue {prenomNom[0]}</h2>
 
-      <br />
-      <div className="PProfile">
 
-        <h3>Vos informations de compte</h3>
-        <br />
-        <p>Email : {profile.email}</p>
-        <p>Pays : {profile.country}</p>
-        <p>Numéro ID : {profile.id}</p>
-        <p>Date de naissance : {convertDate(profile.birthdate)}</p>
-      </div>
+      <h3>Vos informations de compte</h3>
+      <br />
+      <p>Email : {profile.email}</p>
+      <p>Pays : {profile.country}</p>
+      <p>Numéro ID : {profile.id}</p>
+      <p>Date de naissance : {convertDate(profile.birthdate)}</p>
+
     </div >
   );
 };
