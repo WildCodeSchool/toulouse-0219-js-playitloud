@@ -422,3 +422,32 @@ body {
 .card-columns{
   margin :20px;
 }
+
+.DisplayProfil{
+  width: 70%;
+  min-height: 100px;
+  font-size: 30px;
+  position: fixed;
+  left: 40vh;
+  right: 300px;
+  top : 20vh;
+  color: white;
+
+}
+.DisplayProfil h1, h2 {
+  color : white;
+  text-align: center;
+}
+.DisplayProfil h1, h2{
+  font-size: 60px;
+  color: #e62214;
+  font-weight: 900 !important;
+
+}
+.PProfile{
+  max-width: fit-content;
+  padding: 30px;
+  align-content: center;
+  position: fixed;
+  right: 420px;
+}
