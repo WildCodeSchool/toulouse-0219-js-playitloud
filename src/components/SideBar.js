@@ -11,8 +11,6 @@ import {
   NavLink
 } from 'reactstrap';
 import { NavLink as NavRouter } from 'react-router-dom';
-// import { REPL_MODE_STRICT } from 'repl';
-import splitName from '../functions/splitName';
 
 
 class SideBar extends React.Component {
@@ -72,7 +70,7 @@ class SideBar extends React.Component {
                 <NavLink tag={NavRouter} className="asidebar" to="/" onClick={() => { localStorage.setItem('lastLink', '/') }}>Accueil</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={NavRouter} className="asidebar" to="/profil" onClick={() => { localStorage.setItem('lastLink', '/profile') }}>Ton profil</NavLink>
+                <NavLink tag={NavRouter} className="asidebar" to="/profil" onClick={() => { localStorage.setItem('lastLink', '/profile') }}>Profil</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink tag={NavRouter} className="asidebar" to="/favoris" onClick={() => { localStorage.setItem('lastLink', '/favoris') }}>Favoris</NavLink>

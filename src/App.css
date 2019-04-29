@@ -377,6 +377,7 @@ body {
   position: fixed;
   top: 25%;
   left: 30%;
+  
 }
 
 .accueilConnexion h1 {
@@ -492,3 +493,4 @@ font-weight: bold;
 .DisplayProfil p {
   font-weight: normal;
 }
+
