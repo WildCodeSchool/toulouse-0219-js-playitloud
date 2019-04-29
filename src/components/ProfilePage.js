@@ -30,8 +30,11 @@ class ProfilePage extends Component {
   }
 
   render() {
+
     return (
-      <div className="main">
+
+      <div className="Profile">
+
         {this.state.profile && <DisplayProfile profile={this.state.profile} />}
       </div>
     )
