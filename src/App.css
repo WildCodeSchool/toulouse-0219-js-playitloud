@@ -372,12 +372,41 @@ body {
 
 }
 
-.boutonConnexion {
+.accueilConnexion {
   color: red;
   position: fixed;
-  left: 40rem;
-  bottom: 30rem;
+  top: 25%;
+  left: 30%;
 }
+
+.accueilConnexion h1 {
+  font-size: 8rem;
+  font-weight: bolder;
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+.accueilConnexion p {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  padding-bottom: 3rem;
+
+}
+
+.accueilConnexion a {
+  font-size: 2rem;
+  text-align: center;
+  color: white !important;
+  display: block;
+  margin-left: 28%;
+  border: 1px solid red;
+  background-color: red;
+  padding: 10px;
+  border-radius: 30px;
+  max-width: fit-content;
+}
+
 .figcaption{
   max-width:10px;
 }
