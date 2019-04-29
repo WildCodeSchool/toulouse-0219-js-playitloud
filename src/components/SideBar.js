@@ -11,9 +11,6 @@ import {
   NavLink
 } from 'reactstrap';
 import { NavLink as NavRouter } from 'react-router-dom';
-// import { REPL_MODE_STRICT } from 'repl';
-import splitName from '../functions/splitName';
-
 
 class SideBar extends React.Component {
   constructor(props) {
@@ -25,16 +22,17 @@ class SideBar extends React.Component {
       profile: ''
     };
   }
+
   componentDidMount() {
-    this.getUserProfil()
+    this.getUserProfil();
   }
 
   getUserProfil() {
-    fetch("https://api.spotify.com/v1/me", {
+    fetch('https://api.spotify.com/v1/me', {
       headers: {
-        'Accept': 'application/json',
+        Accept: 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem('token')
+        Authorization: `Bearer ${localStorage.getItem('token')}`
       }
     })
       .then(response => response.json())
@@ -44,6 +42,7 @@ class SideBar extends React.Component {
         });
       });
   }
+
   toggle() {
     this.setState({
       // eslint-disable-next-line react/destructuring-assignment
@@ -58,30 +57,32 @@ class SideBar extends React.Component {
           <NavbarToggler className="togglerButton" onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <div className="pictureName">
-              {this.state.profile &&
+              {this.state.profile
+                && (
                 <img
-                  style={{ borderRadius: "100%", maxWidth: "15vh" }}
+                  style={{ borderRadius: '100%', maxWidth: '15vh' }}
                   className="profilePicture"
                   src={this.state.profile.images[0].url}
                   alt={this.state.profile.display_name}
-                />}
+                />
+                )}
             </div>
             <NavbarBrand style={{ color: 'rgb(229,9,20)' }} tag={NavRouter} className="playItLoud" to="/">Play it Loud</NavbarBrand>
             <Nav className="linksidebar" navbar>
               <NavItem>
-                <NavLink tag={NavRouter} className="asidebar" to="/" onClick={() => { localStorage.setItem('lastLink', '/') }}>Accueil</NavLink>
+                <NavLink tag={NavRouter} className="asidebar" to="/" onClick={() => { localStorage.setItem('lastLink', '/'); }}>Accueil</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={NavRouter} className="asidebar" to="/profil" onClick={() => { localStorage.setItem('lastLink', '/profile') }}>Profil</NavLink>
+                <NavLink tag={NavRouter} className="asidebar" to="/profil" onClick={() => { localStorage.setItem('lastLink', '/profile'); }}>Profil</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={NavRouter} className="asidebar" to="/favoris" onClick={() => { localStorage.setItem('lastLink', '/favoris') }}>Favoris</NavLink>
+                <NavLink tag={NavRouter} className="asidebar" to="/favoris" onClick={() => { localStorage.setItem('lastLink', '/favoris'); }}>Favoris</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={NavRouter} className="asidebar" to="/playlists" onClick={() => { localStorage.setItem('lastLink', '/playlists') }}>Playlists</NavLink>
+                <NavLink tag={NavRouter} className="asidebar" to="/playlists" onClick={() => { localStorage.setItem('lastLink', '/playlists'); }}>Playlists</NavLink>
               </NavItem>
               <NavItem>
-                <button className='decoButton' onClick={this.props.deco} >Déconnexion</button>
+                <button className="decoButton" onClick={this.props.deco}>Déconnexion</button>
               </NavItem>
             </Nav>
           </Collapse>

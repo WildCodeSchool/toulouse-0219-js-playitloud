@@ -485,6 +485,7 @@ font-weight: bold;
   position: fixed;
   right: 40vh;
 }
+
 .sidebar h6 {
   font-size: 30px;
 }
@@ -492,3 +493,11 @@ font-weight: bold;
 .DisplayProfil p {
   font-weight: normal;
 }
+
+.cardsDePlaylist {
+  flex-direction: column;
+  position: relative;
+  border: 1px solid red;
+  display: inline-block;
+}
+

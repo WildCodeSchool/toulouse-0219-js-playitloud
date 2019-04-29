@@ -8,7 +8,7 @@ export default class FavoriteCards extends React.Component {
     super(props);
     this.state = {
       checkFavoriteData: []
-    }
+    };
     this.checkFavorite = this.checkFavorite.bind(this);
     this.displayFavorite = this.displayFavorite.bind(this);
     this.handleClick = this.handleClick.bind(this);

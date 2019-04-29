@@ -38,7 +38,7 @@ class Cards extends React.Component {
         </NavLink >
         <br />
         <br />
-        <button onClick={() => this.manageButton()} > {this.getButtonText()} </button>
+        <button onClick={() => this.manageButton()}> {this.getButtonText()} </button>
       </div>
 
     )
