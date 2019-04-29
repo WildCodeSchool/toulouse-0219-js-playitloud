@@ -72,7 +72,7 @@ class SideBar extends React.Component {
                 <NavLink tag={NavRouter} className="asidebar" to="/" onClick={() => { localStorage.setItem('lastLink', '/') }}>Accueil</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={NavRouter} className="asidebar" to="/profile" onClick={() => { localStorage.setItem('lastLink', '/profile') }}>Ton profil</NavLink>
+                <NavLink tag={NavRouter} className="asidebar" to="/profil" onClick={() => { localStorage.setItem('lastLink', '/profile') }}>Ton profil</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink tag={NavRouter} className="asidebar" to="/favoris" onClick={() => { localStorage.setItem('lastLink', '/favoris') }}>Favoris</NavLink>
