@@ -51,7 +51,7 @@ class Home extends Component {
   getSearch() {
     const { search } = this.props;
     if (search === '') {
-      fetch(`https://api.spotify.com/v1/search?q=skippy&type=artist,album,track&limit=50`, {
+      fetch(`https://api.spotify.com/v1/search?q=cacao&type=artist,album,track&limit=50`, {
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
