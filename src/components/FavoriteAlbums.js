@@ -1,5 +1,4 @@
 import React from 'react';
-import { CardColumns } from 'reactstrap';
 import Cards from './CardsForFavorites';
 import { removeFromFavorite, getFavorite } from '../services/FavoriteServices';
 
@@ -32,6 +31,7 @@ export default class FavoriteCards extends React.Component {
     removeFromFavorite(id)
       .then(data => {
         this.setState({
+          // eslint-disable-next-line react/no-unused-state
           removeFromFavorite: data
         });
         this.checkFavorite();
@@ -42,6 +42,7 @@ export default class FavoriteCards extends React.Component {
     const { checkFavoriteData } = this.state;
     return checkFavoriteData
       .map(album => (
+
 
         <Cards
           image={album.images[1].url}
@@ -56,11 +57,10 @@ export default class FavoriteCards extends React.Component {
 
   render() {
     return (
-      <CardColumns>
-
+      // eslint-disable-next-line react/jsx-indent
+      <div className="Cardcontainer">
         {this.displayFavorite()}
-
-      </CardColumns>
+      </div>
     );
   }
 }

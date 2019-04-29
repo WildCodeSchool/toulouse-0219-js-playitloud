@@ -11,7 +11,7 @@ class Cards extends React.Component {
     this.getButtonText = this.getButtonText.bind(this);
   }
 
-  manageButton = () => {
+  manageButton() {
     if (this.props.isFavorite) {
       this.setState({ buttonValue: true })
       this.props.removeFavorite(this.props.id)

@@ -1,3 +1,5 @@
+/* eslint-disable react/button-has-type */
+/* eslint-disable quotes */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/no-access-state-in-setstate */
 import React from 'react';
@@ -59,12 +61,12 @@ class SideBar extends React.Component {
             <div className="pictureName">
               {this.state.profile
                 && (
-                <img
-                  style={{ borderRadius: '100%', maxWidth: '15vh' }}
-                  className="profilePicture"
-                  src={this.state.profile.images[0].url}
-                  alt={this.state.profile.display_name}
-                />
+                  <img
+                    style={{ borderRadius: '100%', maxWidth: '15vh' }}
+                    className="profilePicture"
+                    src={this.state.profile.images[0].url}
+                    alt={this.state.profile.display_name}
+                  />
                 )}
             </div>
             <NavbarBrand style={{ color: 'rgb(229,9,20)' }} tag={NavRouter} className="playItLoud" to="/">Play it Loud</NavbarBrand>

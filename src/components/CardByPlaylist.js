@@ -1,3 +1,6 @@
+/* eslint-disable react/jsx-closing-tag-location */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/button-has-type */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button } from 'reactstrap';
@@ -6,11 +9,13 @@ class CardByPlaylist extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      // eslint-disable-next-line react/no-unused-state
       buttonValue: false,
     };
   }
 
   render() {
+    // eslint-disable-next-line react/destructuring-assignment
     const detailsOrCategory = this.props.isCategory ? 'categories' : 'details';
     return (
       <div className="cardsDePlaylist">
