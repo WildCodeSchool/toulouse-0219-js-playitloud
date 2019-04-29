@@ -18,7 +18,7 @@ const DisplayProfile = ({ profile }) => {
       <p>Numéro ID : {profile.id}</p>
       <p>Date de naissance : {convertDate(profile.birthdate)}</p>
 
-    </div >
+    </div>
   );
 };
 

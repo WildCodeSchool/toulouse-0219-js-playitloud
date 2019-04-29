@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
+import React, { Component } from 'react';
+import Slider from 'react-slick';
 
 class MusicByCategories extends Component {
   render() {
-    let settings = {
+    const settings = {
       dots: true,
       infinite: false,
       autoplay: false,

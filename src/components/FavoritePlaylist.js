@@ -9,7 +9,7 @@ export default class FavoritePlaylist extends React.Component {
     this.state = {
       checkFavoriteData: [],
       removeFromFavoritePlaylist: [],
-    }
+    };
     this.checkFavoritePlaylist = this.checkFavoritePlaylist.bind(this);
     this.displayFavorite = this.displayFavorite.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -20,7 +20,7 @@ export default class FavoritePlaylist extends React.Component {
   }
 
   checkFavoritePlaylist() {
-    fetch(`https://api.spotify.com/v1/me/playlists`, {
+    fetch('https://api.spotify.com/v1/me/playlists', {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',

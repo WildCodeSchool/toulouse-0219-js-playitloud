@@ -3,5 +3,7 @@ const albums = spotifyResults.albums.items.map(item => {
   const id = item.id;
   const image = item.images[0].url;
   const artist = item.artists[0].name;
-  return { name: name, id: id, image: image, artist: artist }
-})
+  return {
+    name, id, image, artist
+  };
+});
