@@ -1,6 +1,6 @@
 function splitName(name) {
   const prenomNom = name.split(' ');
-  const prenom = prenomNom[0]
+  const prenom = prenomNom[0];
   return prenom;
 }
 

@@ -335,7 +335,7 @@ body {
 }
 @media screen and (min-width: 1024px) {
   .main{
-    margin: 7rem 7rem 1vh 10%;
+    margin: 7rem 2rem 1vh 10%;
   padding: auto;
   object-fit: contain !important;
   flex-direction: column !important;
@@ -372,12 +372,42 @@ body {
 
 }
 
-.boutonConnexion {
-  color: red;
+.accueilConnexion {
+  color: #e62214;
   position: fixed;
-  left: 40rem;
-  bottom: 30rem;
+  top: 25%;
+  left: 30%;
+  
 }
+
+.accueilConnexion h1 {
+  font-size: 8rem;
+  font-weight: bolder;
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+.accueilConnexion p {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  padding-bottom: 3rem;
+
+}
+
+.accueilConnexion a {
+  font-size: 2rem;
+  text-align: center;
+  color: white !important;
+  display: block;
+  margin-left: 28%;
+  border: 1px solid #e62214;
+  background-color: #e62214;
+  padding: 10px;
+  border-radius: 30px;
+  max-width: fit-content;
+}
+
 .figcaption{
   max-width:10px;
 }
@@ -421,4 +451,69 @@ body {
 }
 .card-columns{
   margin :20px;
+}
+
+.DisplayProfil{
+  text-align: center;
+  width: 70%;
+  min-height: 100px;
+  font-size: 30px;
+  position: fixed;
+  left: 30vh;
+  right: 300px;
+  top : 20vh;
+  color: white;
+
+}
+.DisplayProfil h1, h2 {
+  color : white;
+  text-align: center;
+}
+.DisplayProfil h1, h2{
+  font-size: 8vh;
+  color: #e62214;
+  font-weight: 900 !important;
+
+}
+.DisplayProfil h3{
+font-weight: bold;
+
+}
+.PProfile{
+  max-width: fit-content;
+  padding: 3vh;
+  align-content: center;
+  position: fixed;
+  right: 40vh;
+}
+
+.sidebar h6 {
+  font-size: 30px;
+}
+
+.DisplayProfil p {
+  font-weight: normal;
+}
+
+.cardsDePlaylist {
+  flex-direction: column;
+  position: relative;
+  display: inline-block;
+}
+
+.accueilButton {
+  margin-left: 25%;
+}
+
+.favButtons {
+  margin-left: 15%;
+}
+
+.CardFav {
+  height: 25vw;
+  width: 15vw;
+}
+
+.card-columns {
+  padding-left: 10%;
 }

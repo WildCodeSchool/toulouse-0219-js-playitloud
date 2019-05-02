@@ -3,13 +3,14 @@ import { CardColumns } from 'reactstrap';
 import CardByPlaylist from './CardByPlaylist';
 import { removeFromFavoritePlaylist } from '../services/FavoriteServices';
 
+
 export default class FavoritePlaylist extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       checkFavoriteData: [],
       removeFromFavoritePlaylist: [],
-    }
+    };
     this.checkFavoritePlaylist = this.checkFavoritePlaylist.bind(this);
     this.displayFavorite = this.displayFavorite.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -20,7 +21,7 @@ export default class FavoritePlaylist extends React.Component {
   }
 
   checkFavoritePlaylist() {
-    fetch(`https://api.spotify.com/v1/me/playlists`, {
+    fetch('https://api.spotify.com/v1/me/playlists', {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
@@ -49,26 +50,21 @@ export default class FavoritePlaylist extends React.Component {
     const { checkFavoriteData } = this.state;
     return checkFavoriteData
       .map(playlist => (
-        <div className="main">
-          <CardByPlaylist
-            image={playlist.images[0] && playlist.images[0].url}
-            name={playlist.name}
-            id={playlist.id}
-            remove={this.handleClick}
-            showButton
-          />
-
-        </div>
+        <CardByPlaylist
+          image={playlist.images[0] && playlist.images[0].url}
+          name={playlist.name}
+          id={playlist.id}
+          remove={this.handleClick}
+          showButton
+        />
 
       ));
   }
 
   render() {
     return (
-      <CardColumns>
-        <div>
-          {this.displayFavorite()}
-        </div>
+      <CardColumns className='favCardGroup'>
+        {this.displayFavorite()}
       </CardColumns>
     );
   }
