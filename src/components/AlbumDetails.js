@@ -8,6 +8,7 @@ import React from 'react';
 import convertDate from '../functions/convertDate';
 import chekingTokenTimeStamp from '../functions/chekingTokenTimeStamp';
 import convertTime from '../functions/convertTime';
+import { Button } from 'reactstrap';
 
 
 export default class AlbumDetails extends React.Component {
@@ -65,9 +66,9 @@ export default class AlbumDetails extends React.Component {
         {this.state.albumsInfos
           && (
             <a target="_blank" rel="noreferrer noopener" href={`https://www.ticketmaster.fr/fr/resultat?ipSearch=${this.state.albumsInfos.artists[0].name}`}>
-              <button>
+              <Button color='danger'>
                 Voir les concerts en France
-              </button>
+              </Button>
             </a>
           )}
 

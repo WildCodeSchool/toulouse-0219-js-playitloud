@@ -63,7 +63,7 @@ export default class FavoritePlaylist extends React.Component {
 
   render() {
     return (
-      <CardColumns>
+      <CardColumns className='favCardGroup'>
         {this.displayFavorite()}
       </CardColumns>
     );

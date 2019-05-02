@@ -12,6 +12,7 @@ import {
   NavItem,
   NavLink
 } from 'reactstrap';
+import { Button } from 'reactstrap';
 import { NavLink as NavRouter } from 'react-router-dom';
 
 class SideBar extends React.Component {
@@ -84,7 +85,7 @@ class SideBar extends React.Component {
                 <NavLink tag={NavRouter} className="asidebar" to="/playlists" onClick={() => { localStorage.setItem('lastLink', '/playlists'); }}>Playlists</NavLink>
               </NavItem>
               <NavItem>
-                <button className="decoButton" onClick={this.props.deco}>Déconnexion</button>
+                <Button color='danger' className="decoButton" onClick={this.props.deco}>Déconnexion</Button>
               </NavItem>
             </Nav>
           </Collapse>

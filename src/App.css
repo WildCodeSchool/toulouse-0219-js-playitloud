@@ -501,3 +501,19 @@ font-weight: bold;
   display: inline-block;
 }
 
+.accueilButton {
+  margin-left: 25%;
+}
+
+.favButtons {
+  margin-left: 15%;
+}
+
+.CardFav {
+  height: 25vw;
+  width: 15vw;
+}
+
+.card-columns {
+  padding-left: 10%;
+}
