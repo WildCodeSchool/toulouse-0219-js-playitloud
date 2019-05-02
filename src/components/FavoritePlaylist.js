@@ -66,9 +66,8 @@ export default class FavoritePlaylist extends React.Component {
   render() {
     return (
       <CardColumns>
-        <div>
-          {this.displayFavorite()}
-        </div>
+        {this.displayFavorite()}
+
       </CardColumns>
     );
   }
