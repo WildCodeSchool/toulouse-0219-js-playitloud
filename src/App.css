@@ -498,7 +498,6 @@ font-weight: bold;
 .cardsDePlaylist {
   flex-direction: column;
   position: relative;
-  border: 1px solid red;
   display: inline-block;
 }
 
