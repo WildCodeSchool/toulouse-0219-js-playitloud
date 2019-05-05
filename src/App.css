@@ -327,6 +327,39 @@ body {
     left: 3rem;
     font-size: 0.6rem;
   }
+  .accueilConnexion {
+    color: #e62214;
+    position: fixed;
+    top: 10% !important;
+    left: 1% !important;
+    
+  }
+  
+  .accueilConnexion h1 {
+    font-size: 2rem !important;
+    font-weight: bolder;
+    padding-bottom: 1rem !important;
+  }
+  
+  .accueilConnexion p {
+    font-size: 1rem !important;
+    color: white;
+    text-align: center;
+    padding-bottom: 1rem;
+  
+  }
+  
+  .accueilConnexion a {
+    font-size: 1rem !important;
+    text-align: center;
+    color: white !important;
+    display: block;
+    border: 7px solid #e62214;
+    background-color: #e62214;
+    padding: 10px;
+    border-radius: 30px;
+    max-width: fit-content;
+  }
 }
 
 .pictureName{
@@ -366,8 +399,39 @@ body {
     margin-bottom: 100px !important;
     margin-top: 0.3vh !important;
   }
-  .togglerButton{
-    visibility: hidden;
+
+  .accueilConnexion {
+    color: #e62214;
+    position: fixed;
+    top: 10% !important;
+    left: 1% !important;
+    
+  }
+  
+  .accueilConnexion h1 {
+    font-size: 2rem !important;
+    font-weight: bolder;
+    padding-bottom: 1rem !important;
+  }
+  
+  .accueilConnexion p {
+    font-size: 1rem !important;
+    color: white;
+    text-align: center;
+    padding-bottom: 1rem;
+  
+  }
+  
+  .accueilConnexion a {
+    font-size: 1rem !important;
+    text-align: center;
+    color: white !important;
+    display: block;
+    border: 7px solid #e62214;
+    background-color: #e62214;
+    padding: 10px;
+    border-radius: 30px;
+    max-width: fit-content;
   }
 
 }
