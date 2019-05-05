@@ -182,8 +182,8 @@ body {
 }
 .togglerButton {
   position: fixed;
-  left: 1.5rem;
-  bottom: 1rem;
+  left: 1rem;
+  bottom: 12rem;
   margin-left: 0px !important;
 }
 
@@ -203,13 +203,7 @@ body {
   .profilpicture {
     display: none;
   }
-  .togglerButton {
-    position: fixed;
-    left: 1.5rem;
-    bottom: 1rem;
-    margin-left: 60px;
-
-  }
+  
   .sidebar {
     background-color: rgb(229,9,20);
     position: fixed;
@@ -297,10 +291,14 @@ body {
 
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 500px) {
+  .togglerButton {
+    position: fixed;
+    left: 0.1rem;
+    bottom: 22rem;
+  }
 
   .imgcard{
-
     width: 100px !important;
     margin-right: 0px !important;
   }
@@ -327,7 +325,7 @@ body {
     left: 3rem;
     font-size: 0.6rem;
   }
-  .accueilConnexion {
+ .accueilConnexion {
     color: #e62214;
     position: fixed;
     top: 10% !important;
@@ -351,7 +349,7 @@ body {
   
   .accueilConnexion a {
     font-size: 1rem !important;
-    text-align: center;
+    text-align: left !important;
     color: white !important;
     display: block;
     border: 7px solid #e62214;
