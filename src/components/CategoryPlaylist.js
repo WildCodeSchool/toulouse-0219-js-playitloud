@@ -1,6 +1,7 @@
 import React from 'react';
 import chekingTokenTimeStamp from '../functions/chekingTokenTimeStamp';
 import { NavLink } from 'react-router-dom';
+import { Button, CardColumns } from 'reactstrap';
 import { addToFavoritePlaylist, removeFromFavoritePlaylist } from '../services/FavoriteServices';
 
 
@@ -93,6 +94,7 @@ export default class CategoryPlaylist extends React.Component {
   render() {
     return (
       <div className="main" style={{ color: 'white' }}>
+      <CardColumns>
         {
           this.state.categoryInfo && this.state.categoryInfo.playlists.items.map((singlePlaylist, i) =>
             <div>
@@ -104,9 +106,10 @@ export default class CategoryPlaylist extends React.Component {
                   </figcaption>
                 </figure>
               </NavLink >
-              <button onClick={() => this.manageButton(singlePlaylist.id)} > {this.getButtonText(singlePlaylist.id)} </button>
+              <Button color='danger' className='favButtons' onClick={() => this.manageButton(singlePlaylist.id)} > {this.getButtonText(singlePlaylist.id)} </Button>
             </div>)
         }
+        </CardColumns>
       </div>
     );
   }

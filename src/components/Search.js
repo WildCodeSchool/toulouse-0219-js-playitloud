@@ -11,11 +11,8 @@ import SpotifyPlayer from 'react-spotify-player';
 
 class Search extends React.Component {
   render() {
-
     this.nmbLength = this.props.location.pathname.length;
-    this.catchID = (ID) => {
-      return ID.substring((this.nmbLength - 22), this.nmbLength)
-    }
+    this.catchID = (ID) => ID.substring((this.nmbLength - 22), this.nmbLength);
 
     const size = {
       width: '100%',
@@ -25,14 +22,12 @@ class Search extends React.Component {
     const theme = 'white';
 
     const URLMUSIC = () => {
-      if (this.props.location.pathname.includes("playlist")) {
-        return `spotify:playlist:${this.catchID(this.props.location.pathname)}`
+      if (this.props.location.pathname.includes('playlist')) {
+        return `spotify:playlist:${this.catchID(this.props.location.pathname)}`;
       }
-      else {
-        return `spotify:album:${this.catchID(this.props.location.pathname)}`
 
-      }
-    }
+      return `spotify:album:${this.catchID(this.props.location.pathname)}`;
+    };
 
     return (
       <div>
@@ -55,13 +50,14 @@ class Search extends React.Component {
 
                   <input
                     className="search_input"
-                    type="text" placeholder="Search..."
+                    type="text"
+                    placeholder="Search..."
                     value={this.props.value}
                     onChange={this.props.change}
 
                   />
 
-                  <NavLink className="search_icon" exact to="/" >
+                  <NavLink className="search_icon" exact to="/">
                     <i className="fas fa-search" />
                   </NavLink>
                 </div>

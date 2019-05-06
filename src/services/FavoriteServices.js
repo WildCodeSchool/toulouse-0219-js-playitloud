@@ -69,4 +69,6 @@ function getFavoritePlaylist() {
     .then(response => response.json());
 }
 
-export { addToFavorite, removeFromFavorite, getFavorite, getFavoritePlaylist, addToFavoritePlaylist, removeFromFavoritePlaylist };
+export {
+  addToFavorite, removeFromFavorite, getFavorite, getFavoritePlaylist, addToFavoritePlaylist, removeFromFavoritePlaylist
+};

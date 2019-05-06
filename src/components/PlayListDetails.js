@@ -4,12 +4,12 @@ import chekingTokenTimeStamp from '../functions/chekingTokenTimeStamp';
 
 export default class PlaylistDetails extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       id: '',
       PlayListInfos: '',
       tracks: []
-    }
+    };
     this.apiCallById = this.apiCallById.bind(this);
   }
 
@@ -19,12 +19,12 @@ export default class PlaylistDetails extends React.Component {
   }
 
   apiCallById() {
-    chekingTokenTimeStamp(localStorage.getItem('tokenTimeStamp'))
+    chekingTokenTimeStamp(localStorage.getItem('tokenTimeStamp'));
     fetch(`https://api.spotify.com/v1/playlists/${this.props.match.params.id}`, {
       headers: {
-        'Accept': 'application/json',
+        Accept: 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem('token')
+        Authorization: `Bearer ${localStorage.getItem('token')}`
       }
     })
       .then(response => response.json())
@@ -34,20 +34,20 @@ export default class PlaylistDetails extends React.Component {
 
         });
       });
-
   }
 
   render() {
     return (
       <div className="main" style={{ color: 'white' }}>
-        <h3> {this.state.PlayListInfos.name}</h3 >
+        <h3> {this.state.PlayListInfos.name}</h3>
         {
-          this.state.PlayListInfos && this.state.PlayListInfos.tracks.items.map((singleTrack, i) =>
+          this.state.PlayListInfos && this.state.PlayListInfos.tracks.items.map((singleTrack, i) => (
             <div>
               <p key={i}>{singleTrack.track_number}. {singleTrack.name} {this.convertTime(singleTrack.duration_ms)}</p>
-            </div>)
+            </div>
+          ))
         }
-      </div >
+      </div>
     );
-  };
+  }
 }
