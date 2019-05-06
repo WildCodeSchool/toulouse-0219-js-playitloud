@@ -8,7 +8,7 @@ export default class CategoryPlaylist extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      id: '',
+      id: '', 
       categoryInfo: "",
       buttonValue: false,
       removeFromFavoritePlaylist: [],
