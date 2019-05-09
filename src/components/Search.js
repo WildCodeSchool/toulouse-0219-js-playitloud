@@ -33,13 +33,14 @@ class Search extends React.Component {
       <div>
 
         <Navbar color="dark" light expand="md" className="fixed-top" bg-white>
+        <div className="Player">
           <SpotifyPlayer
             uri={URLMUSIC()}
             size={size}
             view={view}
             theme={theme}
           />
-
+</div>
           <Nav className="ml-auto" navbar>
             {/* SearchBar */}
 

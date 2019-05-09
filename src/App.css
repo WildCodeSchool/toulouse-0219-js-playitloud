@@ -158,7 +158,18 @@ body {
   display: block;
   flex-direction: column;
 }
-@media screen and (min-width: 350px) and (max-width: 540px) {
+@media screen and (min-width: 300px) and (max-width: 540px) {
+  .DisplayProfil{
+    position : fixed;
+    left: 125px!important;
+    top: 30% !important;
+    max-width: fit-content !important;
+    max-height: 80% !important;
+    font-size: 60% !important;
+  }
+  .DisplayProfil h1, h2, h3{ 
+font-size: 35% !important;
+  }
   .pic{
     width: 100px !important;
     margin-right: 0px !important;
@@ -182,8 +193,8 @@ body {
 }
 .togglerButton {
   position: fixed;
-  left: 1.5rem;
-  bottom: 1rem;
+  left: 1rem;
+  bottom: 1px;
   margin-left: 0px !important;
 }
 
@@ -203,20 +214,13 @@ body {
   .profilpicture {
     display: none;
   }
-  .togglerButton {
-    position: fixed;
-    left: 1.5rem;
-    bottom: 1rem;
-    margin-left: 60px;
-
-  }
+  
   .sidebar {
     background-color: rgb(229,9,20);
     position: fixed;
     height: max-content;
     border-radius: 5px;
     z-index: 1;
-    visibility: hidden;
 
   }
 
@@ -251,7 +255,7 @@ body {
   .togglerButton {
     position: fixed;
     left: 1.5rem;
-    bottom: 16rem;
+    bottom: 1rem;
     margin-left: 60px;
   }
   .sidebar {
@@ -297,10 +301,26 @@ body {
 
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 500px) {
+  .togglerButton {
+    position: fixed;
+    left: 0.1rem;
+    bottom: 2.5rem;
+  }
+  .titleCAT{
+    font-size: 15px !important;
+  }
+  .accueilButton{
+    max-width: fit-content;
+    font-size: 10px !important;
+    margin-left: 0px !important;
+    padding: 1px !important;
+  }
+  .Player {
+    display: none;
+  }
 
   .imgcard{
-
     width: 100px !important;
     margin-right: 0px !important;
   }
@@ -309,11 +329,20 @@ body {
     margin-right: 0px !important;
   }
   .main {
-    margin: 7rem 2rem 1vh 30%;
+    margin: 7rem 2rem 1vh 35% !important;
     padding: auto;
     object-fit: contain !important;
     flex-direction: column !important;
   }
+  .decoButton{
+    padding: 1px !important;
+  }
+.asidebar{
+  font-size: 10px !important;
+}
+.playItLoud{
+  font-size: 15px !important;
+}
   .icones {
     text-align: center;
     position: fixed;
@@ -326,6 +355,39 @@ body {
     bottom: -1rem;
     left: 3rem;
     font-size: 0.6rem;
+  }
+ .accueilConnexion {
+    color: #e62214;
+    position: fixed;
+    top: 10% !important;
+    left: 1% !important;
+    
+  }
+  
+  .accueilConnexion h1 {
+    font-size: 2rem !important;
+    font-weight: bolder;
+    padding-bottom: 1rem !important;
+  }
+  
+  .accueilConnexion p {
+    font-size: 1rem !important;
+    color: white;
+    text-align: center;
+    padding-bottom: 1rem;
+  
+  }
+  
+  .accueilConnexion a {
+    font-size: 1rem !important;
+    text-align: left !important;
+    color: white !important;
+    display: block;
+    border: 7px solid #e62214;
+    background-color: #e62214;
+    padding: 10px;
+    border-radius: 30px;
+    max-width: fit-content;
   }
 }
 
@@ -360,16 +422,74 @@ body {
   }
   .main{
     margin-right: 3vh;
-    margin-left: 17vh;
+    margin-left: 12vh;
   }
   .sidebar{
     margin-bottom: 100px !important;
     margin-top: 0.3vh !important;
   }
-  .togglerButton{
-    visibility: hidden;
-  }
 
+  .accueilConnexion {
+    color: #e62214;
+    position: fixed;
+    top: 10% !important;
+    left: 1% !important;
+    
+  }
+  
+  .accueilConnexion h1 {
+    font-size: 2rem !important;
+    font-weight: bolder;
+    padding-bottom: 1rem !important;
+  }
+  
+  .accueilConnexion p {
+    font-size: 1rem !important;
+    color: white;
+    text-align: center;
+    padding-bottom: 1rem;
+  
+  }
+  
+  .accueilConnexion a {
+    font-size: 1rem !important;
+    text-align: center;
+    color: white !important;
+    display: block;
+    border: 7px solid #e62214;
+    background-color: #e62214;
+    padding: 10px;
+    border-radius: 30px;
+    max-width: fit-content;
+  }
+  .album{
+    min-width: 0px !important;;
+    max-width: fit-content !important;
+    min-height: 15rem !important;
+    margin-bottom: 1px !important;
+  }
+  .pic{
+    min-width: 200px !important;
+  }
+  .accueilButton{
+    font-size: 12px !important;
+    margin-top: -23px !important;
+  }
+  .photoAlbum{
+    max-width: 10px !important;
+    max-height: 10px !important;
+  }
+  .DisplayProfil{
+    position : fixed;
+    left: 325px!important;
+    top: 30% !important;
+    max-width: fit-content !important;
+    max-height: 80% !important;
+    font-size: 100% !important;
+  }
+  .DisplayProfil h1, h2, h3{
+font-size: 150% !important;
+  }
 }
 
 .accueilConnexion {
@@ -416,6 +536,7 @@ body {
   word-wrap: break-word;
   margin-left: 1500 px;
 }
+
 .titleCAT{
   color:  white;
   text-align: left;
@@ -459,7 +580,7 @@ body {
   min-height: 100px;
   font-size: 30px;
   position: fixed;
-  left: 30vh;
+  left: 3vh;
   right: 300px;
   top : 20vh;
   color: white;
@@ -516,4 +637,7 @@ font-weight: bold;
 
 .card-columns {
   padding-left: 10%;
+}
+.Player{
+  min-width: 60% !important;
 }
