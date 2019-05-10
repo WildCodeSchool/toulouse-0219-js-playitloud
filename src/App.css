@@ -167,9 +167,16 @@ body {
     max-height: 80% !important;
     font-size: 60% !important;
   }
-  .DisplayProfil h1, h2, h3{ 
-font-size: 35% !important;
-  }
+  .DisplayProfil h1  { 
+    font-size: 1.5rem !important;
+      }
+  .DisplayProfil h2  { 
+    font-size: 1rem !important;
+      }
+  .DisplayProfil h3  { 
+    font-size: 0.5rem !important;
+      }
+  
   .pic{
     width: 100px !important;
     margin-right: 0px !important;
@@ -487,9 +494,15 @@ font-size: 35% !important;
     max-height: 80% !important;
     font-size: 100% !important;
   }
-  .DisplayProfil h1, h2, h3{
-font-size: 150% !important;
-  }
+  .DisplayProfil h1  { 
+    font-size: 2rem !important;
+      }
+  .DisplayProfil h2  { 
+    font-size: 1.5rem !important;
+      }
+  .DisplayProfil h3  { 
+    font-size: 1rem !important;
+      }
 }
 
 .accueilConnexion {
@@ -589,24 +602,16 @@ font-size: 150% !important;
 .DisplayProfil h1, h2 {
   color : white;
   text-align: center;
-}
-.DisplayProfil h1, h2{
   font-size: 8vh;
   color: #e62214;
   font-weight: 900 !important;
-
 }
+
 .DisplayProfil h3{
 font-weight: bold;
 
 }
-.PProfile{
-  max-width: fit-content;
-  padding: 3vh;
-  align-content: center;
-  position: fixed;
-  right: 40vh;
-}
+
 
 .sidebar h6 {
   font-size: 30px;
