@@ -65,7 +65,7 @@ class SideBar extends React.Component {
                   <img
                     style={{ borderRadius: '100%', maxWidth: '15vh' }}
                     className="profilePicture"
-                    src={this.state.profile.images[0].url}
+                    src={this.state.profile.images[0] ? this.state.profile.images[0].url : "https://lesexpertsdurecouvrement.com/wp-content/uploads/2015/11/default-avatar.jpg"}
                     alt={this.state.profile.display_name}
                   />
                 )}
