@@ -1,6 +1,7 @@
 import React from 'react';
 import Cards from './CardsForFavorites';
-import { Row, Col } from 'reactstrap';
+import { CardColumns } from 'reactstrap';
+import { Col } from 'reactstrap';
 import { removeFromFavorite, getFavorite } from '../services/FavoriteServices';
 
 
@@ -60,11 +61,10 @@ export default class FavoriteCards extends React.Component {
   render() {
     return (
       // eslint-disable-next-line react/jsx-indent
-      <div className='main'>
-      <Row>
+      <CardColumns className='favCardGroup'>
+
         {this.displayFavorite()}
-      </Row>
-      </div>
+      </CardColumns>
     );
   }
 }
